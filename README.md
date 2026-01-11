@@ -36,7 +36,7 @@
 - ✅ **Better Results** - Professional code with simple prompts
 - ✅ **Complete Understanding** - Full analysis of current and future state
 - ✅ **Best Practices** - Industry-standard implementation
-- ✅ **Universal Compatibility** - React, Vue, Angular, Node.js, Python, etc.
+- ✅ **Technology-Agnostic** - Works with any technology stack through methodology
 - ✅ **Multi-AI Support** - Claude, ChatGPT, Gemini, and more
 
 ---
@@ -348,154 +348,90 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ---
 
-## 🎯 Supported Technologies
+## 🎯 Technology-Agnostic Methodology
 
 <div align="center">
 
-### 🎨 Frontend Frameworks & Libraries
+### ⚡ **How It Works**
 
+This template uses a **methodology-first approach** that works with **any technology stack**. The skills don't require specific technology knowledge—they analyze what exists and adapt accordingly.
+
+**What We Guarantee:**
+- ✅ **Universal Methodology** - Same 4-phase process works everywhere
+- ✅ **Automatic Detection** - Analyzes your existing stack automatically
+- ✅ **Respect for Conventions** - Follows your project's patterns
+- ✅ **Best Practices** - Applies industry standards to your stack
+
+**What We Don't Guarantee:**
+- ❌ Specific knowledge of every technology
+- ❌ Pre-configured templates for each stack
+- ❌ Technology-specific optimizations
+
+</div>
+
+### 🔍 How Technology Detection Works
+
+The skills automatically:
+
+1. **Analyze your project structure** - Understands your file organization
+2. **Detect technologies** - Reads `package.json`, `requirements.txt`, etc.
+3. **Identify patterns** - Recognizes naming conventions and architecture
+4. **Adapt methodology** - Applies the protocol to your specific stack
+
+### 📋 Common Technology Examples
+
+The methodology has been tested with (but not limited to):
+
+<div align="center">
+
+#### Frontend
 ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
 ![Vue](https://img.shields.io/badge/Vue-35495E?logo=vue.js&logoColor=4FC08D)
 ![Angular](https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white)
 ![Svelte](https://img.shields.io/badge/Svelte-FF3E00?logo=svelte&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white)
-![Nuxt.js](https://img.shields.io/badge/Nuxt.js-00DC82?logo=nuxt.js&logoColor=white)
-![Gatsby](https://img.shields.io/badge/Gatsby-663399?logo=gatsby&logoColor=white)
-![Remix](https://img.shields.io/badge/Remix-000000?logo=remix&logoColor=white)
-
-### 💻 Languages & Runtimes
-
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?logo=java&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white)
-![Rust](https://img.shields.io/badge/Rust-000000?logo=rust&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white)
-![Ruby](https://img.shields.io/badge/Ruby-CC342D?logo=ruby&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-239120?logo=c-sharp&logoColor=white)
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white)
-![Swift](https://img.shields.io/badge/Swift-FA7343?logo=swift&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-0175C2?logo=dart&logoColor=white)
 
-### ⚙️ Backend Frameworks
-
+#### Backend
 ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-092E20?logo=django&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white)
-![Spring](https://img.shields.io/badge/Spring-6DB33F?logo=spring&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?logo=laravel&logoColor=white)
-![Rails](https://img.shields.io/badge/Rails-CC0000?logo=ruby-on-rails&logoColor=white)
-![ASP.NET](https://img.shields.io/badge/ASP.NET-512BD4?logo=.net&logoColor=white)
-![Gin](https://img.shields.io/badge/Gin-00ADD8?logo=go&logoColor=white)
-![Actix](https://img.shields.io/badge/Actix-000000?logo=rust&logoColor=white)
 
-### 🗄️ Databases
-
+#### Databases
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white)
-![MariaDB](https://img.shields.io/badge/MariaDB-003545?logo=mariadb&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?logo=firebase&logoColor=black)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=white)
-![DynamoDB](https://img.shields.io/badge/DynamoDB-4053D6?logo=amazon-dynamodb&logoColor=white)
-![Cassandra](https://img.shields.io/badge/Cassandra-1287B1?logo=apache-cassandra&logoColor=white)
-![Elasticsearch](https://img.shields.io/badge/Elasticsearch-005571?logo=elasticsearch&logoColor=white)
 
-### ☁️ Cloud & DevOps
-
-![AWS](https://img.shields.io/badge/AWS-232F3E?logo=amazon-aws&logoColor=white)
-![Azure](https://img.shields.io/badge/Azure-0078D4?logo=microsoft-azure&logoColor=white)
-![GCP](https://img.shields.io/badge/GCP-4285F4?logo=google-cloud&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-7B42BC?logo=terraform&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&logoColor=white)
-![GitLab CI](https://img.shields.io/badge/GitLab_CI-FC6D26?logo=gitlab&logoColor=white)
-
-### 🧪 Testing & Quality
-
-![Jest](https://img.shields.io/badge/Jest-C21325?logo=jest&logoColor=white)
-![Vitest](https://img.shields.io/badge/Vitest-6E9F18?logo=vitest&logoColor=white)
-![Cypress](https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=white)
-![Playwright](https://img.shields.io/badge/Playwright-45BA4B?logo=playwright&logoColor=white)
-![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?logo=pytest&logoColor=white)
-![Mocha](https://img.shields.io/badge/Mocha-8D6748?logo=mocha&logoColor=white)
-![Selenium](https://img.shields.io/badge/Selenium-43B02A?logo=selenium&logoColor=white)
-
-### 🎨 UI Libraries & Tools
-
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)
-![Material-UI](https://img.shields.io/badge/Material--UI-0081CB?logo=material-ui&logoColor=white)
-![Chakra UI](https://img.shields.io/badge/Chakra_UI-319795?logo=chakra-ui&logoColor=white)
-![Ant Design](https://img.shields.io/badge/Ant_Design-0170FE?logo=ant-design&logoColor=white)
-![Styled Components](https://img.shields.io/badge/Styled_Components-DB7093?logo=styled-components&logoColor=white)
-![Sass](https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white)
-![Less](https://img.shields.io/badge/Less-1D365D?logo=less&logoColor=white)
-
-### 🤖 AI Systems
-
+#### AI Systems
 ![Claude](https://img.shields.io/badge/Claude-FF6B35?logo=anthropic)
 ![ChatGPT](https://img.shields.io/badge/ChatGPT-74AA9C?logo=openai)
 ![Gemini](https://img.shields.io/badge/Gemini-4285F4?logo=google)
-![Llama](https://img.shields.io/badge/Llama-FF6B00?logo=meta)
-![Ollama](https://img.shields.io/badge/Ollama-000000?logo=ollama)
-
-### 📦 State Management
-
-![Redux](https://img.shields.io/badge/Redux-593D88?logo=redux&logoColor=white)
-![Zustand](https://img.shields.io/badge/Zustand-000000?logo=zustand&logoColor=white)
-![MobX](https://img.shields.io/badge/MobX-FF9955?logo=mobx&logoColor=white)
-![Pinia](https://img.shields.io/badge/Pinia-FFD859?logo=pinia&logoColor=black)
-![Jotai](https://img.shields.io/badge/Jotai-000000?logo=jotai&logoColor=white)
-![Recoil](https://img.shields.io/badge/Recoil-3578E5?logo=recoil&logoColor=white)
-
-### 🔐 Authentication & Security
-
-![Auth0](https://img.shields.io/badge/Auth0-EB5424?logo=auth0&logoColor=white)
-![Firebase Auth](https://img.shields.io/badge/Firebase_Auth-FFCA28?logo=firebase&logoColor=black)
-![Supabase Auth](https://img.shields.io/badge/Supabase_Auth-3ECF8E?logo=supabase&logoColor=white)
-![NextAuth](https://img.shields.io/badge/NextAuth-000000?logo=next.js&logoColor=white)
-![Passport.js](https://img.shields.io/badge/Passport.js-34E27A?logo=passport&logoColor=white)
-![JWT](https://img.shields.io/badge/JWT-000000?logo=json-web-tokens&logoColor=white)
-![OAuth](https://img.shields.io/badge/OAuth-4285F4?logo=google&logoColor=white)
-
-### 📡 API & Communication
-
-![REST](https://img.shields.io/badge/REST-000000?logo=rest&logoColor=white)
-![GraphQL](https://img.shields.io/badge/GraphQL-E10098?logo=graphql&logoColor=white)
-![gRPC](https://img.shields.io/badge/gRPC-4285F4?logo=google&logoColor=white)
-![WebSocket](https://img.shields.io/badge/WebSocket-010101?logo=socket.io&logoColor=white)
-![tRPC](https://img.shields.io/badge/tRPC-2596BE?logo=trpc&logoColor=white)
-![Apollo](https://img.shields.io/badge/Apollo-311C87?logo=apollo-graphql&logoColor=white)
-
-### 🛠️ Build Tools & Bundlers
-
-![Webpack](https://img.shields.io/badge/Webpack-8DD6F9?logo=webpack&logoColor=black)
-![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
-![Rollup](https://img.shields.io/badge/Rollup-EC4A3F?logo=rollup.js&logoColor=white)
-![Parcel](https://img.shields.io/badge/Parcel-000000?logo=parcel&logoColor=white)
-![Turbopack](https://img.shields.io/badge/Turbopack-000000?logo=turbopack&logoColor=white)
-![esbuild](https://img.shields.io/badge/esbuild-FFCF00?logo=esbuild&logoColor=black)
-
-### 📱 Mobile Development
-
-![React Native](https://img.shields.io/badge/React_Native-61DAFB?logo=react&logoColor=black)
-![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=white)
-![Ionic](https://img.shields.io/badge/Ionic-3880FF?logo=ionic&logoColor=white)
-![Expo](https://img.shields.io/badge/Expo-000020?logo=expo&logoColor=white)
-![Xamarin](https://img.shields.io/badge/Xamarin-3498DB?logo=xamarin&logoColor=white)
-
-### 🎯 And Many More!
-
-This template works with **any technology stack**. The skills are technology-agnostic and adapt to your specific needs.
 
 </div>
+
+> 💡 **Important**: These are examples of technologies the methodology has been used with. The skills work by **analyzing your project** and **adapting to what you have**, not by having pre-built knowledge of every technology.
+
+### 🎯 The Key Difference
+
+**Traditional approach**: "I know React, so I'll use React patterns"  
+**This template**: "I see you're using React, so I'll analyze your React patterns and follow them"
+
+The skills are **reactive** (they adapt to what exists) rather than **prescriptive** (they don't force specific technologies).
+
+### ✅ What This Means for You
+
+- **Works with any stack** - If you can describe it, the methodology applies
+- **No technology lock-in** - Switch stacks? The methodology still works
+- **Automatic adaptation** - Skills learn your conventions automatically
+- **Future-proof** - New technologies? The methodology adapts
+
+---
+
+**Bottom line**: The template provides a **universal development methodology** that adapts to your technology stack, not a collection of technology-specific templates.
 
 ---
 

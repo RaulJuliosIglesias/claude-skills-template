@@ -38,11 +38,13 @@ This directory contains the 4 main skills of the template that guarantee consist
 
 **Methodology**: Systematic analysis in 6 steps:
 1. Project structure analysis
-2. Technology identification
+2. Technology identification (automatic detection, not pre-configured)
 3. Architecture analysis
 4. Pattern and convention identification
 5. Relevant code location
 6. Dependencies and configuration analysis
+
+**Important**: This skill **detects** technologies from your project files—it doesn't require knowledge of every technology beforehand. It adapts to what exists.
 
 ### 4. `implementation_protocol/` - Implementation Protocol
 

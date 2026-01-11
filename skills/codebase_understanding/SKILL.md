@@ -47,27 +47,31 @@ Identified Patterns:
 
 ### Step 2: Technology Identification
 
-**Objective**: List all technologies, frameworks, and libraries
+**Objective**: List all technologies, frameworks, and libraries **that exist in the project**
+
+**Important**: This skill **detects** technologies, it does **not** require pre-existing knowledge of them. It analyzes what exists and adapts.
 
 **Process**:
-1. Review package.json / requirements.txt / etc.
-2. Identify main framework (React, Vue, Angular, etc.)
-3. List main libraries
-4. Identify build tools
-5. Recognize testing systems
+1. Review package.json / requirements.txt / pom.xml / Cargo.toml / etc.
+2. Identify main framework (React, Vue, Angular, etc.) **from dependencies**
+3. List main libraries **from dependency files**
+4. Identify build tools **from configuration files**
+5. Recognize testing systems **from test files or config**
 
 **Output**:
 ```
 Technology Stack:
-- Framework: [React/Vue/etc.]
-- Language: [TypeScript/JavaScript/Python/etc.]
-- Build Tool: [Vite/Webpack/etc.]
-- Testing: [Jest/Vitest/etc.]
+- Framework: [Detected from package.json/dependencies]
+- Language: [Detected from file extensions/config]
+- Build Tool: [Detected from config files]
+- Testing: [Detected from test files/config]
 - Main libraries:
-  * [library 1] - [purpose]
-  * [library 2] - [purpose]
+  * [library 1] - [from dependencies]
+  * [library 2] - [from dependencies]
   ...
 ```
+
+**Note**: If a technology is not detected automatically, it will be identified during code analysis when patterns are recognized.
 
 ### Step 3: Architecture Analysis
 
