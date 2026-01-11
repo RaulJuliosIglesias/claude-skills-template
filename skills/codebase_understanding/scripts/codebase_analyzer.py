@@ -1,5 +1,5 @@
 """
-Codebase Analyzer - Ayuda a analizar la estructura y estado del proyecto
+Codebase Analyzer - Helps analyze project structure and state
 """
 
 import os
@@ -8,13 +8,13 @@ from pathlib import Path
 
 def analyze_project_structure(root_path):
     """
-    Analiza la estructura de directorios del proyecto
+    Analyzes the project directory structure
     
     Args:
-        root_path: Ruta raíz del proyecto
+        root_path: Project root path
         
     Returns:
-        dict con estructura analizada
+        dict with analyzed structure
     """
     structure = {
         'root': str(root_path),
@@ -24,7 +24,7 @@ def analyze_project_structure(root_path):
     }
     
     for root, dirs, files in os.walk(root_path):
-        # Ignorar node_modules, .git, etc.
+        # Ignore node_modules, .git, etc.
         dirs[:] = [d for d in dirs if d not in ['.git', 'node_modules', 'venv', '__pycache__']]
         
         level = root.replace(str(root_path), '').count(os.sep)
@@ -32,20 +32,20 @@ def analyze_project_structure(root_path):
         structure['directories'].append(f"{indent}{os.path.basename(root)}/")
         
         subindent = ' ' * 2 * (level + 1)
-        for file in files[:5]:  # Limitar a 5 archivos por directorio
+        for file in files[:5]:  # Limit to 5 files per directory
             structure['files'].append(f"{subindent}{file}")
     
     return structure
 
 def identify_technologies(root_path):
     """
-    Identifica tecnologías usadas en el proyecto
+    Identifies technologies used in the project
     
     Args:
-        root_path: Ruta raíz del proyecto
+        root_path: Project root path
         
     Returns:
-        dict con tecnologías identificadas
+        dict with identified technologies
     """
     technologies = {
         'framework': None,
@@ -55,7 +55,7 @@ def identify_technologies(root_path):
         'libraries': []
     }
     
-    # Buscar package.json (Node.js/React)
+    # Look for package.json (Node.js/React)
     package_json = Path(root_path) / 'package.json'
     if package_json.exists():
         with open(package_json) as f:
@@ -66,7 +66,7 @@ def identify_technologies(root_path):
             technologies['testing'] = 'Jest' if 'jest' in data.get('devDependencies', {}) else None
             technologies['libraries'] = list(data.get('dependencies', {}).keys())[:10]
     
-    # Buscar requirements.txt (Python)
+    # Look for requirements.txt (Python)
     requirements_txt = Path(root_path) / 'requirements.txt'
     if requirements_txt.exists():
         technologies['language'] = 'Python'
@@ -77,13 +77,13 @@ def identify_technologies(root_path):
 
 def identify_naming_conventions(root_path):
     """
-    Identifica convenciones de nombres usadas
+    Identifies naming conventions used
     
     Args:
-        root_path: Ruta raíz del proyecto
+        root_path: Project root path
         
     Returns:
-        dict con convenciones identificadas
+        dict with identified conventions
     """
     conventions = {
         'components': None,
@@ -91,18 +91,18 @@ def identify_naming_conventions(root_path):
         'files': None
     }
     
-    # Analizar archivos para identificar patrones
+    # Analyze files to identify patterns
     for root, dirs, files in os.walk(root_path):
         if files:
-            # Analizar primeros archivos encontrados
+            # Analyze first files found
             sample_files = files[:10]
             for file in sample_files:
                 if file.endswith('.tsx') or file.endswith('.jsx'):
-                    # Componentes React suelen ser PascalCase
+                    # React components are usually PascalCase
                     if file[0].isupper():
                         conventions['components'] = 'PascalCase'
                 elif file.endswith('.ts') or file.endswith('.js'):
-                    # Funciones suelen ser camelCase
+                    # Functions are usually camelCase
                     if file[0].islower():
                         conventions['functions'] = 'camelCase'
                     conventions['files'] = 'camelCase' if file[0].islower() else 'PascalCase'
@@ -112,17 +112,17 @@ def identify_naming_conventions(root_path):
 
 def generate_codebase_summary(root_path):
     """
-    Genera un resumen completo del código base
+    Generates a complete codebase summary
     
     Args:
-        root_path: Ruta raíz del proyecto
+        root_path: Project root path
         
     Returns:
-        dict con resumen completo
+        dict with complete summary
     """
     return {
-        'estructura': analyze_project_structure(root_path),
-        'stack_tecnologico': identify_technologies(root_path),
-        'convenciones': identify_naming_conventions(root_path),
-        'ruta': str(root_path)
+        'structure': analyze_project_structure(root_path),
+        'technology_stack': identify_technologies(root_path),
+        'conventions': identify_naming_conventions(root_path),
+        'path': str(root_path)
     }

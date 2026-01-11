@@ -1,17 +1,17 @@
 """
-Protocol Checker - Verifica que el proceso de desarrollo siga el protocolo
+Protocol Checker - Verifies that the development process follows the protocol
 """
 
 def check_phase_completion(phase_name, checklist):
     """
-    Verifica que una fase del protocolo esté completa
+    Verifies that a protocol phase is complete
     
     Args:
-        phase_name: Nombre de la fase
-        checklist: Lista de items del checklist
+        phase_name: Phase name
+        checklist: Checklist items list
         
     Returns:
-        dict con estado de la fase
+        dict with phase status
     """
     completed = sum(1 for item in checklist if item.get('completed', False))
     total = len(checklist)
@@ -26,20 +26,20 @@ def check_phase_completion(phase_name, checklist):
 
 def validate_requirements_analysis(analysis):
     """
-    Valida que el análisis de requerimientos esté completo
+    Validates that requirements analysis is complete
     
     Args:
-        analysis: Dict con el análisis de requerimientos
+        analysis: Dict with requirements analysis
         
     Returns:
-        dict con validación
+        dict with validation
     """
     required_fields = [
-        'requirement_principal',
-        'funcionalidades',
-        'restricciones',
-        'dependencias',
-        'criterios_aceptacion'
+        'main_requirement',
+        'functionalities',
+        'constraints',
+        'dependencies',
+        'acceptance_criteria'
     ]
     
     missing = [field for field in required_fields if field not in analysis or not analysis[field]]
@@ -52,20 +52,20 @@ def validate_requirements_analysis(analysis):
 
 def validate_codebase_analysis(analysis):
     """
-    Valida que el análisis del código base esté completo
+    Validates that codebase analysis is complete
     
     Args:
-        analysis: Dict con el análisis del código base
+        analysis: Dict with codebase analysis
         
     Returns:
-        dict con validación
+        dict with validation
     """
     required_fields = [
-        'estructura',
-        'stack_tecnologico',
-        'arquitectura',
-        'patrones_convenciones',
-        'codigo_relevante'
+        'structure',
+        'technology_stack',
+        'architecture',
+        'patterns_conventions',
+        'relevant_code'
     ]
     
     missing = [field for field in required_fields if field not in analysis or not analysis[field]]
@@ -78,16 +78,16 @@ def validate_codebase_analysis(analysis):
 
 def generate_protocol_report(phases_status):
     """
-    Genera un reporte del estado del protocolo
+    Generates a protocol status report
     
     Args:
-        phases_status: Lista de estados de fases
+        phases_status: List of phase statuses
         
     Returns:
-        str con reporte formateado
+        str with formatted report
     """
     report = "=" * 80 + "\n"
-    report += "REPORTE DE PROTOCOLO DE DESARROLLO\n"
+    report += "DEVELOPMENT PROTOCOL REPORT\n"
     report += "=" * 80 + "\n\n"
     
     for phase in phases_status:
@@ -100,7 +100,7 @@ def generate_protocol_report(phases_status):
     overall_percentage = (total_completed / total_items * 100) if total_items > 0 else 0
     
     report += "\n" + "-" * 80 + "\n"
-    report += f"Progreso General: {total_completed}/{total_items} ({overall_percentage:.1f}%)\n"
+    report += f"Overall Progress: {total_completed}/{total_items} ({overall_percentage:.1f}%)\n"
     report += "=" * 80 + "\n"
     
     return report

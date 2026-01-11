@@ -1,154 +1,154 @@
-# 🤝 Guía de Contribución
+# 🤝 Contributing Guide
 
-¡Gracias por tu interés en contribuir al Template de Claude Skills!
+Thank you for your interest in contributing to the Claude Skills Template!
 
-## Cómo Contribuir
+## How to Contribute
 
-### Reportar Issues
-- Usa el sistema de issues de GitHub
-- Describe claramente el problema o sugerencia
-- Incluye ejemplos cuando sea posible
+### Report Issues
+- Use GitHub's issue system
+- Clearly describe the problem or suggestion
+- Include examples when possible
 
-### Mejorar Documentación
-- Corrige errores tipográficos
-- Mejora claridad de explicaciones
-- Agrega ejemplos útiles
-- Traduce a otros idiomas
+### Improve Documentation
+- Fix typos
+- Improve explanation clarity
+- Add useful examples
+- Translate to other languages
 
-### Agregar Nuevas Skills
-1. Crea un nuevo directorio en `skills/`
-2. Sigue la estructura estándar:
-   - `SKILL.md` con YAML frontmatter
-   - `scripts/` (opcional) para helpers
-3. Documenta claramente:
-   - Propósito de la skill
-   - Metodología que aplica
-   - Ejemplos de uso
-   - Cómo se integra con otras skills
+### Add New Skills
+1. Create a new directory in `skills/`
+2. Follow the standard structure:
+   - `SKILL.md` with YAML frontmatter
+   - `scripts/` (optional) for helpers
+3. Document clearly:
+   - Skill purpose
+   - Methodology it applies
+   - Usage examples
+   - How it integrates with other skills
 
-### Mejorar Skills Existentes
-- Refina metodologías
-- Agrega más ejemplos
-- Mejora scripts de ayuda
-- Optimiza para mejor rendimiento
+### Improve Existing Skills
+- Refine methodologies
+- Add more examples
+- Improve helper scripts
+- Optimize for better performance
 
-### Compartir Ejemplos
-- Agrega casos de uso reales
-- Documenta problemas resueltos
-- Comparte mejores prácticas descubiertas
+### Share Examples
+- Add real use cases
+- Document solved problems
+- Share discovered best practices
 
-## Estándares de Calidad
+## Quality Standards
 
-### Documentación
-- Usa Markdown correctamente
-- Incluye ejemplos prácticos
-- Mantén consistencia de estilo
-- Actualiza índices cuando agregues contenido
+### Documentation
+- Use Markdown correctly
+- Include practical examples
+- Maintain style consistency
+- Update indexes when adding content
 
-### Código
-- Sigue PEP 8 para Python
-- Comenta código complejo
-- Incluye docstrings
-- Mantén funciones pequeñas y enfocadas
+### Code
+- Follow PEP 8 for Python
+- Comment complex code
+- Include docstrings
+- Keep functions small and focused
 
 ### Skills
-- Formato YAML frontmatter correcto
-- Descripción clara y concisa
-- Metodología bien definida
-- Ejemplos relevantes
+- Correct YAML frontmatter format
+- Clear and concise description
+- Well-defined methodology
+- Relevant examples
 
-## Proceso de Contribución
+## Contribution Process
 
-1. **Fork** el repositorio
-2. **Crea una rama** para tu contribución
+1. **Fork** the repository
+2. **Create a branch** for your contribution
    ```bash
-   git checkout -b feature/mi-contribucion
+   git checkout -b feature/my-contribution
    ```
-3. **Haz tus cambios** siguiendo los estándares
-4. **Prueba** que todo funciona correctamente
-5. **Commit** con mensajes descriptivos
+3. **Make your changes** following standards
+4. **Test** that everything works correctly
+5. **Commit** with descriptive messages
    ```bash
-   git commit -m "feat: agregar nueva skill de testing"
+   git commit -m "feat: add new testing skill"
    ```
-6. **Push** a tu fork
+6. **Push** to your fork
    ```bash
-   git push origin feature/mi-contribucion
+   git push origin feature/my-contribution
    ```
-7. **Abre un Pull Request** con descripción clara
+7. **Open a Pull Request** with clear description
 
-## Convenciones de Commits
+## Commit Conventions
 
-Usa [Conventional Commits](https://www.conventionalcommits.org/):
+Use [Conventional Commits](https://www.conventionalcommits.org/):
 
-- `feat:` Nueva funcionalidad
-- `fix:` Corrección de bug
-- `docs:` Cambios en documentación
-- `style:` Formato, punto y coma faltante, etc.
-- `refactor:` Refactorización de código
-- `test:` Agregar o modificar tests
-- `chore:` Cambios en build, dependencias, etc.
+- `feat:` New functionality
+- `fix:` Bug fix
+- `docs:` Documentation changes
+- `style:` Formatting, missing semicolon, etc.
+- `refactor:` Code refactoring
+- `test:` Add or modify tests
+- `chore:` Build changes, dependencies, etc.
 
-## Estructura de Pull Requests
+## Pull Request Structure
 
-### Título
-- Descriptivo y claro
-- Prefijo con tipo (feat, fix, docs, etc.)
+### Title
+- Descriptive and clear
+- Prefix with type (feat, fix, docs, etc.)
 
-### Descripción
-- ¿Qué cambia?
-- ¿Por qué es necesario?
-- ¿Cómo funciona?
-- ¿Ejemplos de uso?
+### Description
+- What changes?
+- Why is it necessary?
+- How does it work?
+- Usage examples?
 
 ### Checklist
-- [ ] Código/documentación actualizado
-- [ ] Tests pasan (si aplica)
-- [ ] Documentación actualizada
-- [ ] Ejemplos actualizados (si aplica)
+- [ ] Code/documentation updated
+- [ ] Tests pass (if applicable)
+- [ ] Documentation updated
+- [ ] Examples updated (if applicable)
 
-## Áreas de Contribución Prioritarias
+## Priority Contribution Areas
 
-### Alta Prioridad
-- Mejorar documentación de skills existentes
-- Agregar más ejemplos de uso
-- Optimizar metodologías de skills
+### High Priority
+- Improve documentation of existing skills
+- Add more usage examples
+- Optimize skill methodologies
 
-### Media Prioridad
-- Crear nuevas skills complementarias
-- Mejorar scripts de ayuda
-- Agregar casos de uso específicos
+### Medium Priority
+- Create new complementary skills
+- Improve helper scripts
+- Add specific use cases
 
-### Baja Prioridad
-- Traducciones
-- Mejoras de estilo
-- Optimizaciones menores
+### Low Priority
+- Translations
+- Style improvements
+- Minor optimizations
 
-## Preguntas Frecuentes
+## Frequently Asked Questions
 
-### ¿Necesito experiencia previa?
-No, cualquier contribución es bienvenida. Si tienes dudas, abre un issue para discutir.
+### Do I need previous experience?
+No, any contribution is welcome. If you have questions, open an issue to discuss.
 
-### ¿Cómo sé si mi contribución es valiosa?
-Todas las contribuciones son valiosas. Incluso pequeñas mejoras de documentación ayudan.
+### How do I know if my contribution is valuable?
+All contributions are valuable. Even small documentation improvements help.
 
-### ¿Puedo contribuir skills de otros proyectos?
-Sí, siempre que respetes las licencias y des crédito apropiado.
+### Can I contribute skills from other projects?
+Yes, as long as you respect licenses and give appropriate credit.
 
-### ¿Hay un código de conducta?
-Sí, mantén un ambiente respetuoso y colaborativo.
+### Is there a code of conduct?
+Yes, maintain a respectful and collaborative environment.
 
-## Recursos Útiles
+## Useful Resources
 
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [Claude Skills Best Practices](https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/best-practices)
-- [Awesome Claude Skills](https://github.com/VoltAgent/awesome-claude-skills) - Inspiración
+- [Awesome Claude Skills](https://github.com/VoltAgent/awesome-claude-skills) - Inspiration
 
-## Contacto
+## Contact
 
-- Abre un issue para preguntas
-- Usa discussions para ideas generales
-- Pull requests para contribuciones concretas
+- Open an issue for questions
+- Use discussions for general ideas
+- Pull requests for concrete contributions
 
 ---
 
-**¡Gracias por contribuir!** Cada contribución hace este template mejor para toda la comunidad. 🎉
+**Thank you for contributing!** Every contribution makes this template better for the entire community. 🎉

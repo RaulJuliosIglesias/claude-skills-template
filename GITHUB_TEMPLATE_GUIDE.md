@@ -1,157 +1,157 @@
-# 📦 Guía: Usar Este Template en GitHub
+# 📦 Guide: Using This Template on GitHub
 
-Esta guía explica cómo usar este repositorio como template base para nuevos proyectos.
+This guide explains how to use this repository as a base template for new projects.
 
-## 🎯 Propósito
+## 🎯 Purpose
 
-Este template está diseñado para ser **descargado/clonado antes de empezar cualquier proyecto** para garantizar:
-- ✅ Desarrollo consistente y metodológico
-- ✅ Mejor calidad de código desde el inicio
-- ✅ Protocolos claros para cualquier stack tecnológico
-- ✅ Resultados profesionales con prompts sencillos
+This template is designed to be **downloaded/cloned before starting any project** to guarantee:
+- ✅ Consistent and methodological development
+- ✅ Better code quality from the start
+- ✅ Clear protocols for any technology stack
+- ✅ Professional results with simple prompts
 
-## 🚀 Opción 1: Usar como Template de GitHub
+## 🚀 Option 1: Use as GitHub Template
 
-### Configurar como Template
+### Configure as Template
 
-1. **En tu repositorio de GitHub:**
-   - Ve a Settings → General
-   - Scroll hasta "Template repository"
-   - Activa "Template repository"
-   - Guarda cambios
+1. **In your GitHub repository:**
+   - Go to Settings → General
+   - Scroll to "Template repository"
+   - Activate "Template repository"
+   - Save changes
 
-2. **Usar el template:**
-   - Al crear un nuevo repositorio, selecciona "Use this template"
-   - O usa: `https://github.com/tu-usuario/claude-skills-template/generate`
+2. **Use the template:**
+   - When creating a new repository, select "Use this template"
+   - Or use: `https://github.com/your-username/claude-skills-template/generate`
 
-### Ventajas
-- ✅ GitHub mantiene la estructura
-- ✅ Fácil de compartir con tu equipo
-- ✅ Historial limpio desde el inicio
+### Advantages
+- ✅ GitHub maintains the structure
+- ✅ Easy to share with your team
+- ✅ Clean history from the start
 
-## 🔄 Opción 2: Clonar para Cada Proyecto
+## 🔄 Option 2: Clone for Each Project
 
-### Proceso Recomendado
+### Recommended Process
 
 ```bash
-# 1. Clonar el template
-git clone https://github.com/tu-usuario/claude-skills-template.git mi-nuevo-proyecto
-cd mi-nuevo-proyecto
+# 1. Clone the template
+git clone https://github.com/your-username/claude-skills-template.git my-new-project
+cd my-new-project
 
-# 2. Configurar
+# 2. Configure
 ./setup.sh  # Linux/Mac
-# O
+# Or
 setup.bat   # Windows
 
-# 3. Configurar .env
-# Editar .env y agregar tu API key
+# 3. Configure .env
+# Edit .env and add your API key
 
-# 4. Inicializar como nuevo proyecto
+# 4. Initialize as new project
 rm -rf .git
 git init
 git add .
-git commit -m "Initial commit: Template de Skills configurado"
+git commit -m "Initial commit: Skills template configured"
 
-# 5. Agregar tu código del proyecto
-# Ahora puedes empezar a desarrollar con las skills activas
+# 5. Add your project code
+# Now you can start developing with skills active
 ```
 
-## 📋 Checklist de Inicio de Proyecto
+## 📋 Project Startup Checklist
 
-Cuando empiezas un nuevo proyecto con este template:
+When starting a new project with this template:
 
-### Fase 1: Configuración Inicial
-- [ ] Clonar/descargar el template
-- [ ] Ejecutar `setup.sh` o `setup.bat`
-- [ ] Configurar `.env` con tu API key
-- [ ] Verificar que las dependencias estén instaladas
-- [ ] Probar con un ejemplo simple
+### Phase 1: Initial Configuration
+- [ ] Clone/download template
+- [ ] Run `setup.sh` or `setup.bat`
+- [ ] Configure `.env` with your API key
+- [ ] Verify dependencies are installed
+- [ ] Test with a simple example
 
-### Fase 2: Personalización
-- [ ] Revisar las skills y ajustar según tu stack
-- [ ] Personalizar metodologías si es necesario
-- [ ] Agregar skills específicas de tu dominio (opcional)
-- [ ] Configurar estructura de tu proyecto
+### Phase 2: Customization
+- [ ] Review skills and adjust according to your stack
+- [ ] Customize methodologies if necessary
+- [ ] Add domain-specific skills (optional)
+- [ ] Configure your project structure
 
-### Fase 3: Integración
-- [ ] Cargar las skills en tu entorno (Claude Desktop/API)
-- [ ] Probar con un requerimiento real
-- [ ] Ajustar según resultados
-- [ ] Documentar decisiones específicas del proyecto
+### Phase 3: Integration
+- [ ] Load skills in your environment (Claude Desktop/API)
+- [ ] Test with a real requirement
+- [ ] Adjust according to results
+- [ ] Document project-specific decisions
 
-## 🎨 Personalización por Tipo de Proyecto
+## 🎨 Customization by Project Type
 
-### Para Proyectos React/TypeScript
+### For React/TypeScript Projects
 
 ```bash
-# Después de clonar el template
+# After cloning template
 npx create-react-app . --template typescript
-# O
+# Or
 npm create vite@latest . -- --template react-ts
 
-# Las skills ya están listas para usar
+# Skills are ready to use
 ```
 
-### Para Proyectos Node.js/Express
+### For Node.js/Express Projects
 
 ```bash
-# Después de clonar el template
+# After cloning template
 npm init -y
 npm install express
-# ... otras dependencias
+# ... other dependencies
 
-# Las skills funcionan igual
+# Skills work the same
 ```
 
-### Para Proyectos Python
+### For Python Projects
 
 ```bash
-# Después de clonar el template
+# After cloning template
 python -m venv venv
-source venv/bin/activate  # o venv\Scripts\activate en Windows
-pip install -r requirements.txt  # del template
-# Agregar tus propias dependencias
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+pip install -r requirements.txt  # from template
+# Add your own dependencies
 
-# Las skills son independientes del stack
+# Skills are stack-independent
 ```
 
-## 📁 Estructura Recomendada
+## 📁 Recommended Structure
 
-Después de clonar, tu proyecto debería verse así:
+After cloning, your project should look like this:
 
 ```
-mi-proyecto/
-├── skills/              # Skills del template (mantener)
-├── examples/            # Ejemplos (opcional, puedes eliminar)
-├── outputs/             # Archivos generados (gitignored)
-├── src/                 # Tu código del proyecto
-├── .env                 # Configuración (gitignored)
-├── .env.example         # Template de configuración
-├── README.md            # Actualizar con info de tu proyecto
-├── requirements.txt     # Dependencias Python (si aplica)
-└── ...                  # Archivos de tu proyecto
+my-project/
+├── skills/              # Template skills (keep)
+├── examples/            # Examples (optional, you can delete)
+├── outputs/             # Generated files (gitignored)
+├── src/                 # Your project code
+├── .env                 # Configuration (gitignored)
+├── .env.example         # Configuration template
+├── README.md            # Update with your project info
+├── requirements.txt     # Python dependencies (if applicable)
+└── ...                  # Your project files
 ```
 
-## 🔧 Integración con Tu Workflow
+## 🔧 Integration with Your Workflow
 
-### Con Claude Desktop
+### With Claude Desktop
 
-1. **Cargar skills:**
-   - Abre Claude Desktop
+1. **Load skills:**
+   - Open Claude Desktop
    - Settings → Skills
-   - Agrega el directorio `skills/` de tu proyecto
-   - Las skills estarán disponibles automáticamente
+   - Add your project's `skills/` directory
+   - Skills will be available automatically
 
-2. **Usar en desarrollo:**
-   - Abre Claude Desktop
-   - Las skills se cargan automáticamente
-   - Haz tus prompts normalmente
-   - Las skills garantizan consistencia
+2. **Use in development:**
+   - Open Claude Desktop
+   - Skills load automatically
+   - Make your prompts normally
+   - Skills guarantee consistency
 
-### Con Claude API
+### With Claude API
 
 ```python
-# En tu código del proyecto
+# In your project code
 from anthropic import Anthropic
 import os
 from dotenv import load_dotenv
@@ -160,112 +160,112 @@ load_dotenv()
 
 client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
-# Las skills están en el directorio skills/
-# Cárgalas según INTEGRATION_GUIDE.md
+# Skills are in the skills/ directory
+# Load them according to INTEGRATION_GUIDE.md
 ```
 
-### Con Otros IAs
+### With Other AIs
 
-Ver **USAGE_WITH_OTHER_AI.md** para adaptar a ChatGPT, Gemini, etc.
+See **USAGE_WITH_OTHER_AI.md** to adapt to ChatGPT, Gemini, etc.
 
-## 📝 Actualizar README del Proyecto
+## 📝 Update Project README
 
-Después de clonar, actualiza el README con:
+After cloning, update README with:
 
 ```markdown
-# Mi Proyecto
+# My Project
 
-[Descripción de tu proyecto]
+[Description of your project]
 
-## Desarrollo con Skills
+## Development with Skills
 
-Este proyecto usa el [Claude Skills Template](link-al-template) para garantizar desarrollo consistente.
+This project uses the [Claude Skills Template](link-to-template) to guarantee consistent development.
 
-Las skills están en `skills/` y se cargan automáticamente cuando trabajas con Claude.
+Skills are in `skills/` and load automatically when working with Claude.
 
-## Uso
+## Usage
 
-[Instrucciones específicas de tu proyecto]
+[Your project-specific instructions]
 ```
 
-## 🎯 Flujo de Trabajo Recomendado
+## 🎯 Recommended Workflow
 
-1. **Inicio de proyecto:**
+1. **Project start:**
    ```bash
-   git clone template mi-proyecto
-   cd mi-proyecto
+   git clone template my-project
+   cd my-project
    ./setup.sh
-   # Configurar .env
+   # Configure .env
    ```
 
-2. **Durante desarrollo:**
-   - Usa Claude con las skills cargadas
-   - Haz prompts sencillos, las skills garantizan calidad
-   - Las skills analizan, planifican e implementan consistentemente
+2. **During development:**
+   - Use Claude with skills loaded
+   - Make simple prompts, skills guarantee quality
+   - Skills analyze, plan, and implement consistently
 
-3. **Mantenimiento:**
-   - Actualiza las skills según mejores prácticas
-   - Personaliza según necesidades del proyecto
-   - Comparte mejoras con la comunidad
+3. **Maintenance:**
+   - Update skills according to best practices
+   - Customize according to project needs
+   - Share improvements with community
 
-## 🔄 Actualizar el Template
+## 🔄 Update Template
 
-Si mejoras el template:
+If you improve the template:
 
-1. **En el repositorio del template:**
+1. **In template repository:**
    ```bash
    git add .
-   git commit -m "feat: mejora en skills"
+   git commit -m "feat: skill improvement"
    git push
    ```
 
-2. **En proyectos existentes:**
+2. **In existing projects:**
    ```bash
-   # Opción 1: Merge manual
-   git remote add template https://github.com/tu-usuario/claude-skills-template.git
+   # Option 1: Manual merge
+   git remote add template https://github.com/your-username/claude-skills-template.git
    git fetch template
    git merge template/main --allow-unrelated-histories
    
-   # Opción 2: Copiar cambios manualmente
-   # Copiar solo skills/ actualizadas
+   # Option 2: Copy changes manually
+   # Copy only updated skills/
    ```
 
 ## 💡 Tips
 
-### Mantener Skills Actualizadas
-- Revisa periódicamente mejoras en el template
-- Actualiza skills según mejores prácticas
-- Documenta personalizaciones específicas
+### Keep Skills Updated
+- Periodically review template improvements
+- Update skills according to best practices
+- Document specific customizations
 
-### Compartir con Equipo
-- Todos usan el mismo template
-- Consistencia en metodología
-- Fácil onboarding de nuevos miembros
+### Share with Team
+- Everyone uses the same template
+- Consistency in methodology
+- Easy onboarding of new members
 
-### Para Múltiples Proyectos
-- Mantén el template centralizado
-- Clona para cada proyecto nuevo
-- Personaliza según necesidades específicas
+### For Multiple Projects
+- Keep template centralized
+- Clone for each new project
+- Customize according to specific needs
 
-## 🚨 Importante
+## 🚨 Important
 
-### No Committear
-- `.env` (contiene API keys)
-- `outputs/` (archivos generados)
-- `venv/` o `node_modules/` (dependencias)
+### Don't Commit
+- `.env` (contains API keys)
+- `outputs/` (generated files)
+- `venv/` or `node_modules/` (dependencies)
 
-### Sí Committear
-- `skills/` (las skills son parte del proyecto)
-- `.env.example` (template sin secrets)
-- Configuración del proyecto
+### Do Commit
+- `skills/` (skills are part of the project)
+- `.env.example` (template without secrets)
+- Project configuration
 
-## 📚 Recursos Adicionales
+## 📚 Additional Resources
 
-- **QUICK_START.md** - Inicio rápido
-- **INTEGRATION_GUIDE.md** - Integración detallada
-- **USAGE_WITH_OTHER_AI.md** - Uso con otros IAs
-- **RESOURCES.md** - Recursos y referencias
+- **QUICK_START.md** - Quick start
+- **INTEGRATION_GUIDE.md** - Detailed integration
+- **USAGE_WITH_OTHER_AI.md** - Use with other AIs
+- **RESOURCES.md** - Resources and references
 
 ---
 
-**¡Listo para empezar!** Clona el template y comienza tu proyecto con metodología y calidad garantizadas. 🚀
+**Ready to start!** Clone the template and begin your project with guaranteed methodology and quality. 🚀

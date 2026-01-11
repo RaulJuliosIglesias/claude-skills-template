@@ -1,21 +1,21 @@
 """
-Requirements Parser - Ayuda a estructurar y analizar requerimientos
+Requirements Parser - Helps structure and analyze requirements
 """
 
 def extract_main_requirement(user_message):
     """
-    Extrae el requerimiento principal de un mensaje del usuario
+    Extracts the main requirement from a user message
     
     Args:
-        user_message: Mensaje del usuario
+        user_message: User message
         
     Returns:
-        str con requerimiento principal
+        str with main requirement
     """
-    # Identificar verbos de acción comunes
+    # Identify common action verbs
     action_verbs = [
-        'crear', 'agregar', 'modificar', 'eliminar', 'implementar',
-        'desarrollar', 'construir', 'hacer', 'necesito', 'quiero',
+        'create', 'add', 'modify', 'delete', 'implement',
+        'develop', 'build', 'make', 'need', 'want',
         'create', 'add', 'modify', 'delete', 'implement', 'develop', 'build', 'need', 'want'
     ]
     
@@ -34,17 +34,17 @@ def extract_main_requirement(user_message):
 
 def identify_functionalities(text):
     """
-    Identifica funcionalidades mencionadas en el texto
+    Identifies functionalities mentioned in text
     
     Args:
-        text: Texto a analizar
+        text: Text to analyze
         
     Returns:
-        list de funcionalidades identificadas
+        list of identified functionalities
     """
-    # Palabras clave que indican funcionalidades
+    # Keywords that indicate functionalities
     functionality_keywords = [
-        'debe', 'puede', 'necesita', 'incluir', 'tener',
+        'must', 'should', 'can', 'needs', 'include', 'have',
         'must', 'should', 'can', 'needs', 'include', 'have'
     ]
     
@@ -62,85 +62,85 @@ def identify_functionalities(text):
 
 def identify_constraints(text):
     """
-    Identifica restricciones mencionadas en el texto
+    Identifies constraints mentioned in text
     
     Args:
-        text: Texto a analizar
+        text: Text to analyze
         
     Returns:
-        dict con restricciones por categoría
+        dict with constraints by category
     """
     constraints = {
-        'tecnologicas': [],
-        'diseno': [],
-        'rendimiento': [],
-        'seguridad': [],
-        'compatibilidad': []
+        'technological': [],
+        'design': [],
+        'performance': [],
+        'security': [],
+        'compatibility': []
     }
     
-    # Palabras clave por categoría
-    tech_keywords = ['usar', 'framework', 'librería', 'tecnología', 'use', 'framework', 'library']
-    design_keywords = ['diseño', 'ui', 'ux', 'interfaz', 'design', 'interface']
-    perf_keywords = ['rápido', 'performance', 'velocidad', 'fast', 'speed']
-    sec_keywords = ['seguridad', 'seguro', 'autenticación', 'security', 'auth']
-    compat_keywords = ['compatible', 'navegador', 'plataforma', 'browser', 'platform']
+    # Keywords by category
+    tech_keywords = ['use', 'framework', 'library', 'technology', 'use', 'framework', 'library']
+    design_keywords = ['design', 'ui', 'ux', 'interface', 'design', 'interface']
+    perf_keywords = ['fast', 'performance', 'speed', 'fast', 'speed']
+    sec_keywords = ['security', 'secure', 'authentication', 'security', 'auth']
+    compat_keywords = ['compatible', 'browser', 'platform', 'browser', 'platform']
     
     text_lower = text.lower()
     
-    # Identificar restricciones tecnológicas
+    # Identify technological constraints
     for keyword in tech_keywords:
         if keyword in text_lower:
-            # Extraer contexto alrededor de la palabra clave
+            # Extract context around keyword
             idx = text_lower.find(keyword)
             context = text[max(0, idx-50):min(len(text), idx+100)]
-            constraints['tecnologicas'].append(context.strip())
+            constraints['technological'].append(context.strip())
     
-    # Similar para otras categorías...
+    # Similar for other categories...
     
     return constraints
 
 def structure_requirements_analysis(user_message):
     """
-    Estructura un análisis completo de requerimientos
+    Structures a complete requirements analysis
     
     Args:
-        user_message: Mensaje del usuario
+        user_message: User message
         
     Returns:
-        dict con análisis estructurado
+        dict with structured analysis
     """
     return {
-        'requirement_principal': extract_main_requirement(user_message),
-        'funcionalidades': identify_functionalities(user_message),
-        'restricciones': identify_constraints(user_message),
-        'dependencias': [],  # Requiere análisis más profundo
-        'criterios_aceptacion': [],  # Requiere análisis más profundo
-        'ambiguedades': []  # Requiere análisis más profundo
+        'main_requirement': extract_main_requirement(user_message),
+        'functionalities': identify_functionalities(user_message),
+        'constraints': identify_constraints(user_message),
+        'dependencies': [],  # Requires deeper analysis
+        'acceptance_criteria': [],  # Requires deeper analysis
+        'ambiguities': []  # Requires deeper analysis
     }
 
 def format_requirements_template(analysis):
     """
-    Formatea el análisis en el template estándar
+    Formats analysis in standard template
     
     Args:
-        analysis: Dict con análisis de requerimientos
+        analysis: Dict with requirements analysis
         
     Returns:
-        str con template formateado
+        str with formatted template
     """
     template = f"""
-## Análisis de Requerimientos
+## Requirements Analysis
 
-### Requerimiento Principal
-{analysis.get('requirement_principal', 'No identificado')}
+### Main Requirement
+{analysis.get('main_requirement', 'Not identified')}
 
-### Funcionalidades Requeridas
+### Required Functionalities
 """
-    for i, func in enumerate(analysis.get('funcionalidades', []), 1):
+    for i, func in enumerate(analysis.get('functionalities', []), 1):
         template += f"{i}. {func}\n"
     
-    template += "\n### Restricciones\n"
-    constraints = analysis.get('restricciones', {})
+    template += "\n### Constraints\n"
+    constraints = analysis.get('constraints', {})
     for category, items in constraints.items():
         if items:
             template += f"- {category.capitalize()}: {', '.join(items)}\n"

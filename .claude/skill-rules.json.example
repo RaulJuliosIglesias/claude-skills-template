@@ -2,18 +2,18 @@
   "rules": [
     {
       "skill": "project_protocol",
-      "description": "Protocolo maestro de desarrollo",
+      "description": "Master development protocol",
       "triggers": [
         {
           "type": "keyword",
           "patterns": [
-            "desarrollar",
-            "implementar",
-            "crear",
-            "agregar",
-            "nuevo proyecto",
-            "desarrollo",
-            "desarrollar",
+            "develop",
+            "implement",
+            "create",
+            "add",
+            "new project",
+            "development",
+            "develop",
             "build",
             "create",
             "implement"
@@ -32,18 +32,17 @@
     },
     {
       "skill": "requirements_analyzer",
-      "description": "Analizador de requerimientos",
+      "description": "Requirements analyzer",
       "triggers": [
         {
           "type": "keyword",
           "patterns": [
-            "necesito",
-            "quiero",
-            "requiero",
-            "requerimiento",
-            "funcionalidad",
+            "need",
+            "want",
+            "require",
+            "requirement",
+            "functionality",
             "feature",
-            "necesidad",
             "need",
             "require",
             "requirement"
@@ -52,9 +51,9 @@
         {
           "type": "context",
           "patterns": [
-            "qué",
-            "cómo",
-            "por qué",
+            "what",
+            "how",
+            "why",
             "what",
             "how",
             "why"
@@ -64,17 +63,17 @@
     },
     {
       "skill": "codebase_understanding",
-      "description": "Comprensión del código base",
+      "description": "Codebase understanding",
       "triggers": [
         {
           "type": "keyword",
           "patterns": [
-            "entender",
-            "analizar",
-            "revisar código",
-            "código existente",
-            "arquitectura",
-            "estructura",
+            "understand",
+            "analyze",
+            "review code",
+            "existing code",
+            "architecture",
+            "structure",
             "understand",
             "analyze",
             "review code",
@@ -97,16 +96,16 @@
     },
     {
       "skill": "implementation_protocol",
-      "description": "Protocolo de implementación",
+      "description": "Implementation protocol",
       "triggers": [
         {
           "type": "keyword",
           "patterns": [
-            "implementar",
-            "código",
-            "escribir",
-            "crear archivo",
-            "modificar",
+            "implement",
+            "code",
+            "write",
+            "create file",
+            "modify",
             "implement",
             "code",
             "write",

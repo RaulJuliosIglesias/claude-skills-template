@@ -1,56 +1,56 @@
-# 🔌 Integración con Claude Code (IDE)
+# 🔌 Integration with Claude Code (IDE)
 
-Esta guía explica cómo integrar este template con **Claude Code** (el IDE de Anthropic) para habilitar **auto-activación de skills** y otras funcionalidades avanzadas.
+This guide explains how to integrate this template with **Claude Code** (Anthropic's IDE) to enable **skill auto-activation** and other advanced features.
 
-> **Referencia**: Este documento está inspirado en [claude-code-infrastructure-showcase](https://github.com/diet103/claude-code-infrastructure-showcase), que resuelve el problema de que las skills no se activan automáticamente.
+> **Reference**: This document is inspired by [claude-code-infrastructure-showcase](https://github.com/diet103/claude-code-infrastructure-showcase), which solves the problem of skills not activating automatically.
 
-## 🎯 ¿Qué es Claude Code?
+## 🎯 What is Claude Code?
 
-Claude Code es el IDE de Anthropic que permite usar Claude directamente en tu editor. Una de sus características más poderosas es el sistema de **hooks** que puede activar skills automáticamente.
+Claude Code is Anthropic's IDE that allows you to use Claude directly in your editor. One of its most powerful features is the **hooks** system that can activate skills automatically.
 
-## 🚀 Problema que Resuelve
+## 🚀 Problem It Solves
 
-**Antes**: Las skills no se activan automáticamente - tienes que recordar cuál usar.
+**Before**: Skills don't activate automatically - you have to remember which one to use.
 
-**Después**: Las skills se sugieren y activan automáticamente basándose en el contexto.
+**After**: Skills are suggested and activated automatically based on context.
 
-## 📦 Componentes Necesarios
+## 📦 Required Components
 
-### 1. Hooks de Claude Code
+### 1. Claude Code Hooks
 
-Los hooks son scripts que se ejecutan en momentos específicos del flujo de trabajo de Claude Code.
+Hooks are scripts that run at specific moments in Claude Code's workflow.
 
-#### Hook Esencial: Auto-Activación de Skills
+#### Essential Hook: Skill Auto-Activation
 
-**Ubicación**: `.claude/hooks/user-prompt-submit/`
+**Location**: `.claude/hooks/user-prompt-submit/`
 
-Este hook se ejecuta cada vez que envías un prompt y puede sugerir skills relevantes.
+This hook runs every time you submit a prompt and can suggest relevant skills.
 
 ### 2. skill-rules.json
 
-Archivo que mapea patrones (palabras clave, rutas de archivos, etc.) a skills específicas.
+File that maps patterns (keywords, file paths, etc.) to specific skills.
 
-**Ubicación**: `.claude/skill-rules.json`
+**Location**: `.claude/skill-rules.json`
 
-## 🔧 Configuración Paso a Paso
+## 🔧 Step-by-Step Configuration
 
-### Paso 1: Crear Estructura de Directorios
+### Step 1: Create Directory Structure
 
 ```bash
 mkdir -p .claude/hooks/user-prompt-submit
 mkdir -p .claude/skills
 ```
 
-### Paso 2: Copiar Skills al Directorio de Claude Code
+### Step 2: Copy Skills to Claude Code Directory
 
 ```bash
-# Copiar skills al directorio .claude
+# Copy skills to .claude directory
 cp -r skills/* .claude/skills/
 ```
 
-### Paso 3: Crear skill-rules.json
+### Step 3: Create skill-rules.json
 
-Crea `.claude/skill-rules.json`:
+Create `.claude/skill-rules.json`:
 
 ```json
 {
@@ -60,7 +60,7 @@ Crea `.claude/skill-rules.json`:
       "triggers": [
         {
           "type": "keyword",
-          "patterns": ["desarrollar", "implementar", "crear", "agregar", "nuevo proyecto", "desarrollo"]
+          "patterns": ["develop", "implement", "create", "add", "new project", "development"]
         },
         {
           "type": "file_path",
@@ -73,7 +73,7 @@ Crea `.claude/skill-rules.json`:
       "triggers": [
         {
           "type": "keyword",
-          "patterns": ["necesito", "quiero", "requiero", "requerimiento", "funcionalidad", "feature"]
+          "patterns": ["need", "want", "require", "requirement", "functionality", "feature"]
         }
       ]
     },
@@ -82,7 +82,7 @@ Crea `.claude/skill-rules.json`:
       "triggers": [
         {
           "type": "keyword",
-          "patterns": ["entender", "analizar", "revisar código", "código existente", "arquitectura"]
+          "patterns": ["understand", "analyze", "review code", "existing code", "architecture"]
         },
         {
           "type": "file_path",
@@ -95,7 +95,7 @@ Crea `.claude/skill-rules.json`:
       "triggers": [
         {
           "type": "keyword",
-          "patterns": ["implementar", "código", "escribir", "crear archivo", "modificar"]
+          "patterns": ["implement", "code", "write", "create file", "modify"]
         },
         {
           "type": "file_path",
@@ -107,15 +107,15 @@ Crea `.claude/skill-rules.json`:
 }
 ```
 
-### Paso 4: Crear Hook de Auto-Activación
+### Step 4: Create Auto-Activation Hook
 
-Crea `.claude/hooks/user-prompt-submit/skill-activation-prompt.sh`:
+Create `.claude/hooks/user-prompt-submit/skill-activation-prompt.sh`:
 
 ```bash
 #!/bin/bash
 
-# Hook para auto-activar skills basándose en skill-rules.json
-# Se ejecuta cada vez que el usuario envía un prompt
+# Hook to auto-activate skills based on skill-rules.json
+# Runs every time the user submits a prompt
 
 SKILL_RULES_FILE=".claude/skill-rules.json"
 USER_PROMPT="$1"
@@ -124,47 +124,47 @@ if [ ! -f "$SKILL_RULES_FILE" ]; then
     exit 0
 fi
 
-# Leer skill-rules.json y buscar matches
-# Este es un ejemplo simplificado - en producción usarías jq o similar
+# Read skill-rules.json and search for matches
+# This is a simplified example - in production you'd use jq or similar
 
-# Extraer keywords del prompt
+# Extract keywords from prompt
 PROMPT_LOWER=$(echo "$USER_PROMPT" | tr '[:upper:]' '[:lower:]')
 
-# Verificar cada regla
+# Check each rule
 while IFS= read -r line; do
-    # Buscar patrones en el prompt
-    # Si hay match, sugerir la skill
-    echo "💡 Skill sugerida: [skill_name] basada en tu prompt"
+    # Search for patterns in prompt
+    # If there's a match, suggest the skill
+    echo "💡 Suggested skill: [skill_name] based on your prompt"
 done < <(cat "$SKILL_RULES_FILE" | jq -r '.rules[] | @json')
 
 exit 0
 ```
 
-**Nota**: Este es un ejemplo básico. Para una implementación completa, consulta [claude-code-infrastructure-showcase](https://github.com/diet103/claude-code-infrastructure-showcase).
+**Note**: This is a basic example. For a complete implementation, consult [claude-code-infrastructure-showcase](https://github.com/diet103/claude-code-infrastructure-showcase).
 
-## 🎨 Patrón de Progressive Disclosure
+## 🎨 Progressive Disclosure Pattern
 
-Las skills grandes pueden exceder límites de contexto. El repositorio de referencia usa un patrón de **500 líneas máximo** por archivo.
+Large skills can exceed context limits. The reference repository uses a pattern of **500 lines maximum** per file.
 
-### Estructura Modular
+### Modular Structure
 
 ```
 skill_name/
-├── SKILL.md              # <500 líneas (overview + navegación)
-└── resources/            # Archivos adicionales
-    ├── routing.md        # <500 líneas
-    ├── controllers.md    # <500 líneas
-    ├── services.md       # <500 líneas
+├── SKILL.md              # <500 lines (overview + navigation)
+└── resources/            # Additional files
+    ├── routing.md        # <500 lines
+    ├── controllers.md    # <500 lines
+    ├── services.md       # <500 lines
     └── ...
 ```
 
-### Ejemplo: Modificar Nuestra Skill
+### Example: Modify Our Skill
 
-Para `codebase_understanding`, podrías estructurarla así:
+For `codebase_understanding`, you could structure it like this:
 
 ```
 codebase_understanding/
-├── SKILL.md              # Overview y navegación
+├── SKILL.md              # Overview and navigation
 └── resources/
     ├── structure-analysis.md
     ├── technology-identification.md
@@ -172,13 +172,13 @@ codebase_understanding/
     └── code-location.md
 ```
 
-## 🤖 Agents Especializados (Opcional)
+## 🤖 Specialized Agents (Optional)
 
-Además de skills, puedes crear **agents** para tareas complejas específicas.
+In addition to skills, you can create **agents** for specific complex tasks.
 
-### Ejemplo: Agent de Revisión de Arquitectura
+### Example: Architecture Review Agent
 
-Crea `.claude/agents/code-architecture-reviewer.md`:
+Create `.claude/agents/code-architecture-reviewer.md`:
 
 ```markdown
 # Code Architecture Reviewer Agent
@@ -205,26 +205,26 @@ Review code for architectural consistency and best practices.
 
 ## 📝 Dev Docs Pattern
 
-Sistema de documentación que sobrevive a resets de contexto.
+Documentation system that survives context resets.
 
-### Estructura de 3 Archivos
+### 3-File Structure
 
-Para cada tarea compleja, crea:
+For each complex task, create:
 
-1. `[task]-plan.md` - Plan estratégico
-2. `[task]-context.md` - Decisiones clave y archivos
-3. `[task]-tasks.md` - Checklist de tareas
+1. `[task]-plan.md` - Strategic plan
+2. `[task]-context.md` - Key decisions and files
+3. `[task]-tasks.md` - Task checklist
 
-**Ubicación**: `.claude/dev-docs/` o `dev/active/`
+**Location**: `.claude/dev-docs/` or `dev/active/`
 
-## 🔗 Integración Completa
+## 🔗 Complete Integration
 
-### Estructura Final Recomendada
+### Recommended Final Structure
 
 ```
-proyecto/
+project/
 ├── .claude/
-│   ├── skills/              # Skills del template
+│   ├── skills/              # Template skills
 │   │   ├── project_protocol/
 │   │   ├── requirements_analyzer/
 │   │   ├── codebase_understanding/
@@ -232,57 +232,57 @@ proyecto/
 │   ├── hooks/
 │   │   └── user-prompt-submit/
 │   │       └── skill-activation-prompt.sh
-│   ├── agents/              # Agents opcionales
-│   ├── skill-rules.json     # Reglas de auto-activación
-│   └── settings.json        # Configuración de Claude Code
-└── skills/                   # Skills originales (backup)
+│   ├── agents/              # Optional agents
+│   ├── skill-rules.json     # Auto-activation rules
+│   └── settings.json        # Claude Code configuration
+└── skills/                   # Original skills (backup)
 ```
 
-## 📚 Recursos Adicionales
+## 📚 Additional Resources
 
-### Repositorio de Referencia
+### Reference Repository
 
-**[claude-code-infrastructure-showcase](https://github.com/diet103/claude-code-infrastructure-showcase)** - Implementación completa y probada en producción:
+**[claude-code-infrastructure-showcase](https://github.com/diet103/claude-code-infrastructure-showcase)** - Complete implementation tested in production:
 
-- ✅ Hooks funcionales para auto-activación
-- ✅ skill-rules.json completo
-- ✅ Agents especializados
+- ✅ Functional hooks for auto-activation
+- ✅ Complete skill-rules.json
+- ✅ Specialized agents
 - ✅ Dev docs pattern
-- ✅ Ejemplos reales de uso
+- ✅ Real usage examples
 
-### Documentación Oficial
+### Official Documentation
 
-- [Claude Code Documentation](https://docs.anthropic.com/en/claude-code) - Documentación oficial
-- [Claude Code Hooks](https://docs.anthropic.com/en/claude-code/hooks) - Guía de hooks
+- [Claude Code Documentation](https://docs.anthropic.com/en/claude-code) - Official documentation
+- [Claude Code Hooks](https://docs.anthropic.com/en/claude-code/hooks) - Hooks guide
 
-## ⚠️ Notas Importantes
+## ⚠️ Important Notes
 
-### Diferencias con Claude API
+### Differences with Claude API
 
-- **Claude Code** usa hooks y auto-activación
-- **Claude API** requiere cargar skills manualmente
-- Este template funciona con ambos, pero la auto-activación solo funciona en Claude Code
+- **Claude Code** uses hooks and auto-activation
+- **Claude API** requires manually loading skills
+- This template works with both, but auto-activation only works in Claude Code
 
-### Personalización Requerida
+### Required Customization
 
-- `skill-rules.json` debe personalizarse según tu proyecto
-- Los hooks pueden necesitar ajustes según tu estructura
-- Los agents son opcionales y específicos de dominio
+- `skill-rules.json` must be customized according to your project
+- Hooks may need adjustments according to your structure
+- Agents are optional and domain-specific
 
-## 🚀 Quick Start para Claude Code
+## 🚀 Quick Start for Claude Code
 
-1. **Copiar skills a .claude/skills/**
-2. **Crear skill-rules.json** con tus patrones
-3. **Crear hook básico** (o usar el del repositorio de referencia)
-4. **Probar** enviando un prompt - la skill debería sugerirse
+1. **Copy skills to .claude/skills/**
+2. **Create skill-rules.json** with your patterns
+3. **Create basic hook** (or use the one from reference repository)
+4. **Test** by sending a prompt - the skill should be suggested
 
 ## 💡 Tips
 
-- Empieza simple: solo auto-activación básica
-- Itera: agrega más reglas según veas qué funciona
-- Usa el repositorio de referencia como guía
-- Personaliza según tu flujo de trabajo
+- Start simple: only basic auto-activation
+- Iterate: add more rules as you see what works
+- Use the reference repository as a guide
+- Customize according to your workflow
 
 ---
 
-**¿Necesitas más detalles?** Consulta el [repositorio de referencia](https://github.com/diet103/claude-code-infrastructure-showcase) para implementación completa y probada en producción.
+**Need more details?** Consult the [reference repository](https://github.com/diet103/claude-code-infrastructure-showcase) for complete implementation tested in production.

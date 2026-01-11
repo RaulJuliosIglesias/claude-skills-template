@@ -1,36 +1,36 @@
-# 🤖 Uso con Otros Sistemas de IA
+# 🤖 Usage with Other AI Systems
 
-Este template está diseñado principalmente para Claude, pero las metodologías y protocolos pueden adaptarse para trabajar con otros sistemas de IA.
+This template is designed primarily for Claude, but the methodologies and protocols can be adapted to work with other AI systems.
 
-## 🎯 Adaptación del Template
+## 🎯 Template Adaptation
 
-### Principio Fundamental
+### Fundamental Principle
 
-Las **Skills** son esencialmente **instrucciones estructuradas** que pueden adaptarse a diferentes sistemas de IA. El valor del template no está en la implementación técnica específica de Claude, sino en la **metodología y protocolos** que garantizan desarrollo consistente.
+**Skills** are essentially **structured instructions** that can be adapted to different AI systems. The value of the template is not in Claude's specific technical implementation, but in the **methodology and protocols** that guarantee consistent development.
 
-## 🔄 Adaptación para Diferentes IAs
+## 🔄 Adaptation for Different AIs
 
-### Para ChatGPT / GPT-4
+### For ChatGPT / GPT-4
 
-#### Opción 1: Usar como System Prompts
+#### Option 1: Use as System Prompts
 
 ```python
 from openai import OpenAI
 
 client = OpenAI(api_key="your-api-key")
 
-# Cargar contenido de las skills
+# Load skill content
 def load_skill_as_prompt(skill_name):
     with open(f"skills/{skill_name}/SKILL.md", "r", encoding="utf-8") as f:
         content = f.read()
-        # Extraer solo el contenido después del YAML frontmatter
+        # Extract only content after YAML frontmatter
         if "---" in content:
             content = content.split("---", 2)[2].strip()
         return content
 
-# Construir system prompt con todas las skills
+# Build system prompt with all skills
 system_prompt = f"""
-Eres un asistente de desarrollo experto. Sigue estos protocolos:
+You are an expert development assistant. Follow these protocols:
 
 {load_skill_as_prompt('project_protocol')}
 
@@ -45,20 +45,20 @@ response = client.chat.completions.create(
     model="gpt-4",
     messages=[
         {"role": "system", "content": system_prompt},
-        {"role": "user", "content": "Necesito agregar autenticación al proyecto"}
+        {"role": "user", "content": "I need to add authentication to the project"}
     ]
 )
 ```
 
-#### Opción 2: Usar Function Calling
+#### Option 2: Use Function Calling
 
-Puedes convertir las metodologías en funciones que GPT puede llamar:
+You can convert methodologies into functions that GPT can call:
 
 ```python
 functions = [
     {
         "name": "analyze_requirements",
-        "description": "Analiza requerimientos del usuario siguiendo el protocolo",
+        "description": "Analyzes user requirements following the protocol",
         "parameters": {
             "type": "object",
             "properties": {
@@ -68,18 +68,18 @@ functions = [
             }
         }
     },
-    # ... más funciones basadas en las skills
+    # ... more functions based on skills
 ]
 ```
 
-### Para Gemini / Google AI
+### For Gemini / Google AI
 
 ```python
 import google.generativeai as genai
 
 genai.configure(api_key="your-api-key")
 
-# Cargar skills como contexto
+# Load skills as context
 def build_context():
     skills_content = []
     for skill in ['project_protocol', 'requirements_analyzer', 
@@ -93,26 +93,26 @@ def build_context():
 
 model = genai.GenerativeModel('gemini-pro')
 
-# Usar las skills como contexto
+# Use skills as context
 prompt = f"""
-Sigue estos protocolos de desarrollo:
+Follow these development protocols:
 
 {build_context()}
 
-Usuario: Necesito agregar autenticación al proyecto
+User: I need to add authentication to the project
 """
 
 response = model.generate_content(prompt)
 ```
 
-### Para Llama / Ollama (Local)
+### For Llama / Ollama (Local)
 
 ```python
 from ollama import Client
 
 client = Client(host='http://localhost:11434')
 
-# Cargar skills
+# Load skills
 def load_all_skills():
     skills = {}
     for skill_name in ['project_protocol', 'requirements_analyzer', 
@@ -127,7 +127,7 @@ def load_all_skills():
 skills_content = load_all_skills()
 
 system_prompt = f"""
-Eres un asistente de desarrollo. Sigue estos protocolos:
+You are a development assistant. Follow these protocols:
 
 {skills_content['project_protocol']}
 
@@ -142,18 +142,18 @@ response = client.chat(
     model='llama2',
     messages=[
         {'role': 'system', 'content': system_prompt},
-        {'role': 'user', 'content': 'Necesito agregar autenticación'}
+        {'role': 'user', 'content': 'I need to add authentication'}
     ]
 )
 ```
 
-## 🛠️ Herramienta de Adaptación
+## 🛠️ Adaptation Tool
 
-### Script Helper para Cualquier IA
+### Helper Script for Any AI
 
 ```python
 """
-Helper para adaptar las skills a cualquier sistema de IA
+Helper to adapt skills to any AI system
 """
 
 from pathlib import Path
@@ -166,7 +166,7 @@ class SkillsAdapter:
         self.load_all_skills()
     
     def load_all_skills(self):
-        """Carga todas las skills del template"""
+        """Loads all template skills"""
         skill_names = [
             'project_protocol',
             'requirements_analyzer',
@@ -178,7 +178,7 @@ class SkillsAdapter:
             skill_path = self.skills_dir / skill_name / "SKILL.md"
             if skill_path.exists():
                 content = skill_path.read_text(encoding="utf-8")
-                # Remover YAML frontmatter
+                # Remove YAML frontmatter
                 if content.startswith("---"):
                     parts = content.split("---", 2)
                     if len(parts) >= 3:
@@ -186,9 +186,9 @@ class SkillsAdapter:
                 self.skills[skill_name] = content
     
     def get_system_prompt(self) -> str:
-        """Genera un system prompt con todas las skills"""
+        """Generates a system prompt with all skills"""
         prompts = []
-        prompts.append("Eres un asistente de desarrollo experto. Sigue estos protocolos:\n")
+        prompts.append("You are an expert development assistant. Follow these protocols:\n")
         
         for skill_name, content in self.skills.items():
             prompts.append(f"## {skill_name.replace('_', ' ').title()}\n")
@@ -198,70 +198,70 @@ class SkillsAdapter:
         return "\n".join(prompts)
     
     def get_skill(self, skill_name: str) -> str:
-        """Obtiene el contenido de una skill específica"""
+        """Gets content of a specific skill"""
         return self.skills.get(skill_name, "")
     
     def get_methodology_summary(self) -> str:
-        """Genera un resumen de las metodologías"""
+        """Generates a summary of methodologies"""
         summary = """
-# Metodología de Desarrollo
+# Development Methodology
 
-Este sistema sigue un protocolo de 4 fases:
+This system follows a 4-phase protocol:
 
-1. **Análisis de Requerimientos**: Entender completamente qué necesita el usuario
-2. **Comprensión del Código Base**: Analizar el estado actual del proyecto
-3. **Planificación**: Crear un plan coherente que respete el proyecto existente
-4. **Implementación**: Ejecutar siguiendo mejores prácticas y estándares
+1. **Requirements Analysis**: Completely understand what the user needs
+2. **Codebase Understanding**: Analyze the current project state
+3. **Planning**: Create a coherent plan that respects existing project
+4. **Implementation**: Execute following best practices and standards
 
-Cada fase tiene checklists y validaciones para asegurar calidad.
+Each phase has checklists and validations to ensure quality.
 """
         return summary
 
-# Uso
+# Usage
 adapter = SkillsAdapter()
 system_prompt = adapter.get_system_prompt()
 
-# Usar con cualquier IA
-# response = your_ai_client.chat(system=system_prompt, user="tu requerimiento")
+# Use with any AI
+# response = your_ai_client.chat(system=system_prompt, user="your requirement")
 ```
 
-## 📋 Checklist de Adaptación
+## 📋 Adaptation Checklist
 
-Para adaptar este template a otro sistema de IA:
+To adapt this template to another AI system:
 
-- [ ] Identificar cómo el sistema maneja "system prompts" o contexto
-- [ ] Cargar contenido de las skills (remover YAML frontmatter)
-- [ ] Combinar skills en un prompt/contexto apropiado
-- [ ] Ajustar formato según requerimientos del sistema
-- [ ] Probar con ejemplos reales
-- [ ] Documentar adaptación específica
+- [ ] Identify how the system handles "system prompts" or context
+- [ ] Load skill content (remove YAML frontmatter)
+- [ ] Combine skills in appropriate prompt/context
+- [ ] Adjust format according to system requirements
+- [ ] Test with real examples
+- [ ] Document specific adaptation
 
-## 🎯 Ventajas de la Metodología
+## 🎯 Methodology Advantages
 
-Independientemente del sistema de IA que uses, las metodologías del template proporcionan:
+Regardless of the AI system you use, the template methodologies provide:
 
-1. **Estructura**: Proceso claro y definido
-2. **Consistencia**: Mismos pasos en cada proyecto
-3. **Calidad**: Validaciones y checklists
-4. **Documentación**: Todo está documentado
-5. **Reproducibilidad**: Resultados predecibles
+1. **Structure**: Clear and defined process
+2. **Consistency**: Same steps in each project
+3. **Quality**: Validations and checklists
+4. **Documentation**: Everything is documented
+5. **Reproducibility**: Predictable results
 
-## 💡 Recomendaciones
+## 💡 Recommendations
 
-### Para Mejores Resultados
+### For Better Results
 
-1. **Carga todas las skills**: No uses solo una, el poder está en la combinación
-2. **Proporciona contexto**: Incluye información del proyecto
-3. **Itera**: Ajusta las metodologías según tus necesidades
-4. **Documenta**: Registra qué funciona mejor con tu IA específica
+1. **Load all skills**: Don't use just one, the power is in the combination
+2. **Provide context**: Include project information
+3. **Iterate**: Adjust methodologies according to your needs
+4. **Document**: Record what works best with your specific AI
 
-### Personalización
+### Customization
 
-- Edita los archivos `SKILL.md` para ajustar metodologías
-- Agrega skills específicas para tu dominio
-- Crea adaptadores personalizados para tu stack
+- Edit `SKILL.md` files to adjust methodologies
+- Add domain-specific skills
+- Create custom adapters for your stack
 
-## 🔗 Recursos
+## 🔗 Resources
 
 - [OpenAI Function Calling](https://platform.openai.com/docs/guides/function-calling)
 - [Google AI Python SDK](https://github.com/google/generative-ai-python)
@@ -269,4 +269,4 @@ Independientemente del sistema de IA que uses, las metodologías del template pr
 
 ---
 
-**Nota**: Este template está optimizado para Claude, pero las metodologías son universales y pueden adaptarse a cualquier sistema de IA que soporte contexto estructurado.
+**Note**: This template is optimized for Claude, but the methodologies are universal and can be adapted to any AI system that supports structured context.

@@ -1,45 +1,45 @@
-# 📁 Directorio .claude
+# 📁 .claude Directory
 
-Este directorio contiene la configuración para **Claude Code IDE** (el IDE de Anthropic).
+This directory contains configuration for **Claude Code IDE** (Anthropic's IDE).
 
-## 🎯 ¿Qué es esto?
+## 🎯 What is this?
 
-Claude Code permite usar hooks y auto-activación de skills. Este directorio contiene la configuración necesaria.
+Claude Code allows using hooks and skill auto-activation. This directory contains the necessary configuration.
 
-## 📦 Contenido
+## 📦 Content
 
 ### skills/
-Copia de las skills del template para uso en Claude Code.
+Copy of template skills for use in Claude Code.
 
 ### hooks/
-Hooks que se ejecutan en momentos específicos del flujo de trabajo.
+Hooks that run at specific moments in the workflow.
 
 ### skill-rules.json
-Archivo que mapea patrones (keywords, file paths) a skills para auto-activación.
+File that maps patterns (keywords, file paths) to skills for auto-activation.
 
-## 🚀 Setup Rápido
+## 🚀 Quick Setup
 
-1. **Copiar skills:**
+1. **Copy skills:**
    ```bash
    cp -r skills/* .claude/skills/
    ```
 
-2. **Configurar skill-rules.json:**
+2. **Configure skill-rules.json:**
    ```bash
    cp .claude/skill-rules.json.example .claude/skill-rules.json
-   # Editar según tus necesidades
+   # Edit according to your needs
    ```
 
-3. **Crear hooks (opcional):**
-   Ver `CLAUDE_CODE_INTEGRATION.md` para detalles.
+3. **Create hooks (optional):**
+   See `CLAUDE_CODE_INTEGRATION.md` for details.
 
-## 📚 Documentación
+## 📚 Documentation
 
-- **CLAUDE_CODE_INTEGRATION.md** - Guía completa de integración
-- **[claude-code-infrastructure-showcase](https://github.com/diet103/claude-code-infrastructure-showcase)** - Referencia completa
+- **CLAUDE_CODE_INTEGRATION.md** - Complete integration guide
+- **[claude-code-infrastructure-showcase](https://github.com/diet103/claude-code-infrastructure-showcase)** - Complete reference
 
-## ⚠️ Nota
+## ⚠️ Note
 
-Este directorio es **opcional**. Solo es necesario si usas **Claude Code IDE**.
+This directory is **optional**. Only necessary if you use **Claude Code IDE**.
 
-Para uso con Claude API o otros IAs, las skills en `skills/` son suficientes.
+For use with Claude API or other AIs, the skills in `skills/` are sufficient.

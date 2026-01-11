@@ -1,143 +1,143 @@
-# 📑 Índice de Archivos - Template de Skills
+# 📑 File Index - Skills Template
 
-Guía rápida de todos los archivos del template y su propósito.
+Quick guide to all template files and their purpose.
 
-## 📚 Documentación Principal
+## 📚 Main Documentation
 
-| Archivo | Propósito | Cuándo Leer |
-|---------|-----------|-------------|
-| **README.md** | Visión general del template, estructura y uso básico | Primero - Entender qué es el template |
-| **GETTING_STARTED.md** | 🚀 **EMPIEZA AQUÍ** - Tu primer uso paso a paso | **SEGUNDO - Para empezar** |
-| **QUICK_START.md** | Guía rápida de configuración e inicio | Para referencia rápida |
-| **INTEGRATION_GUIDE.md** | Guía detallada de cómo integrar las skills | Para integración avanzada |
-| **CLAUDE_CODE_INTEGRATION.md** | Integración con Claude Code IDE (auto-activación) | Para Claude Code IDE |
-| **RESOURCES.md** | Recursos y referencias adicionales | Recursos externos |
-| **CONTRIBUTING.md** | Guía de contribución al proyecto | Para contribuidores |
-| **SETUP_CHECKLIST.md** | Checklist rápido de configuración | Verificación |
-| **PROJECT_ANALYSIS.md** | Análisis completo del proyecto | Entender cada componente |
-| **INDEX.md** | Este archivo - Índice de todos los archivos | Navegación |
+| File | Purpose | When to Read |
+|------|---------|--------------|
+| **README.md** | Template overview, structure and basic usage | First - Understand what the template is |
+| **GETTING_STARTED.md** | 🚀 **START HERE** - Your first use step by step | **SECOND - To get started** |
+| **QUICK_START.md** | Quick configuration and startup guide | For quick reference |
+| **INTEGRATION_GUIDE.md** | Detailed guide on how to integrate skills | For advanced integration |
+| **CLAUDE_CODE_INTEGRATION.md** | Integration with Claude Code IDE (auto-activation) | For Claude Code IDE |
+| **RESOURCES.md** | Additional resources and references | External resources |
+| **CONTRIBUTING.md** | Project contribution guide | For contributors |
+| **SETUP_CHECKLIST.md** | Quick setup checklist | Verification |
+| **PROJECT_ANALYSIS.md** | Complete project analysis | Understand each component |
+| **INDEX.md** | This file - Index of all files | Navigation |
 
 ## 🎯 Skills
 
 ### project_protocol/
-| Archivo | Propósito |
-|---------|-----------|
-| **SKILL.md** | Documentación completa del protocolo principal |
-| **scripts/protocol_checker.py** | Scripts de ayuda para validar el protocolo |
+| File | Purpose |
+|------|---------|
+| **SKILL.md** | Complete documentation of main protocol |
+| **scripts/protocol_checker.py** | Helper scripts to validate protocol |
 
 ### requirements_analyzer/
-| Archivo | Propósito |
-|---------|-----------|
-| **SKILL.md** | Metodología para analizar requerimientos |
-| **scripts/requirements_parser.py** | Herramientas para estructurar requerimientos |
+| File | Purpose |
+|------|---------|
+| **SKILL.md** | Methodology to analyze requirements |
+| **scripts/requirements_parser.py** | Tools to structure requirements |
 
 ### codebase_understanding/
-| Archivo | Propósito |
-|---------|-----------|
-| **SKILL.md** | Protocolo para entender el código base |
-| **scripts/codebase_analyzer.py** | Scripts para analizar estructura del proyecto |
+| File | Purpose |
+|------|---------|
+| **SKILL.md** | Protocol to understand codebase |
+| **scripts/codebase_analyzer.py** | Scripts to analyze project structure |
 
 ### implementation_protocol/
-| Archivo | Propósito |
-|---------|-----------|
-| **SKILL.md** | Guía para implementación consistente |
+| File | Purpose |
+|------|---------|
+| **SKILL.md** | Guide for consistent implementation |
 
 ### skills/README.md
-Documentación general de todas las skills y cómo trabajan juntas.
+General documentation of all skills and how they work together.
 
-## 💻 Ejemplos
+## 💻 Examples
 
-| Archivo | Propósito |
-|---------|-----------|
-| **examples/usage_example.py** | Ejemplo básico de uso de las skills |
-| **examples/complete_example.py** | Ejemplo completo con múltiples casos de uso |
+| File | Purpose |
+|------|---------|
+| **examples/usage_example.py** | Basic example of using skills |
+| **examples/complete_example.py** | Complete example with multiple use cases |
 
-## ⚙️ Configuración
+## ⚙️ Configuration
 
-| Archivo | Propósito |
-|---------|-----------|
-| **requirements.txt** | Dependencias Python necesarias |
-| **.env.example** | Template para variables de entorno |
-| **.gitignore** | Archivos a ignorar en Git |
-| **setup.sh / setup.bat** | Scripts de configuración automática |
+| File | Purpose |
+|------|---------|
+| **requirements.txt** | Required Python dependencies |
+| **.env.example** | Template for environment variables |
+| **.gitignore** | Files to ignore in Git |
+| **setup.sh / setup.bat** | Automatic setup scripts |
 
-## 🗺️ Ruta de Aprendizaje Recomendada
+## 🗺️ Recommended Learning Path
 
-### Para Empezar (5 minutos)
-1. **README.md** - Entender qué es el template
-2. **GETTING_STARTED.md** - 🚀 Tu primer uso (RECOMENDADO)
-3. **test_skills.py** - Verificar que todo funciona
+### To Get Started (5 minutes)
+1. **README.md** - Understand what the template is
+2. **GETTING_STARTED.md** - 🚀 Your first use (RECOMMENDED)
+3. **test_skills.py** - Verify everything works
 
-### Para Integrar (15 minutos)
-3. **INTEGRATION_GUIDE.md** - Cómo cargar las skills
-4. **CLAUDE_CODE_INTEGRATION.md** - Auto-activación (si usas Claude Code IDE)
-5. **examples/usage_example.py** - Ver ejemplo básico
+### To Integrate (15 minutes)
+3. **INTEGRATION_GUIDE.md** - How to load skills
+4. **CLAUDE_CODE_INTEGRATION.md** - Auto-activation (if using Claude Code IDE)
+5. **examples/usage_example.py** - See basic example
 
-### Para Profundizar (30 minutos)
-5. **skills/README.md** - Entender cada skill
-6. Leer **SKILL.md** de cada skill individual
-7. **examples/complete_example.py** - Ejemplos avanzados
+### To Deep Dive (30 minutes)
+5. **skills/README.md** - Understand each skill
+6. Read **SKILL.md** of each individual skill
+7. **examples/complete_example.py** - Advanced examples
 
-### Para Personalizar
-8. Editar **SKILL.md** de las skills según tus necesidades
-9. Crear nuevas skills siguiendo la estructura
+### To Customize
+8. Edit **SKILL.md** of skills according to your needs
+9. Create new skills following the structure
 
-## 📖 Estructura de Lectura por Objetivo
+## 📖 Reading Structure by Objective
 
-### Objetivo: Entender el Sistema
+### Objective: Understand the System
 1. README.md
 2. skills/README.md
-3. PROJECT_ANALYSIS.md (análisis completo)
+3. PROJECT_ANALYSIS.md (complete analysis)
 
-### Objetivo: Empezar a Usar
+### Objective: Start Using
 1. QUICK_START.md
 2. examples/usage_example.py
 3. INTEGRATION_GUIDE.md
 
-### Objetivo: Personalizar
+### Objective: Customize
 1. skills/project_protocol/SKILL.md
 2. skills/requirements_analyzer/SKILL.md
 3. skills/codebase_understanding/SKILL.md
 4. skills/implementation_protocol/SKILL.md
 
-### Objetivo: Casos Avanzados
+### Objective: Advanced Cases
 1. examples/complete_example.py
-2. INTEGRATION_GUIDE.md (sección de personalización)
-3. Scripts en scripts/ de cada skill
+2. INTEGRATION_GUIDE.md (customization section)
+3. Scripts in scripts/ of each skill
 
-## 🔍 Búsqueda Rápida
+## 🔍 Quick Search
 
-### ¿Cómo empiezo?
-→ **GETTING_STARTED.md** (recomendado) o **QUICK_START.md**
+### How do I start?
+→ **GETTING_STARTED.md** (recommended) or **QUICK_START.md**
 
-### ¿Cómo cargo las skills?
+### How do I load skills?
 → **INTEGRATION_GUIDE.md**
 
-### ¿Auto-activación con Claude Code?
+### Auto-activation with Claude Code?
 → **CLAUDE_CODE_INTEGRATION.md**
 
-### ¿Qué hace cada skill?
-→ **skills/README.md** o **SKILL.md** individual
+### What does each skill do?
+→ **skills/README.md** or individual **SKILL.md**
 
-### ¿Cómo personalizo?
-→ **INTEGRATION_GUIDE.md** (sección Personalización)
+### How do I customize?
+→ **INTEGRATION_GUIDE.md** (Customization section)
 
-### ¿Ejemplos de uso?
+### Usage examples?
 → **examples/**
 
-### ¿Análisis completo del proyecto?
+### Complete project analysis?
 → **PROJECT_ANALYSIS.md**
 
-### ¿Recursos adicionales?
+### Additional resources?
 → **RESOURCES.md**
 
-## 📝 Notas
+## 📝 Notes
 
-- Todos los archivos **SKILL.md** siguen el mismo formato
-- Los scripts en **scripts/** son opcionales pero útiles
-- Los ejemplos son funcionales y listos para usar
-- La documentación está diseñada para ser progresiva
+- All **SKILL.md** files follow the same format
+- Scripts in **scripts/** are optional but useful
+- Examples are functional and ready to use
+- Documentation is designed to be progressive
 
 ---
 
-**¿No encuentras lo que buscas?** Revisa el **README.md** principal o la sección de Troubleshooting en **INTEGRATION_GUIDE.md**.
+**Can't find what you're looking for?** Review the main **README.md** or the Troubleshooting section in **INTEGRATION_GUIDE.md**.

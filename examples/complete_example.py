@@ -1,8 +1,8 @@
 """
-Ejemplo Completo: Uso del Template de Skills para Desarrollo Consistente
+Complete Example: Using the Skills Template for Consistent Development
 
-Este ejemplo demuestra cómo usar todas las skills juntas para desarrollar
-una funcionalidad completa siguiendo el protocolo establecido.
+This example demonstrates how to use all skills together to develop
+a complete functionality following the established protocol.
 """
 
 from anthropic import Anthropic
@@ -11,124 +11,124 @@ from dotenv import load_dotenv
 from pathlib import Path
 import json
 
-# Cargar variables de entorno
+# Load environment variables
 load_dotenv()
 
 API_KEY = os.getenv("ANTHROPIC_API_KEY")
 MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-5")
 
 if not API_KEY:
-    raise ValueError("ANTHROPIC_API_KEY no encontrada. Configura tu .env file.")
+    raise ValueError("ANTHROPIC_API_KEY not found. Configure your .env file.")
 
-# Inicializar cliente
+# Initialize client
 client = Anthropic(api_key=API_KEY)
 
 def get_project_context(project_path):
     """
-    Obtiene contexto del proyecto para incluir en el prompt
+    Gets project context to include in prompt
     
     Args:
-        project_path: Ruta del proyecto
+        project_path: Project path
         
     Returns:
-        str con contexto del proyecto
+        str with project context
     """
     context_parts = []
     
-    # Información básica
-    context_parts.append(f"Ruta del proyecto: {project_path}")
+    # Basic information
+    context_parts.append(f"Project path: {project_path}")
     
-    # Verificar package.json (React/Node)
+    # Check package.json (React/Node)
     package_json = Path(project_path) / "package.json"
     if package_json.exists():
         with open(package_json) as f:
             data = json.load(f)
-            context_parts.append(f"Nombre: {data.get('name', 'N/A')}")
-            context_parts.append(f"Dependencias principales: {', '.join(list(data.get('dependencies', {}).keys())[:5])}")
+            context_parts.append(f"Name: {data.get('name', 'N/A')}")
+            context_parts.append(f"Main dependencies: {', '.join(list(data.get('dependencies', {}).keys())[:5])}")
     
-    # Verificar estructura de directorios
+    # Check directory structure
     src_path = Path(project_path) / "src"
     if src_path.exists():
         dirs = [d.name for d in src_path.iterdir() if d.is_dir()]
-        context_parts.append(f"Directorios en src/: {', '.join(dirs[:5])}")
+        context_parts.append(f"Directories in src/: {', '.join(dirs[:5])}")
     
     return "\n".join(context_parts)
 
 def develop_with_protocol(user_requirement, project_path=None, verbose=True):
     """
-    Desarrolla una funcionalidad siguiendo el protocolo completo
+    Develops a functionality following the complete protocol
     
     Args:
-        user_requirement: Requerimiento del usuario
-        project_path: Ruta opcional del proyecto
-        verbose: Si True, imprime información detallada
+        user_requirement: User requirement
+        project_path: Optional project path
+        verbose: If True, prints detailed information
         
     Returns:
-        response de Claude
+        Claude response
     """
     if verbose:
         print("=" * 80)
-        print("DESARROLLO CON PROTOCOLO COMPLETO")
+        print("DEVELOPMENT WITH COMPLETE PROTOCOL")
         print("=" * 80)
-        print(f"\n📋 Requerimiento: {user_requirement}\n")
+        print(f"\n📋 Requirement: {user_requirement}\n")
     
-    # Construir contexto
+    # Build context
     context = ""
     if project_path:
         project_context = get_project_context(project_path)
         context = f"""
         
-CONTEXTO DEL PROYECTO:
+PROJECT CONTEXT:
 {project_context}
 
-IMPORTANTE: Antes de implementar, analiza completamente el estado actual del proyecto.
+IMPORTANT: Before implementing, completely analyze the current project state.
 """
     
-    # Construir mensaje siguiendo el protocolo
+    # Build message following protocol
     message = f"""
 {user_requirement}
 {context}
 
-Por favor, sigue el protocolo completo de desarrollo:
+Please follow the complete development protocol:
 
-1. ANÁLISIS DE REQUERIMIENTOS (requirements_analyzer):
-   - Identifica el requerimiento principal
-   - Lista todas las funcionalidades necesarias
-   - Identifica restricciones y dependencias
-   - Define criterios de aceptación
+1. REQUIREMENTS ANALYSIS (requirements_analyzer):
+   - Identify the main requirement
+   - List all necessary functionalities
+   - Identify constraints and dependencies
+   - Define acceptance criteria
 
-2. COMPRENSIÓN DEL CÓDIGO BASE (codebase_understanding):
-   - Analiza la estructura del proyecto
-   - Identifica tecnologías y frameworks usados
-   - Reconoce patrones y convenciones
-   - Localiza código relevante existente
+2. CODEBASE UNDERSTANDING (codebase_understanding):
+   - Analyze the project structure
+   - Identify technologies and frameworks used
+   - Recognize patterns and conventions
+   - Locate relevant existing code
 
-3. PLANIFICACIÓN (project_protocol):
-   - Crea un plan de implementación coherente
-   - Diseña la solución respetando la arquitectura existente
-   - Identifica componentes a crear/modificar
-   - Planifica la integración
+3. PLANNING (project_protocol):
+   - Create a coherent implementation plan
+   - Design solution respecting existing architecture
+   - Identify components to create/modify
+   - Plan integration
 
-4. IMPLEMENTACIÓN (implementation_protocol):
-   - Implementa siguiendo las convenciones del proyecto
-   - Mantén consistencia con el código existente
-   - Documenta decisiones importantes
-   - Valida que cumple los requerimientos
+4. IMPLEMENTATION (implementation_protocol):
+   - Implement following project conventions
+   - Maintain consistency with existing code
+   - Document important decisions
+   - Validate that it meets requirements
 
-Por favor, proporciona:
-- Análisis completo de requerimientos
-- Análisis del estado actual del proyecto
-- Plan de implementación detallado
-- Código implementado siguiendo estándares
+Please provide:
+- Complete requirements analysis
+- Current project state analysis
+- Detailed implementation plan
+- Implemented code following standards
 """
     
     if verbose:
-        print("🔄 Enviando solicitud a Claude con todas las skills...\n")
+        print("🔄 Sending request to Claude with all skills...\n")
     
-    # Cargar todas las skills del template
+    # Load all template skills
     response = client.beta.messages.create(
         model=MODEL,
-        max_tokens=8192,  # Más tokens para respuestas completas
+        max_tokens=8192,  # More tokens for complete responses
         container={
             "skills": [
                 {"type": "custom", "skill_id": "project_protocol", "version": "latest"},
@@ -147,9 +147,9 @@ Por favor, proporciona:
     )
     
     if verbose:
-        print("✅ Respuesta recibida\n")
+        print("✅ Response received\n")
         print("=" * 80)
-        print("RESPUESTA DE CLAUDE")
+        print("CLAUDE RESPONSE")
         print("=" * 80)
         print()
         
@@ -158,78 +158,78 @@ Por favor, proporciona:
                 print(content.text)
                 print()
             elif content.type == "tool_use":
-                print(f"🔧 Herramienta usada: {content.name}")
+                print(f"🔧 Tool used: {content.name}")
                 if hasattr(content, 'input'):
                     print(f"   Input: {str(content.input)[:200]}...")
                 print()
         
         print("=" * 80)
-        print(f"📊 Uso de Tokens:")
-        print(f"   Entrada: {response.usage.input_tokens:,}")
-        print(f"   Salida: {response.usage.output_tokens:,}")
+        print(f"📊 Token Usage:")
+        print(f"   Input: {response.usage.input_tokens:,}")
+        print(f"   Output: {response.usage.output_tokens:,}")
         print(f"   Total: {response.usage.input_tokens + response.usage.output_tokens:,}")
         print("=" * 80)
     
     return response
 
 def example_simple_feature():
-    """Ejemplo 1: Funcionalidad simple"""
+    """Example 1: Simple functionality"""
     print("\n" + "=" * 80)
-    print("EJEMPLO 1: Funcionalidad Simple")
+    print("EXAMPLE 1: Simple Functionality")
     print("=" * 80)
     
-    requirement = "Agregar un botón de 'Cerrar Sesión' en el header de la aplicación"
+    requirement = "Add a 'Logout' button to the application header"
     
     response = develop_with_protocol(
         requirement,
-        project_path=Path.cwd().parent,  # Ajustar según tu proyecto
+        project_path=Path.cwd().parent,  # Adjust according to your project
         verbose=True
     )
     
     return response
 
 def example_complex_feature():
-    """Ejemplo 2: Funcionalidad compleja"""
+    """Example 2: Complex functionality"""
     print("\n" + "=" * 80)
-    print("EJEMPLO 2: Funcionalidad Compleja")
+    print("EXAMPLE 2: Complex Functionality")
     print("=" * 80)
     
     requirement = """
-    Necesito implementar un sistema completo de notificaciones que incluya:
-    - Notificaciones en tiempo real usando WebSockets
-    - Panel de notificaciones en el header
-    - Marcar como leídas/no leídas
-    - Diferentes tipos de notificaciones (info, warning, error, success)
-    - Persistencia en base de datos
-    - Integración con el sistema de usuarios existente
+    I need to implement a complete notification system that includes:
+    - Real-time notifications using WebSockets
+    - Notification panel in header
+    - Mark as read/unread
+    - Different notification types (info, warning, error, success)
+    - Database persistence
+    - Integration with existing user system
     """
     
     response = develop_with_protocol(
         requirement,
-        project_path=Path.cwd().parent,  # Ajustar según tu proyecto
+        project_path=Path.cwd().parent,  # Adjust according to your project
         verbose=True
     )
     
     return response
 
 def example_refactoring():
-    """Ejemplo 3: Refactorización"""
+    """Example 3: Refactoring"""
     print("\n" + "=" * 80)
-    print("EJEMPLO 3: Refactorización")
+    print("EXAMPLE 3: Refactoring")
     print("=" * 80)
     
     requirement = """
-    Refactorizar el módulo de autenticación para:
-    - Separar lógica de negocio de la UI
-    - Implementar un patrón de servicios
-    - Mejorar manejo de errores
-    - Agregar validación más robusta
-    - Mantener compatibilidad con código existente
+    Refactor the authentication module to:
+    - Separate business logic from UI
+    - Implement a services pattern
+    - Improve error handling
+    - Add more robust validation
+    - Maintain compatibility with existing code
     """
     
     response = develop_with_protocol(
         requirement,
-        project_path=Path.cwd().parent,  # Ajustar según tu proyecto
+        project_path=Path.cwd().parent,  # Adjust according to your project
         verbose=True
     )
     
@@ -238,19 +238,19 @@ def example_refactoring():
 if __name__ == "__main__":
     print("""
     ╔══════════════════════════════════════════════════════════════╗
-    ║   Template de Skills - Ejemplo Completo de Uso             ║
+    ║   Skills Template - Complete Usage Example                   ║
     ╚══════════════════════════════════════════════════════════════╝
     """)
     
-    # Ejecutar ejemplos
-    # Descomenta el ejemplo que quieras probar:
+    # Run examples
+    # Uncomment the example you want to test:
     
     # example_simple_feature()
     # example_complex_feature()
     # example_refactoring()
     
-    # O crea tu propio ejemplo:
-    custom_requirement = input("Ingresa tu requerimiento (o presiona Enter para usar ejemplo): ").strip()
+    # Or create your own example:
+    custom_requirement = input("Enter your requirement (or press Enter to use example): ").strip()
     
     if custom_requirement:
         develop_with_protocol(
@@ -259,5 +259,5 @@ if __name__ == "__main__":
             verbose=True
         )
     else:
-        print("\nUsando ejemplo por defecto...\n")
+        print("\nUsing default example...\n")
         example_simple_feature()

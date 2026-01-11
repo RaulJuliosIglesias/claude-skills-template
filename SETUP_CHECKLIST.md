@@ -1,132 +1,132 @@
-# ✅ Checklist de Configuración
+# ✅ Setup Checklist
 
-Checklist rápido para verificar que el template esté configurado correctamente.
+Quick checklist to verify the template is correctly configured.
 
-> **💡 Tip**: Ejecuta `python test_skills.py` para verificación automática  
-> **📖 Instrucciones**: Consulta `QUICK_START.md` o `GETTING_STARTED.md` para detalles
+> **💡 Tip**: Run `python test_skills.py` for automatic verification  
+> **📖 Instructions**: Consult `QUICK_START.md` or `GETTING_STARTED.md` for details
 
-## 📋 Pre-Instalación
+## 📋 Pre-Installation
 
-### Verificaciones Iniciales
-- [ ] Python 3.8+ instalado (`python --version`)
-- [ ] Git instalado (si vas a clonar)
-- [ ] Acceso a internet para descargar dependencias
-- [ ] API key de Anthropic (o de otro proveedor de IA)
+### Initial Checks
+- [ ] Python 3.8+ installed (`python --version`)
+- [ ] Git installed (if cloning)
+- [ ] Internet access to download dependencies
+- [ ] Anthropic API key (or other AI provider)
 
-## 🔧 Instalación
+## 🔧 Installation
 
-### Paso 1: Obtener el Template
-- [ ] Clonado o descargado el repositorio
-- [ ] Navegado al directorio del proyecto
+### Step 1: Get Template
+- [ ] Cloned or downloaded repository
+- [ ] Navigated to project directory
 
-### Paso 2: Configuración del Entorno
-- [ ] Ejecutado `setup.sh` (Linux/Mac) o `setup.bat` (Windows)
-  - O manualmente:
-  - [ ] Creado entorno virtual (`python -m venv venv`)
-  - [ ] Activado entorno virtual
-  - [ ] Instaladas dependencias (`pip install -r requirements.txt`)
+### Step 2: Environment Setup
+- [ ] Ran `setup.sh` (Linux/Mac) or `setup.bat` (Windows)
+  - Or manually:
+  - [ ] Created virtual environment (`python -m venv venv`)
+  - [ ] Activated virtual environment
+  - [ ] Installed dependencies (`pip install -r requirements.txt`)
 
-### Paso 3: Configuración de API
-- [ ] Copiado `.env.example` a `.env`
-- [ ] Editado `.env` y agregado `ANTHROPIC_API_KEY`
-- [ ] Verificado que `.env` está en `.gitignore`
+### Step 3: API Configuration
+- [ ] Copied `.env.example` to `.env`
+- [ ] Edited `.env` and added `ANTHROPIC_API_KEY`
+- [ ] Verified `.env` is in `.gitignore`
 
-### Paso 4: Verificación
-- [ ] Probado con ejemplo básico (`python examples/usage_example.py`)
-- [ ] Verificado que las skills están en `skills/`
-- [ ] Creado directorio `outputs/` (si no existe)
+### Step 4: Verification
+- [ ] Tested with basic example (`python examples/usage_example.py`)
+- [ ] Verified skills are in `skills/`
+- [ ] Created `outputs/` directory (if it doesn't exist)
 
-## 📚 Documentación (Opcional)
+## 📚 Documentation (Optional)
 
-- [ ] Leído `README.md` (visión general)
-- [ ] Revisado `QUICK_START.md` o `INTEGRATION_GUIDE.md` según necesidad
+- [ ] Read `README.md` (overview)
+- [ ] Reviewed `QUICK_START.md` or `INTEGRATION_GUIDE.md` as needed
 
-## 🎯 Configuración de Skills
+## 🎯 Skills Configuration
 
-### Para Claude Desktop
-- [ ] Claude Desktop instalado
-- [ ] Abierto Settings → Skills
-- [ ] Agregado directorio `skills/` como fuente
-- [ ] Verificado que las skills aparecen
+### For Claude Desktop
+- [ ] Claude Desktop installed
+- [ ] Opened Settings → Skills
+- [ ] Added `skills/` directory as source
+- [ ] Verified skills appear
 
-### Para Claude API
-- [ ] Revisado `INTEGRATION_GUIDE.md`
-- [ ] Probado carga de skills en código
-- [ ] Verificado que funciona con ejemplo
+### For Claude API
+- [ ] Reviewed `INTEGRATION_GUIDE.md`
+- [ ] Tested skill loading in code
+- [ ] Verified it works with example
 
-### Para Otros IAs
-- [ ] Revisado `USAGE_WITH_OTHER_AI.md`
-- [ ] Adaptado según el sistema de IA
-- [ ] Probado con ejemplo
+### For Other AIs
+- [ ] Reviewed `USAGE_WITH_OTHER_AI.md`
+- [ ] Adapted according to AI system
+- [ ] Tested with example
 
-## 🧪 Pruebas
+## 🧪 Tests
 
-### Pruebas Básicas
-- [ ] Ejecutado `examples/usage_example.py` exitosamente
-- [ ] Verificado que se genera respuesta de Claude
-- [ ] Revisado que el análisis sigue el protocolo
+### Basic Tests
+- [ ] Ran `examples/usage_example.py` successfully
+- [ ] Verified Claude response is generated
+- [ ] Reviewed that analysis follows protocol
 
-### Pruebas Avanzadas
-- [ ] Ejecutado `examples/complete_example.py`
-- [ ] Probado con requerimiento real de tu proyecto
-- [ ] Verificado que las skills funcionan correctamente
+### Advanced Tests
+- [ ] Ran `examples/complete_example.py`
+- [ ] Tested with real requirement from your project
+- [ ] Verified skills work correctly
 
-## 🎨 Personalización (Opcional)
+## 🎨 Customization (Optional)
 
-### Ajustes Básicos
-- [ ] Revisado las skills en `skills/`
-- [ ] Entendido cómo funcionan
-- [ ] Decidido si necesitas personalizarlas
+### Basic Adjustments
+- [ ] Reviewed skills in `skills/`
+- [ ] Understood how they work
+- [ ] Decided if you need to customize them
 
-### Personalización Avanzada
-- [ ] Editado `SKILL.md` de alguna skill según necesidad
-- [ ] Agregado skills específicas de tu dominio (opcional)
-- [ ] Documentado personalizaciones
+### Advanced Customization
+- [ ] Edited `SKILL.md` of some skill as needed
+- [ ] Added domain-specific skills (optional)
+- [ ] Documented customizations
 
-## 🚀 Listo para Usar
+## 🚀 Ready to Use
 
-### Verificación Final
-- [ ] Todo instalado correctamente
-- [ ] API key configurada
-- [ ] Skills cargadas y funcionando
-- [ ] Ejemplos probados exitosamente
-- [ ] Documentación leída
+### Final Verification
+- [ ] Everything installed correctly
+- [ ] API key configured
+- [ ] Skills loaded and working
+- [ ] Examples tested successfully
+- [ ] Documentation read
 
-### Próximos Pasos
-- [ ] Empezar a usar en tu proyecto
-- [ ] Hacer primeros prompts con las skills
-- [ ] Iterar y ajustar según resultados
+### Next Steps
+- [ ] Start using in your project
+- [ ] Make first prompts with skills
+- [ ] Iterate and adjust according to results
 
 ## ❓ Troubleshooting
 
-Si algo no funciona:
+If something doesn't work:
 
-1. **API Key no funciona**
-   - Verifica que esté correcta en `.env`
-   - Verifica que no tenga espacios extra
-   - Prueba regenerar la key en console.anthropic.com
+1. **API Key doesn't work**
+   - Verify it's correct in `.env`
+   - Verify it doesn't have extra spaces
+   - Try regenerating key at console.anthropic.com
 
-2. **Skills no se cargan**
-   - Verifica que los archivos `SKILL.md` existan
-   - Verifica formato YAML frontmatter
-   - Revisa `INTEGRATION_GUIDE.md`
+2. **Skills don't load**
+   - Verify `SKILL.md` files exist
+   - Verify YAML frontmatter format
+   - Review `INTEGRATION_GUIDE.md`
 
-3. **Dependencias no instalan**
-   - Verifica Python 3.8+
-   - Actualiza pip: `pip install --upgrade pip`
-   - Prueba reinstalar: `pip install -r requirements.txt --force-reinstall`
+3. **Dependencies don't install**
+   - Verify Python 3.8+
+   - Update pip: `pip install --upgrade pip`
+   - Try reinstalling: `pip install -r requirements.txt --force-reinstall`
 
-4. **Ejemplos no funcionan**
-   - Verifica que `.env` esté configurado
-   - Verifica que el entorno virtual esté activado
-   - Revisa errores en la consola
+4. **Examples don't work**
+   - Verify `.env` is configured
+   - Verify virtual environment is activated
+   - Review console errors
 
-## 📞 Ayuda
+## 📞 Help
 
-- Consulta `QUICK_START.md` para instrucciones detalladas
-- Revisa `INTEGRATION_GUIDE.md` para problemas de integración
-- Consulta `RESOURCES.md` para recursos adicionales
+- Consult `QUICK_START.md` for detailed instructions
+- Review `INTEGRATION_GUIDE.md` for integration problems
+- Consult `RESOURCES.md` for additional resources
 
 ---
 
-**✅ Todo listo?** Consulta `QUICK_START.md` para comenzar. 🚀
+**✅ Everything ready?** Consult `QUICK_START.md` to begin. 🚀
