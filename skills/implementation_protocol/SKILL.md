@@ -144,22 +144,146 @@ export const NewComponent: React.FC<Props> = ({ prop1, prop2 }) => {
 
 ### Phase 5: Validation
 
-**Objective**: Verify that implementation meets requirements
+**Objective**: Verify that implementation meets requirements AND passes all mandatory quality checks
 
 **Process**:
 1. Review implemented code
 2. Verify it meets requirements
 3. Validate it respects architecture
 4. Verify consistency with project
-5. Test basic functionality
+5. **MANDATORY**: Complete Security Checklist
+6. **MANDATORY**: Complete Database Checklist (if applicable)
+7. **MANDATORY**: Complete Quality Assurance Checklist
+8. Test basic functionality
 
 **Validation Checklist**:
 - [ ] Code completely implemented
 - [ ] Meets all requirements
 - [ ] Respects project architecture
 - [ ] Consistent with existing code
+- [ ] **Security Checklist completed** (see below)
+- [ ] **Database Checklist completed** (if applicable, see below)
+- [ ] **Quality Assurance Checklist completed** (see below)
 - [ ] Basic functionality verified
 - [ ] No syntax/compilation errors
+
+---
+
+## 🔒 MANDATORY SECURITY CHECKLIST
+
+**This checklist MUST be completed for every implementation. Mark each item as Confirmed, Likely, Not Applicable, or Needs Review.**
+
+### Authentication & Authorization
+- [ ] **Authentication implemented** - User authentication is properly implemented
+- [ ] **Authorization checks** - User permissions verified before sensitive operations
+- [ ] **Route-level authorization** - Protected routes check user roles/permissions
+- [ ] **Object-level authorization** - Users can only access their own data (BOLA prevention)
+- [ ] **Session management** - Secure session handling (HttpOnly cookies, secure tokens)
+- [ ] **MFA considered** - Multi-factor authentication implemented for sensitive operations
+
+### Input Validation & Sanitization
+- [ ] **Server-side validation** - All inputs validated on server (not just client)
+- [ ] **Input sanitization** - User inputs sanitized to prevent injection attacks
+- [ ] **Type validation** - Data types strictly validated
+- [ ] **Length limits** - Payload size limits enforced (DoS prevention)
+- [ ] **File upload validation** - File types validated by magic numbers, not just extensions
+- [ ] **Path traversal prevention** - User-supplied paths sanitized (no `../`)
+
+### Data Protection
+- [ ] **Sensitive data encrypted** - Passwords, PII encrypted at rest
+- [ ] **Password hashing** - Passwords hashed with bcrypt/Argon2 (not plaintext/Base64)
+- [ ] **Secrets management** - API keys, credentials in environment variables (not hardcoded)
+- [ ] **No secrets in frontend** - Service role keys not exposed in client bundles
+- [ ] **Error message sanitization** - No sensitive data leaked in error messages
+- [ ] **Log sanitization** - Sensitive data not logged (passwords, tokens, PII)
+
+### API Security
+- [ ] **Rate limiting** - API endpoints have rate limiting (especially auth endpoints)
+- [ ] **CORS configured** - CORS whitelist specific domains (not wildcard `*`)
+- [ ] **CSRF protection** - CSRF tokens or SameSite cookies implemented
+- [ ] **JWT signature verification** - JWT signatures verified (not just decoded)
+- [ ] **HTTPS enforced** - All traffic encrypted (no HTTP in production)
+- [ ] **Security headers** - HSTS, CSP, X-Frame-Options, X-Content-Type-Options set
+
+### Code Security
+- [ ] **No SQL injection** - Parameterized queries or ORM used
+- [ ] **No XSS vulnerabilities** - User input sanitized before rendering (DOMPurify if needed)
+- [ ] **No command injection** - User input not passed to shell commands
+- [ ] **No SSRF** - User-supplied URLs validated against allowlist
+- [ ] **No prototype pollution** - Object merges check for `__proto__`/`constructor`
+- [ ] **Dependencies updated** - No known vulnerable dependencies
+
+### Infrastructure Security
+- [ ] **Database not public** - Database ports not exposed to internet
+- [ ] **Environment isolation** - Dev/prod environments separated
+- [ ] **Container security** - Docker containers run as non-root user
+- [ ] **Debug mode disabled** - DEBUG=False in production
+- [ ] **Git not exposed** - .git directory not accessible publicly
+- [ ] **Lockfiles committed** - package-lock.json committed to prevent supply chain attacks
+
+---
+
+## 🗄️ MANDATORY DATABASE CHECKLIST
+
+**This checklist MUST be completed if the implementation involves database operations.**
+
+### Data Integrity
+- [ ] **Row Level Security (RLS)** - RLS policies enabled for multi-tenant data
+- [ ] **Foreign key constraints** - Relationships properly enforced
+- [ ] **Unique constraints** - Duplicate prevention where needed
+- [ ] **Check constraints** - Data validation at database level
+- [ ] **Transactions used** - Critical operations wrapped in transactions (ACID)
+- [ ] **Idempotency keys** - Duplicate request prevention for payments/critical ops
+
+### Query Security
+- [ ] **Parameterized queries** - No string concatenation in SQL
+- [ ] **Query optimization** - Indexes added for frequently queried columns
+- [ ] **Query limits** - Pagination or LIMIT clauses to prevent large result sets
+- [ ] **Access control** - Database user has minimal required permissions
+
+### Data Management
+- [ ] **Backup strategy** - Backup process considered/implemented
+- [ ] **Migration safety** - Migrations tested and reversible
+- [ ] **Seed data security** - No default credentials in seed files
+- [ ] **Data retention** - Sensitive data retention policies considered
+
+---
+
+## ✅ MANDATORY QUALITY ASSURANCE CHECKLIST
+
+**This checklist MUST be completed for every implementation.**
+
+### Code Quality
+- [ ] **Error handling** - All errors caught and handled appropriately
+- [ ] **Edge cases** - Edge cases and boundary conditions handled
+- [ ] **Null/undefined checks** - Null safety implemented
+- [ ] **Type safety** - TypeScript types or runtime type checks implemented
+- [ ] **Code comments** - Complex logic documented
+- [ ] **No hardcoded values** - Configuration values in environment/config files
+
+### Testing
+- [ ] **Unit tests** - Critical functions have unit tests
+- [ ] **Integration tests** - API endpoints have integration tests (if applicable)
+- [ ] **Test coverage** - Reasonable test coverage for new code
+- [ ] **Manual testing** - Basic functionality manually tested
+
+### Performance
+- [ ] **N+1 queries avoided** - Database queries optimized (eager loading if needed)
+- [ ] **Caching considered** - Caching strategy for expensive operations
+- [ ] **Async operations** - Long-running operations are async/non-blocking
+- [ ] **Resource cleanup** - Connections, file handles properly closed
+
+### Documentation
+- [ ] **Code documented** - Functions/components have JSDoc/TSDoc
+- [ ] **API documented** - API endpoints documented (if applicable)
+- [ ] **README updated** - Significant features documented in README
+- [ ] **Decision documented** - Important architectural decisions explained
+
+### Integration
+- [ ] **Backward compatible** - Changes don't break existing functionality
+- [ ] **Migration path** - Breaking changes have migration path
+- [ ] **Dependencies updated** - New dependencies documented
+- [ ] **Environment variables** - New env vars documented in .env.example
 
 ### Phase 6: Documentation
 

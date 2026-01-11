@@ -36,6 +36,9 @@
 - ✅ **Better Results** - Professional code with simple prompts
 - ✅ **Complete Understanding** - Full analysis of current and future state
 - ✅ **Best Practices** - Industry-standard implementation
+- ✅ **Guaranteed Security Checks** - Mandatory security checklist (46+ items) for every implementation
+- ✅ **Guaranteed Database Checks** - Mandatory database validation (RLS, transactions, constraints)
+- ✅ **Guaranteed Quality Checks** - Mandatory QA checklist (testing, performance, documentation)
 - ✅ **Technology-Agnostic** - Works with any technology stack through methodology
 - ✅ **Multi-AI Support** - Claude, ChatGPT, Gemini, and more
 
@@ -89,8 +92,12 @@ Ensures professional implementation:
 - Respects existing architecture
 - Follows project conventions
 - Maintains code consistency
-- Includes proper testing
+- **MANDATORY Security Checklist** (46+ security checks)
+- **MANDATORY Database Checklist** (RLS, transactions, constraints)
+- **MANDATORY Quality Assurance Checklist** (testing, performance, documentation)
 - Complete documentation
+
+**Guarantees**: Every implementation must pass security, database, and quality checks before completion.
 
 </details>
 
@@ -361,11 +368,19 @@ This template uses a **methodology-first approach** that works with **any techno
 - ✅ **Automatic Detection** - Analyzes your existing stack automatically
 - ✅ **Respect for Conventions** - Follows your project's patterns
 - ✅ **Best Practices** - Applies industry standards to your stack
+- ✅ **Mandatory Security Checks** - 46+ security checklist items enforced on every implementation
+- ✅ **Mandatory Database Checks** - RLS, transactions, constraints validated when applicable
+- ✅ **Mandatory Quality Checks** - Testing, performance, documentation validated
 
 **What We Don't Guarantee:**
 - ❌ Specific knowledge of every technology
 - ❌ Pre-configured templates for each stack
 - ❌ Technology-specific optimizations
+
+**What We DO Guarantee:**
+- ✅ **Security is never optional** - Every implementation must complete security checklist
+- ✅ **Database best practices enforced** - RLS, transactions, validation required when applicable
+- ✅ **Quality gates passed** - Testing, error handling, documentation required
 
 </div>
 

@@ -139,4 +139,19 @@ Before considering a task complete, verify:
 - [ ] Solution respects existing architecture
 - [ ] Code implemented and functional
 - [ ] Consistent with project conventions
+- [ ] **Security checklist completed** (see implementation_protocol)
+- [ ] **Database checklist completed** (if applicable, see implementation_protocol)
+- [ ] **Quality assurance checklist completed** (see implementation_protocol)
 - [ ] Documentation updated if necessary
+
+---
+
+## 🎯 MANDATORY PROTOCOL ENFORCEMENT
+
+**This protocol MUST ensure that:**
+
+1. **Security is never optional** - Every implementation must complete security checklist
+2. **Database best practices enforced** - If database involved, RLS, transactions, validation required
+3. **Quality gates passed** - Testing, error handling, documentation required
+4. **No shortcuts on security** - Rate limiting, input validation, authorization are mandatory
+5. **Audit trail maintained** - All security and quality decisions documented

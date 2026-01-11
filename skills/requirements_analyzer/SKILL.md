@@ -64,7 +64,9 @@ Functionalities:
 - Identify mentioned or required technologies
 - Detect design or UX constraints
 - Identify performance limitations
-- Note security or privacy constraints
+- **MANDATORY**: Identify security requirements (even if not explicitly mentioned)
+- **MANDATORY**: Identify database requirements (if data storage needed)
+- Note privacy constraints
 - Identify compatibility constraints
 
 **Output**:
@@ -72,10 +74,30 @@ Functionalities:
 Constraints:
 - Technological: [frameworks, libraries, versions]
 - Design: [UI/UX requirements]
-- Performance: [performance requirements]
-- Security: [security requirements]
+- Performance: [speed, scalability requirements]
+- Security: [authentication, authorization, validation, encryption requirements]
+- Database: [data storage, RLS, transactions, constraints requirements]
+- Privacy: [data protection, GDPR, etc.]
 - Compatibility: [browser, platform requirements]
 ```
+
+**Security Requirements (Always Consider)**:
+Even if not explicitly mentioned, identify if the requirement involves:
+- User authentication/authorization
+- Data validation
+- Sensitive data handling
+- API endpoints
+- File uploads
+- Payment processing
+- Admin functionality
+
+**Database Requirements (Always Consider)**:
+Even if not explicitly mentioned, identify if the requirement involves:
+- Data storage/retrieval
+- User data
+- Multi-tenant data
+- Transactional operations
+- Data relationships
 
 ### Step 4: Dependency Identification
 

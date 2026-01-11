@@ -265,4 +265,52 @@ Before considering the analysis complete:
 - [ ] Patterns and conventions recognized
 - [ ] Relevant code located
 - [ ] Configuration reviewed
+- [ ] **Security patterns identified** - Authentication, authorization, validation patterns found
+- [ ] **Database patterns identified** - RLS, constraints, transaction patterns found
+- [ ] **Testing patterns identified** - Test structure and conventions found
 - [ ] Analysis documented
+
+---
+
+## 🔍 MANDATORY SECURITY AUDIT
+
+**When analyzing codebase, ALWAYS identify:**
+
+### Authentication & Authorization Patterns
+- [ ] How authentication is implemented (JWT, sessions, OAuth, etc.)
+- [ ] Where authorization checks are performed
+- [ ] What roles/permissions system exists
+- [ ] How protected routes are handled
+
+### Input Validation Patterns
+- [ ] Where input validation occurs (middleware, validators, etc.)
+- [ ] What validation libraries/frameworks are used
+- [ ] How file uploads are validated
+- [ ] How SQL injection is prevented
+
+### Security Configuration
+- [ ] CORS configuration location and settings
+- [ ] Rate limiting implementation (if any)
+- [ ] Security headers configuration
+- [ ] Environment variable management
+- [ ] Secrets management approach
+
+### Database Security
+- [ ] RLS policies (if using Supabase/Postgres)
+- [ ] Database access patterns
+- [ ] Transaction usage patterns
+- [ ] Query parameterization approach
+
+---
+
+## 🗄️ MANDATORY DATABASE AUDIT
+
+**When analyzing codebase with database, ALWAYS identify:**
+
+- [ ] Database type and ORM/query builder used
+- [ ] Database schema structure and relationships
+- [ ] Migration system and patterns
+- [ ] RLS policies or access control mechanisms
+- [ ] Transaction usage patterns
+- [ ] Indexing strategy
+- [ ] Connection pooling configuration
