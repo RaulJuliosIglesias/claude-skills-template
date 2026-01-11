@@ -139,7 +139,7 @@ Each skill can be customized by editing its `SKILL.md`:
 ## 📚 Resources
 
 - See `INTEGRATION_GUIDE.md` for how to load skills
-- See `QUICK_START.md` for quick start
+- See `GETTING_STARTED.md` for quick start
 - See main `README.md` for overview
 
 ## 🤝 Contributing

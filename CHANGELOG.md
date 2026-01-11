@@ -45,11 +45,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/lang/en/).
 ## [Unreleased]
 
 ### Recent Improvements
-- ✅ GETTING_STARTED.md - First use guide
+- ✅ GETTING_STARTED.md - Enhanced first use guide (merged QUICK_START + SETUP_CHECKLIST)
 - ✅ test_skills.py - Verification script
-- ✅ PROJECT_ANALYSIS.md - Complete project analysis
-- ✅ Removed redundancy (SUMMARY.md)
-- ✅ SETUP_CHECKLIST.md simplified
+- ✅ Reorganized documentation - Moved secondary docs to `docs/` folder
+- ✅ Removed redundancy - Merged QUICK_START.md and SETUP_CHECKLIST.md
+- ✅ Improved README - Enhanced technologies section with comprehensive stack support
 
 ### Planned
 - More stack-specific usage examples

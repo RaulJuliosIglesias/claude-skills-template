@@ -37,6 +37,72 @@ If you see "✅ Everything is working correctly", you're ready!
 
 ---
 
+## ✅ Setup Checklist
+
+Quick checklist to verify the template is correctly configured.
+
+> **💡 Tip**: Run `python test_skills.py` for automatic verification
+
+### 📋 Pre-Installation
+
+**Initial Checks**
+- [ ] Python 3.8+ installed (`python --version`)
+- [ ] Git installed (if cloning)
+- [ ] Internet access to download dependencies
+- [ ] Anthropic API key (or other AI provider)
+
+### 🔧 Installation
+
+**Step 1: Get Template**
+- [ ] Cloned or downloaded repository
+- [ ] Navigated to project directory
+
+**Step 2: Environment Setup**
+- [ ] Ran `setup.sh` (Linux/Mac) or `setup.bat` (Windows)
+  - Or manually:
+  - [ ] Created virtual environment (`python -m venv venv`)
+  - [ ] Activated virtual environment
+  - [ ] Installed dependencies (`pip install -r requirements.txt`)
+
+**Step 3: API Configuration**
+- [ ] Copied `.env.example` to `.env`
+- [ ] Edited `.env` and added `ANTHROPIC_API_KEY`
+- [ ] Verified `.env` is in `.gitignore`
+
+**Step 4: Verification**
+- [ ] Tested with basic example (`python examples/usage_example.py`)
+- [ ] Verified skills are in `skills/`
+- [ ] Created `outputs/` directory (if it doesn't exist)
+
+### 🎯 Skills Configuration
+
+**For Claude Desktop**
+- [ ] Claude Desktop installed
+- [ ] Opened Settings → Skills
+- [ ] Added `skills/` directory as source
+- [ ] Verified skills appear
+
+**For Claude API**
+- [ ] Reviewed `INTEGRATION_GUIDE.md`
+- [ ] Tested skill loading in code
+- [ ] Verified it works with example
+
+**For Other AIs**
+- [ ] Reviewed `docs/USAGE_WITH_OTHER_AI.md`
+- [ ] Adapted according to AI system
+- [ ] Tested with example
+
+### 🚀 Ready to Use
+
+**Final Verification**
+- [ ] Everything installed correctly
+- [ ] API key configured
+- [ ] Skills loaded and working
+- [ ] Examples tested successfully
+- [ ] Documentation read
+
+---
+
 ## 🎯 Your First Prompt with Skills
 
 ### Minimal Example (Copy and Paste)
@@ -81,31 +147,35 @@ python examples/usage_example.py
 
 ---
 
-## 📖 Recommended Learning Flow
+## 💡 Tips for Better Results
 
-### Day 1: Setup (15 min)
-1. ✅ Run setup
-2. ✅ Configure .env
-3. ✅ Run test_skills.py
-4. ✅ Read README.md
+### ✅ Do
+- **Be specific**: Mention your technology stack
+- **Provide context**: Share project structure if relevant
+- **Mention constraints**: Versions, frameworks, conventions
+- **Iterate**: Start simple, then add complexity
 
-### Day 2: First Use (30 min)
-1. ✅ Run examples/usage_example.py
-2. ✅ Make your first real prompt
-3. ✅ Review QUICK_START.md
-4. ✅ Understand the skills workflow
+### ❌ Avoid
+- Very vague prompts ("do something")
+- Assuming Claude knows your complete project
+- Skipping current state analysis
+- Ignoring project conventions
 
-### Day 3: Deep Dive (1 hour)
-1. ✅ Read skills/README.md
-2. ✅ Review INTEGRATION_GUIDE.md
-3. ✅ Customize for your stack
-4. ✅ Create your first complex prompt
+### Examples of Effective Prompts
 
-### Day 4+: Optimization
-1. ✅ Review RESOURCES.md
-2. ✅ Explore CLAUDE_CODE_INTEGRATION.md (if using Claude Code IDE)
-3. ✅ Customize skills according to your needs
-4. ✅ Share improvements with the community
+**✅ Good Prompt**
+```
+I need to add an authentication system to the React project that:
+- Uses JWT for tokens
+- Integrates with the existing AuthContext
+- Follows the project's component structure
+- Uses TypeScript like the rest of the code
+```
+
+**❌ Improvable Prompt**
+```
+Add login
+```
 
 ---
 
@@ -142,22 +212,6 @@ The project uses React + TypeScript and already has authentication configured."
 
 ---
 
-## 💡 Tips for Better Results
-
-### ✅ Do
-- **Be specific**: Mention your technology stack
-- **Provide context**: Share project structure if relevant
-- **Mention constraints**: Versions, frameworks, conventions
-- **Iterate**: Start simple, then add complexity
-
-### ❌ Avoid
-- Very vague prompts ("do something")
-- Assuming Claude knows your complete project
-- Skipping current state analysis
-- Ignoring project conventions
-
----
-
 ## 🔧 Quick Customization
 
 ### Adjust Skills for Your Stack
@@ -174,21 +228,63 @@ The project uses React + TypeScript and already has authentication configured."
 
 ---
 
-## 📚 Next Steps
+## 📖 Recommended Learning Flow
 
-- **QUICK_START.md** - More examples and details
-- **INTEGRATION_GUIDE.md** - Advanced integration
-- **skills/README.md** - Understand each skill
-- **RESOURCES.md** - Additional resources
+### Day 1: Setup (15 min)
+1. ✅ Run setup
+2. ✅ Configure .env
+3. ✅ Run test_skills.py
+4. ✅ Read README.md
+
+### Day 2: First Use (30 min)
+1. ✅ Run examples/usage_example.py
+2. ✅ Make your first real prompt
+3. ✅ Understand the skills workflow
+
+### Day 3: Deep Dive (1 hour)
+1. ✅ Read skills/README.md
+2. ✅ Review INTEGRATION_GUIDE.md
+3. ✅ Customize for your stack
+4. ✅ Create your first complex prompt
+
+### Day 4+: Optimization
+1. ✅ Review docs/RESOURCES.md
+2. ✅ Explore docs/CLAUDE_CODE_INTEGRATION.md (if using Claude Code IDE)
+3. ✅ Customize skills according to your needs
+4. ✅ Share improvements with the community
 
 ---
 
-## ❓ Problems?
+## 📚 Next Steps
 
-1. **Check .env** - Correct API key
-2. **Run test_skills.py** - Validate configuration
-3. **Review QUICK_START.md** - Detailed instructions
-4. **Consult INTEGRATION_GUIDE.md** - Troubleshooting
+- **INTEGRATION_GUIDE.md** - Advanced integration
+- **skills/README.md** - Understand each skill
+- **docs/RESOURCES.md** - Additional resources
+- **docs/INDEX.md** - Complete file index
+
+---
+
+## ❓ Troubleshooting
+
+### API Key doesn't work
+- Verify it's correct in `.env`
+- Verify it doesn't have extra spaces
+- Try regenerating key at console.anthropic.com
+
+### Skills don't load
+- Verify `SKILL.md` files exist
+- Verify YAML frontmatter format
+- Review `INTEGRATION_GUIDE.md`
+
+### Dependencies don't install
+- Verify Python 3.8+
+- Update pip: `pip install --upgrade pip`
+- Try reinstalling: `pip install -r requirements.txt --force-reinstall`
+
+### Examples don't work
+- Verify `.env` is configured
+- Verify virtual environment is activated
+- Review console errors
 
 ---
 

@@ -84,7 +84,7 @@ Based on [awesome-claude-skills](https://github.com/VoltAgent/awesome-claude-ski
 
 ### Level 1: Beginner
 1. Read this template's **README.md**
-2. Review **QUICK_START.md**
+2. Review **GETTING_STARTED.md**
 3. Try examples in `examples/`
 4. Read basic official documentation
 

@@ -166,7 +166,7 @@ client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 ### With Other AIs
 
-See **USAGE_WITH_OTHER_AI.md** to adapt to ChatGPT, Gemini, etc.
+See **docs/USAGE_WITH_OTHER_AI.md** to adapt to ChatGPT, Gemini, etc.
 
 ## 📝 Update Project README
 
@@ -261,10 +261,10 @@ If you improve the template:
 
 ## 📚 Additional Resources
 
-- **QUICK_START.md** - Quick start
+- **GETTING_STARTED.md** - Quick start and setup
 - **INTEGRATION_GUIDE.md** - Detailed integration
-- **USAGE_WITH_OTHER_AI.md** - Use with other AIs
-- **RESOURCES.md** - Resources and references
+- **docs/USAGE_WITH_OTHER_AI.md** - Use with other AIs
+- **docs/RESOURCES.md** - Resources and references
 
 ---
 
