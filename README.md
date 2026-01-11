@@ -1,194 +1,194 @@
-# Claude Skills Template - Framework de Desarrollo Consistente
+# Claude Skills Template - Consistent Development Framework
 
-Un sistema completo de Skills para Claude que garantiza metodología, protocolo y consistencia en **cualquier proyecto de desarrollo**, independientemente del stack tecnológico.
+A complete Skills system for Claude that guarantees methodology, protocol, and consistency in **any development project**, regardless of the technology stack.
 
-## 🎯 Objetivo
+## 🎯 Objective
 
-Este template proporciona un conjunto de Skills que aseguran:
-- ✅ **Consistencia metodológica** en todos los proyectos
-- ✅ **Protocolos claros** para entender y desarrollar
-- ✅ **Mejores resultados** con prompts sencillos
-- ✅ **Comprensión completa** del estado actual y futuro del proyecto
-- ✅ **Implementación profesional** siguiendo mejores prácticas
-- ✅ **Compatible con cualquier stack** (React, Vue, Angular, Node.js, Python, etc.)
-- ✅ **Funciona con múltiples IAs** (Claude, ChatGPT, Gemini, etc.)
+This template provides a set of Skills that ensure:
+- ✅ **Methodological consistency** across all projects
+- ✅ **Clear protocols** for understanding and developing
+- ✅ **Better results** with simple prompts
+- ✅ **Complete understanding** of the current and future project state
+- ✅ **Professional implementation** following best practices
+- ✅ **Compatible with any stack** (React, Vue, Angular, Node.js, Python, etc.)
+- ✅ **Works with multiple AIs** (Claude, ChatGPT, Gemini, etc.)
 
-## 📦 Skills Incluidas
+## 📦 Included Skills
 
-### 1. **project_protocol** - Protocolo Principal de Proyecto
-Skill maestro que orquesta todo el proceso de desarrollo, asegurando que cada paso se siga correctamente.
+### 1. **project_protocol** - Main Project Protocol
+Master skill that orchestrates the entire development process, ensuring each step is followed correctly.
 
-### 2. **requirements_analyzer** - Analizador de Requerimientos
-Analiza y estructura los requerimientos del usuario, identificando:
-- Qué quiere el usuario
-- Por qué lo necesita
-- Cómo debe funcionar
-- Qué restricciones existen
+### 2. **requirements_analyzer** - Requirements Analyzer
+Analyzes and structures user requirements, identifying:
+- What the user wants
+- Why they need it
+- How it should work
+- What constraints exist
 
-### 3. **codebase_understanding** - Comprensión del Código Base
-Analiza el estado actual del proyecto:
-- Qué existe actualmente
-- Arquitectura y patrones usados
-- Dependencias y tecnologías
-- Estructura de archivos
+### 3. **codebase_understanding** - Codebase Understanding
+Analyzes the current project state:
+- What currently exists
+- Architecture and patterns used
+- Dependencies and technologies
+- File structure
 
-### 4. **implementation_protocol** - Protocolo de Implementación
-Guía la implementación siguiendo:
-- Mejores prácticas del proyecto
-- Consistencia con código existente
-- Testing y validación
-- Documentación
+### 4. **implementation_protocol** - Implementation Protocol
+Guides implementation following:
+- Project best practices
+- Consistency with existing code
+- Testing and validation
+- Documentation
 
-## 🚀 Inicio Rápido
+## 🚀 Quick Start
 
-### Opción 1: Usar como Template de GitHub
+### Option 1: Use as GitHub Template
 ```bash
-# Crear nuevo repositorio desde template
-# O clonar directamente
-git clone https://github.com/tu-usuario/claude-skills-template.git mi-proyecto
-cd mi-proyecto
+# Create new repository from template
+# Or clone directly
+git clone https://github.com/your-username/claude-skills-template.git my-project
+cd my-project
 ./setup.sh  # Linux/Mac
-# O setup.bat en Windows
+# Or setup.bat on Windows
 ```
 
-### Opción 2: Instalación Manual
+### Option 2: Manual Installation
 ```bash
-# 1. Clonar o descargar
-git clone https://github.com/tu-usuario/claude-skills-template.git
+# 1. Clone or download
+git clone https://github.com/your-username/claude-skills-template.git
 cd claude-skills-template
 
-# 2. Instalar dependencias
+# 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Configurar
+# 3. Configure
 cp .env.example .env
-# Editar .env y agregar tu ANTHROPIC_API_KEY
+# Edit .env and add your ANTHROPIC_API_KEY
 ```
 
-Ver **QUICK_START.md** para más detalles.
+See **QUICK_START.md** for more details.
 
-## 📁 Estructura del Proyecto
+## 📁 Project Structure
 
 ```
 claude-skills-template/
-├── skills/                    # Skills del template
+├── skills/                    # Template skills
 │   ├── project_protocol/
 │   ├── requirements_analyzer/
 │   ├── codebase_understanding/
 │   └── implementation_protocol/
-├── examples/                  # Ejemplos de uso
-├── outputs/                   # Archivos generados (gitignored)
-├── .env.example              # Template de configuración
-├── requirements.txt          # Dependencias Python
-├── setup.sh / setup.bat      # Scripts de configuración automática
-├── .claude/                  # Configuración Claude Code IDE (opcional)
-└── README.md                 # Este archivo
+├── examples/                  # Usage examples
+├── outputs/                   # Generated files (gitignored)
+├── .env.example              # Configuration template
+├── requirements.txt          # Python dependencies
+├── setup.sh / setup.bat      # Automatic setup scripts
+├── .claude/                  # Claude Code IDE configuration (optional)
+└── README.md                 # This file
 ```
 
-## 🔧 Instalación Completa
+## 🔧 Complete Installation
 
-### Paso 1: Instalar Dependencias
+### Step 1: Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### Paso 2: Configurar API Key
+### Step 2: Configure API Key
 ```bash
-# Copiar archivo de ejemplo
+# Copy example file
 cp .env.example .env
 
-# Editar .env y agregar tu API key
+# Edit .env and add your API key
 # ANTHROPIC_API_KEY=sk-ant-api03-...
 ```
 
-### Paso 3: Cargar las Skills
-Sigue la guía en **INTEGRATION_GUIDE.md** para cargar las skills en tu entorno.
+### Step 3: Load the Skills
+Follow the guide in **INTEGRATION_GUIDE.md** to load the skills in your environment.
 
-### Paso 4: Verificar Configuración
+### Step 4: Verify Configuration
 ```bash
 python test_skills.py
 ```
 
-### Paso 5: ¡Empezar a Desarrollar!
-Revisa **GETTING_STARTED.md** para tu primer uso o **QUICK_START.md** para más ejemplos.
+### Step 5: Start Developing!
+Review **GETTING_STARTED.md** for your first use or **QUICK_START.md** for more examples.
 
-## 📚 Documentación
+## 📚 Documentation
 
-### Documentación Principal
-- **README.md** (este archivo) - Visión general del template
-- **GETTING_STARTED.md** - 🚀 **EMPIEZA AQUÍ** - Tu primer uso paso a paso
-- **QUICK_START.md** - Guía rápida de configuración e inicio
-- **INTEGRATION_GUIDE.md** - Guía detallada de integración
-- **CLAUDE_CODE_INTEGRATION.md** - Integración con Claude Code IDE (auto-activación)
-- **GITHUB_TEMPLATE_GUIDE.md** - Cómo usar como template de GitHub
-- **USAGE_WITH_OTHER_AI.md** - Adaptación para otros sistemas de IA
-- **RESOURCES.md** - Recursos y referencias adicionales
-- **INDEX.md** - Índice completo de archivos
+### Main Documentation
+- **README.md** (this file) - Template overview
+- **GETTING_STARTED.md** - 🚀 **START HERE** - Your first use step by step
+- **QUICK_START.md** - Quick configuration and startup guide
+- **INTEGRATION_GUIDE.md** - Detailed integration guide
+- **CLAUDE_CODE_INTEGRATION.md** - Claude Code IDE integration (auto-activation)
+- **GITHUB_TEMPLATE_GUIDE.md** - How to use as GitHub template
+- **USAGE_WITH_OTHER_AI.md** - Adaptation for other AI systems
+- **RESOURCES.md** - Additional resources and references
+- **INDEX.md** - Complete file index
 
-### Documentación de Skills
-Cada skill incluye documentación completa en su `SKILL.md` explicando:
-- Propósito y alcance
-- Metodología que aplica
-- Ejemplos de uso
-- Mejores prácticas
+### Skills Documentation
+Each skill includes complete documentation in its `SKILL.md` explaining:
+- Purpose and scope
+- Methodology it applies
+- Usage examples
+- Best practices
 
-Ver `skills/README.md` para documentación detallada de cada skill.
+See `skills/README.md` for detailed documentation of each skill.
 
-### Ejemplos
-- **examples/usage_example.py** - Ejemplo básico de uso
-- **examples/complete_example.py** - Ejemplo completo con casos de uso
+### Examples
+- **examples/usage_example.py** - Basic usage example
+- **examples/complete_example.py** - Complete example with use cases
 
-## 🎓 Flujo de Trabajo
+## 🎓 Workflow
 
-1. **Análisis**: `requirements_analyzer` entiende qué necesita el usuario
-2. **Comprensión**: `codebase_understanding` analiza el estado actual
-3. **Planificación**: `project_protocol` crea un plan coherente
-4. **Implementación**: `implementation_protocol` ejecuta siguiendo estándares
+1. **Analysis**: `requirements_analyzer` understands what the user needs
+2. **Understanding**: `codebase_understanding` analyzes the current state
+3. **Planning**: `project_protocol` creates a coherent plan
+4. **Implementation**: `implementation_protocol` executes following standards
 
-## 🌟 Recursos y Referencias
+## 🌟 Resources and References
 
-### Recursos Oficiales de Claude Skills
-- [Claude Skills Quickstart](https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/overview) - Guía oficial de inicio
-- [Claude Skills Best Practices](https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/best-practices) - Mejores prácticas oficiales
-- [Skills Cookbook](https://github.com/anthropics/claude-cookbooks) - Ejemplos y guías oficiales
-- [How to Create Custom Skills](https://support.claude.com/en/articles/12599426-how-to-create-a-skill-with-claude-through-conversation) - Guía de creación
+### Official Claude Skills Resources
+- [Claude Skills Quickstart](https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/overview) - Official getting started guide
+- [Claude Skills Best Practices](https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/best-practices) - Official best practices
+- [Skills Cookbook](https://github.com/anthropics/claude-cookbooks) - Official examples and guides
+- [How to Create Custom Skills](https://support.claude.com/en/articles/12599426-how-to-create-a-skill-with-claude-through-conversation) - Creation guide
 
-### Recursos de la Comunidad
-- [Awesome Claude Skills](https://github.com/VoltAgent/awesome-claude-skills) - Colección curada de skills de la comunidad
-- [Claude Code Infrastructure Showcase](https://github.com/diet103/claude-code-infrastructure-showcase) - Auto-activación de skills con hooks (8.3k⭐)
-- [Claude Skills Documentation](https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills) - Documentación completa
+### Community Resources
+- [Awesome Claude Skills](https://github.com/VoltAgent/awesome-claude-skills) - Curated collection of community skills
+- [Claude Code Infrastructure Showcase](https://github.com/diet103/claude-code-infrastructure-showcase) - Auto-activation of skills with hooks (8.3k⭐)
+- [Claude Skills Documentation](https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills) - Complete documentation
 
-### Artículos y Tutoriales
-- [Equipping Agents for the Real World](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) - Artículo técnico sobre Skills
-- [Teach Claude Your Way of Working](https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills) - Guía de personalización
+### Articles and Tutorials
+- [Equipping Agents for the Real World](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) - Technical article on Skills
+- [Teach Claude Your Way of Working](https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills) - Customization guide
 
-## 🤝 Contribuir
+## 🤝 Contributing
 
-Este template está diseñado para ser adaptado a tus necesidades específicas. Modifica las skills según tu metodología preferida.
+This template is designed to be adapted to your specific needs. Modify the skills according to your preferred methodology.
 
-**¿Quieres contribuir?** Revisa [CONTRIBUTING.md](CONTRIBUTING.md) para ver cómo puedes ayudar:
-- Mejorar documentación
-- Agregar nuevas skills
-- Compartir ejemplos de uso
-- Reportar issues o sugerir mejoras
+**Want to contribute?** Review [CONTRIBUTING.md](CONTRIBUTING.md) to see how you can help:
+- Improve documentation
+- Add new skills
+- Share usage examples
+- Report issues or suggest improvements
 
-## 📄 Licencia
+## 📄 License
 
-MIT License - Úsalo libremente en tus proyectos.
+MIT License - Use freely in your projects.
 
-## 🎯 Casos de Uso
+## 🎯 Use Cases
 
-Este template es perfecto para:
-- ✅ **Inicio de nuevos proyectos** - Garantiza calidad desde el día 1
-- ✅ **Equipos de desarrollo** - Consistencia metodológica
-- ✅ **Múltiples stacks** - Funciona con React, Vue, Node.js, Python, etc.
-- ✅ **Diferentes IAs** - Adaptable a Claude, ChatGPT, Gemini, etc.
-- ✅ **Proyectos complejos** - Metodología estructurada para cualquier tamaño
-- ✅ **Claude Code IDE** - Auto-activación de skills con hooks (ver CLAUDE_CODE_INTEGRATION.md)
+This template is perfect for:
+- ✅ **Starting new projects** - Guarantees quality from day 1
+- ✅ **Development teams** - Methodological consistency
+- ✅ **Multiple stacks** - Works with React, Vue, Node.js, Python, etc.
+- ✅ **Different AIs** - Adaptable to Claude, ChatGPT, Gemini, etc.
+- ✅ **Complex projects** - Structured methodology for any size
+- ✅ **Claude Code IDE** - Auto-activation of skills with hooks (see CLAUDE_CODE_INTEGRATION.md)
 
 ---
 
-**¿Listo para empezar?** 
-1. 🚀 **GETTING_STARTED.md** - Tu primer uso (recomendado)
-2. ⚡ **QUICK_START.md** - Configuración rápida
-3. 📦 **GITHUB_TEMPLATE_GUIDE.md** - Usar como template
+**Ready to start?** 
+1. 🚀 **GETTING_STARTED.md** - Your first use (recommended)
+2. ⚡ **QUICK_START.md** - Quick configuration
+3. 📦 **GITHUB_TEMPLATE_GUIDE.md** - Use as template

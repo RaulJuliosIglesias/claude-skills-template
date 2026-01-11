@@ -1,45 +1,45 @@
 # 🚀 Quick Start Guide
 
-## Configuración Rápida
+## Quick Configuration
 
-### 1. Instalar Dependencias
+### 1. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Configurar API Key
+### 2. Configure API Key
 
 ```bash
-# Copiar archivo de ejemplo
+# Copy example file
 cp .env.example .env
 
-# Editar .env y agregar tu API key
+# Edit .env and add your API key
 # ANTHROPIC_API_KEY=sk-ant-api03-...
 ```
 
-### 3. Cargar Skills en tu Proyecto
+### 3. Load Skills in Your Project
 
-Las skills deben estar en un directorio accesible. Tienes dos opciones:
+Skills must be in an accessible directory. You have two options:
 
-#### Opción A: Skills Locales (Recomendado para desarrollo)
+#### Option A: Local Skills (Recommended for development)
 
 ```python
 from anthropic import Anthropic
 
 client = Anthropic(api_key="your-api-key")
 
-# Las skills deben estar en un directorio que Claude pueda acceder
-# Por ahora, usa las skills de Anthropic o crea las tuyas siguiendo la estructura
+# Skills must be in a directory that Claude can access
+# For now, use Anthropic's skills or create your own following the structure
 ```
 
-#### Opción B: Usar con Claude Desktop/Claude.ai
+#### Option B: Use with Claude Desktop/Claude.ai
 
-Si estás usando Claude Desktop o Claude.ai, puedes cargar las skills directamente desde el directorio `skills/`.
+If you're using Claude Desktop or Claude.ai, you can load skills directly from the `skills/` directory.
 
-## Uso Básico
+## Basic Usage
 
-### Ejemplo Mínimo
+### Minimal Example
 
 ```python
 from anthropic import Anthropic
@@ -64,7 +64,7 @@ response = client.beta.messages.create(
     tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
     messages=[{
         "role": "user",
-        "content": "Necesito agregar autenticación al proyecto"
+        "content": "I need to add authentication to the project"
     }],
     betas=[
         "code-execution-2025-08-25",
@@ -76,60 +76,60 @@ response = client.beta.messages.create(
 print(response.content[0].text)
 ```
 
-## Flujo de Trabajo Recomendado
+## Recommended Workflow
 
-1. **Define tu requerimiento** de forma clara
-2. **Ejecuta la consulta** con todas las skills cargadas
-3. **Revisa el análisis** que Claude proporciona:
-   - Análisis de requerimientos
-   - Estado actual del proyecto
-   - Plan de implementación
-4. **Implementa** siguiendo el plan propuesto
-5. **Valida** que cumple con los requerimientos
+1. **Define your requirement** clearly
+2. **Execute the query** with all skills loaded
+3. **Review the analysis** that Claude provides:
+   - Requirements analysis
+   - Current project state
+   - Implementation plan
+4. **Implement** following the proposed plan
+5. **Validate** that it meets the requirements
 
-## Tips para Mejores Resultados
+## Tips for Better Results
 
-### ✅ Hacer
+### ✅ Do
 
-- **Sé específico**: Menciona detalles importantes
-- **Proporciona contexto**: Si hay código relevante, compártelo
-- **Menciona restricciones**: Tecnologías, frameworks, versiones
-- **Sé claro sobre prioridades**: Qué es más importante
+- **Be specific**: Mention important details
+- **Provide context**: If there's relevant code, share it
+- **Mention constraints**: Technologies, frameworks, versions
+- **Be clear about priorities**: What's most important
 
-### ❌ Evitar
+### ❌ Avoid
 
-- Requerimientos muy vagos sin contexto
-- Asumir que Claude conoce tu proyecto completo
-- Saltarse el análisis del estado actual
-- Ignorar las convenciones del proyecto
+- Very vague requirements without context
+- Assuming Claude knows your complete project
+- Skipping current state analysis
+- Ignoring project conventions
 
-## Ejemplos de Prompts Efectivos
+## Examples of Effective Prompts
 
-### ✅ Buen Prompt
-
-```
-Necesito agregar un sistema de autenticación al proyecto React que:
-- Use JWT para tokens
-- Integre con el AuthContext existente
-- Siga la estructura de componentes del proyecto
-- Use TypeScript como el resto del código
-```
-
-### ❌ Prompt Mejorable
+### ✅ Good Prompt
 
 ```
-Agregar login
+I need to add an authentication system to the React project that:
+- Uses JWT for tokens
+- Integrates with the existing AuthContext
+- Follows the project's component structure
+- Uses TypeScript like the rest of the code
 ```
 
-## Personalización
+### ❌ Improvable Prompt
 
-Puedes personalizar las skills editando los archivos `SKILL.md` en cada directorio:
+```
+Add login
+```
 
-- `skills/project_protocol/SKILL.md` - Ajusta el protocolo principal
-- `skills/requirements_analyzer/SKILL.md` - Personaliza el análisis de requerimientos
-- `skills/codebase_understanding/SKILL.md` - Ajusta cómo se analiza el código
-- `skills/implementation_protocol/SKILL.md` - Personaliza el protocolo de implementación
+## Customization
 
-## Siguiente Paso
+You can customize skills by editing the `SKILL.md` files in each directory:
 
-Lee el `README.md` completo para entender mejor cómo funciona cada skill y cómo personalizarlas para tus necesidades.
+- `skills/project_protocol/SKILL.md` - Adjust the main protocol
+- `skills/requirements_analyzer/SKILL.md` - Customize requirements analysis
+- `skills/codebase_understanding/SKILL.md` - Adjust how code is analyzed
+- `skills/implementation_protocol/SKILL.md` - Customize implementation protocol
+
+## Next Step
+
+Read the complete `README.md` to better understand how each skill works and how to customize them for your needs.

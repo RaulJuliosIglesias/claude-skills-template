@@ -1,264 +1,264 @@
 ---
 name: Codebase Understanding Protocol
 description: |
-  Analiza sistemáticamente el estado actual del proyecto para entender arquitectura, tecnologías,
-  patrones y convenciones. Garantiza que cualquier implementación respete y se integre correctamente
-  con el código existente, manteniendo consistencia y calidad del proyecto.
+  Systematically analyzes the current project state to understand architecture, technologies,
+  patterns, and conventions. Ensures that any implementation respects and correctly integrates
+  with existing code, maintaining project consistency and quality.
 version: 1.0.0
 ---
 
 # Codebase Understanding Protocol Skill
 
-## Propósito
+## Purpose
 
-Esta skill garantiza una comprensión completa del estado actual del proyecto antes de cualquier implementación, asegurando:
+This skill ensures complete understanding of the current project state before any implementation, ensuring:
 
-1. **Conocimiento de la arquitectura** actual
-2. **Identificación de tecnologías** y frameworks usados
-3. **Reconocimiento de patrones** y convenciones
-4. **Localización de código relevante** existente
-5. **Respeto por la estructura** y organización del proyecto
+1. **Knowledge of current architecture**
+2. **Identification of technologies** and frameworks used
+3. **Recognition of patterns** and conventions
+4. **Location of relevant existing code**
+5. **Respect for project structure** and organization
 
-## Metodología: Análisis Sistemático
+## Methodology: Systematic Analysis
 
-### Paso 1: Análisis de Estructura del Proyecto
+### Step 1: Project Structure Analysis
 
-**Objetivo**: Entender la organización de archivos y directorios
+**Objective**: Understand file and directory organization
 
-**Proceso**:
-1. Examinar estructura de directorios raíz
-2. Identificar directorios principales (src, components, utils, etc.)
-3. Reconocer patrones de organización
-4. Mapear estructura de carpetas
+**Process**:
+1. Examine root directory structure
+2. Identify main directories (src, components, utils, etc.)
+3. Recognize organization patterns
+4. Map folder structure
 
 **Output**:
 ```
-Estructura del Proyecto:
-├── [directorio principal]
-│   ├── [subdirectorio]
+Project Structure:
+├── [main directory]
+│   ├── [subdirectory]
 │   └── ...
-├── [directorio principal]
+├── [main directory]
 └── ...
 
-Patrones identificados:
-- Organización por: [feature/type/layer]
-- Convenciones de nombres: [camelCase/PascalCase/kebab-case]
+Identified Patterns:
+- Organization by: [feature/type/layer]
+- Naming conventions: [camelCase/PascalCase/kebab-case]
 ```
 
-### Paso 2: Identificación de Tecnologías
+### Step 2: Technology Identification
 
-**Objetivo**: Listar todas las tecnologías, frameworks y librerías
+**Objective**: List all technologies, frameworks, and libraries
 
-**Proceso**:
-1. Revisar package.json / requirements.txt / etc.
-2. Identificar framework principal (React, Vue, Angular, etc.)
-3. Listar librerías principales
-4. Identificar herramientas de build
-5. Reconocer sistemas de testing
+**Process**:
+1. Review package.json / requirements.txt / etc.
+2. Identify main framework (React, Vue, Angular, etc.)
+3. List main libraries
+4. Identify build tools
+5. Recognize testing systems
 
 **Output**:
 ```
-Stack Tecnológico:
+Technology Stack:
 - Framework: [React/Vue/etc.]
-- Lenguaje: [TypeScript/JavaScript/Python/etc.]
+- Language: [TypeScript/JavaScript/Python/etc.]
 - Build Tool: [Vite/Webpack/etc.]
 - Testing: [Jest/Vitest/etc.]
-- Librerías principales:
-  * [librería 1] - [propósito]
-  * [librería 2] - [propósito]
+- Main libraries:
+  * [library 1] - [purpose]
+  * [library 2] - [purpose]
   ...
 ```
 
-### Paso 3: Análisis de Arquitectura
+### Step 3: Architecture Analysis
 
-**Objetivo**: Entender cómo está estructurado el código
+**Objective**: Understand how the code is structured
 
-**Proceso**:
-1. Identificar patrón arquitectónico (MVC, Component-based, etc.)
-2. Reconocer capas o módulos principales
-3. Identificar flujo de datos
-4. Reconocer sistema de estado (Redux, Context, etc.)
-5. Identificar sistema de routing
+**Process**:
+1. Identify architectural pattern (MVC, Component-based, etc.)
+2. Recognize main layers or modules
+3. Identify data flow
+4. Recognize state system (Redux, Context, etc.)
+5. Identify routing system
 
 **Output**:
 ```
-Arquitectura:
-- Patrón: [MVC/Component-based/etc.]
-- Capas principales:
-  * [Capa 1]: [responsabilidad]
-  * [Capa 2]: [responsabilidad]
-- Gestión de estado: [Redux/Context/Zustand/etc.]
+Architecture:
+- Pattern: [MVC/Component-based/etc.]
+- Main layers:
+  * [Layer 1]: [responsibility]
+  * [Layer 2]: [responsibility]
+- State management: [Redux/Context/Zustand/etc.]
 - Routing: [React Router/Vue Router/etc.]
-- Flujo de datos: [descripción]
+- Data flow: [description]
 ```
 
-### Paso 4: Identificación de Patrones y Convenciones
+### Step 4: Pattern and Convention Identification
 
-**Objetivo**: Reconocer patrones de código y convenciones usadas
+**Objective**: Recognize code patterns and conventions used
 
-**Proceso**:
-1. Analizar ejemplos de código existente
-2. Identificar patrones de diseño usados
-3. Reconocer convenciones de nombres
-4. Identificar estilos de código (ESLint, Prettier configs)
-5. Reconocer patrones de componentes/funciones
+**Process**:
+1. Analyze existing code examples
+2. Identify design patterns used
+3. Recognize naming conventions
+4. Identify code styles (ESLint, Prettier configs)
+5. Recognize component/function patterns
 
 **Output**:
 ```
-Patrones y Convenciones:
-- Nomenclatura:
-  * Componentes: [PascalCase/camelCase]
-  * Funciones: [camelCase]
-  * Archivos: [convención]
-- Patrones de diseño:
-  * [Patrón 1]: usado en [contexto]
-  * [Patrón 2]: usado en [contexto]
-- Estilo de código: [configuración ESLint/Prettier]
-- Estructura de componentes: [descripción]
+Patterns and Conventions:
+- Nomenclature:
+  * Components: [PascalCase/camelCase]
+  * Functions: [camelCase]
+  * Files: [convention]
+- Design patterns:
+  * [Pattern 1]: used in [context]
+  * [Pattern 2]: used in [context]
+- Code style: [ESLint/Prettier configuration]
+- Component structure: [description]
 ```
 
-### Paso 5: Localización de Código Relevante
+### Step 5: Relevant Code Location
 
-**Objetivo**: Encontrar código existente relacionado con el requerimiento
+**Objective**: Find existing code related to the requirement
 
-**Proceso**:
-1. Buscar componentes/funciones similares
-2. Identificar código que se reutilizará
-3. Localizar código que necesita modificación
-4. Identificar servicios/APIs relacionadas
-5. Encontrar utilidades existentes relevantes
+**Process**:
+1. Search for similar components/functions
+2. Identify code to reuse
+3. Locate code that needs modification
+4. Identify related services/APIs
+5. Find relevant existing utilities
 
 **Output**:
 ```
-Código Relevante:
-- Componentes similares:
-  * [ruta/componente] - [propósito]
-- Funciones/Utilidades:
-  * [ruta/función] - [propósito]
-- Servicios/APIs:
-  * [ruta/servicio] - [propósito]
-- Código a modificar:
-  * [ruta/archivo] - [razón]
+Relevant Code:
+- Similar components:
+  * [path/component] - [purpose]
+- Functions/Utilities:
+  * [path/function] - [purpose]
+- Services/APIs:
+  * [path/service] - [purpose]
+- Code to modify:
+  * [path/file] - [reason]
 ```
 
-### Paso 6: Análisis de Dependencias y Configuración
+### Step 6: Dependencies and Configuration Analysis
 
-**Objetivo**: Entender configuración y dependencias del proyecto
+**Objective**: Understand project configuration and dependencies
 
-**Proceso**:
-1. Revisar archivos de configuración
-2. Identificar variables de entorno
-3. Reconocer configuración de build
-4. Identificar scripts disponibles
-5. Revisar configuración de herramientas
+**Process**:
+1. Review configuration files
+2. Identify environment variables
+3. Recognize build configuration
+4. Identify available scripts
+5. Review tool configuration
 
 **Output**:
 ```
-Configuración:
-- Variables de entorno: [lista]
-- Scripts disponibles: [npm/yarn scripts]
-- Configuración de build: [detalles]
-- Herramientas configuradas: [ESLint, Prettier, etc.]
+Configuration:
+- Environment variables: [list]
+- Available scripts: [npm/yarn scripts]
+- Build configuration: [details]
+- Configured tools: [ESLint, Prettier, etc.]
 ```
 
-## Template de Análisis
+## Analysis Template
 
-Usar este template para documentar el análisis:
+Use this template to document the analysis:
 
 ```markdown
-## Análisis del Estado Actual del Proyecto
+## Current Project State Analysis
 
-### Estructura del Proyecto
-[Descripción de organización]
+### Project Structure
+[Organization description]
 
-### Stack Tecnológico
+### Technology Stack
 - Framework: ...
-- Lenguaje: ...
-- Librerías principales: ...
+- Language: ...
+- Main libraries: ...
 
-### Arquitectura
-- Patrón: ...
-- Capas: ...
-- Gestión de estado: ...
+### Architecture
+- Pattern: ...
+- Layers: ...
+- State management: ...
 
-### Patrones y Convenciones
-- Nomenclatura: ...
-- Patrones de diseño: ...
-- Estilo de código: ...
+### Patterns and Conventions
+- Nomenclature: ...
+- Design patterns: ...
+- Code style: ...
 
-### Código Relevante
-- Componentes similares: ...
-- Utilidades: ...
-- Código a modificar: ...
+### Relevant Code
+- Similar components: ...
+- Utilities: ...
+- Code to modify: ...
 
-### Configuración
-- Variables de entorno: ...
+### Configuration
+- Environment variables: ...
 - Scripts: ...
 ```
 
-## Reglas de Análisis
+## Analysis Rules
 
-1. **Ser exhaustivo**: No asumir, verificar en el código
-2. **Buscar patrones**: Identificar cómo se hacen las cosas en el proyecto
-3. **Respetar convenciones**: Seguir los patrones existentes
-4. **Documentar hallazgos**: Registrar todo lo encontrado
-5. **Identificar código reutilizable**: No reinventar la rueda
+1. **Be exhaustive**: Don't assume, verify in code
+2. **Look for patterns**: Identify how things are done in the project
+3. **Respect conventions**: Follow existing patterns
+4. **Document findings**: Record everything found
+5. **Identify reusable code**: Don't reinvent the wheel
 
-## Estrategias de Búsqueda
+## Search Strategies
 
-### Para encontrar código similar:
-- Buscar por palabras clave relacionadas
-- Revisar directorios relacionados
-- Buscar imports/exports similares
-- Revisar tests para entender uso
+### To find similar code:
+- Search by related keywords
+- Review related directories
+- Search for similar imports/exports
+- Review tests to understand usage
 
-### Para entender arquitectura:
-- Revisar archivos de configuración principales
-- Analizar estructura de imports
-- Revisar archivos de entrada (index.js, main.js, App.js)
-- Examinar estructura de componentes principales
+### To understand architecture:
+- Review main configuration files
+- Analyze import structure
+- Review entry files (index.js, main.js, App.js)
+- Examine main component structure
 
-### Para identificar patrones:
-- Revisar múltiples ejemplos de código
-- Buscar patrones repetidos
-- Analizar convenciones de nombres
-- Revisar configuración de herramientas
+### To identify patterns:
+- Review multiple code examples
+- Look for repeated patterns
+- Analyze naming conventions
+- Review tool configuration
 
-## Ejemplos
+## Examples
 
-### Ejemplo 1: Proyecto React
+### Example 1: React Project
 
-**Análisis**:
-- Estructura: src/components, src/utils, src/services
+**Analysis**:
+- Structure: src/components, src/utils, src/services
 - Stack: React 18, TypeScript, Vite
-- Arquitectura: Component-based, Context API para estado
-- Patrones: Functional components, hooks, custom hooks
-- Convenciones: PascalCase para componentes, camelCase para funciones
+- Architecture: Component-based, Context API for state
+- Patterns: Functional components, hooks, custom hooks
+- Conventions: PascalCase for components, camelCase for functions
 
-### Ejemplo 2: Proyecto con Backend
+### Example 2: Project with Backend
 
-**Análisis**:
-- Estructura: frontend/, backend/, shared/
+**Analysis**:
+- Structure: frontend/, backend/, shared/
 - Stack: React frontend, Node.js backend, PostgreSQL
-- Arquitectura: Separación frontend/backend, REST API
-- Patrones: MVC en backend, Component-based en frontend
-- Convenciones: kebab-case para archivos, camelCase para código
+- Architecture: Frontend/backend separation, REST API
+- Patterns: MVC in backend, Component-based in frontend
+- Conventions: kebab-case for files, camelCase for code
 
-## Integración con Otras Skills
+## Integration with Other Skills
 
-Esta skill alimenta:
-- `project_protocol`: Proporciona contexto del estado actual
-- `requirements_analyzer`: Identifica qué buscar en el código
-- `implementation_protocol`: Define cómo implementar respetando lo existente
+This skill feeds:
+- `project_protocol`: Provides current state context
+- `requirements_analyzer`: Identifies what to look for in code
+- `implementation_protocol`: Defines how to implement respecting existing code
 
-## Checklist de Validación
+## Validation Checklist
 
-Antes de considerar el análisis completo:
+Before considering the analysis complete:
 
-- [ ] Estructura del proyecto mapeada
-- [ ] Stack tecnológico identificado
-- [ ] Arquitectura entendida
-- [ ] Patrones y convenciones reconocidos
-- [ ] Código relevante localizado
-- [ ] Configuración revisada
-- [ ] Análisis documentado
+- [ ] Project structure mapped
+- [ ] Technology stack identified
+- [ ] Architecture understood
+- [ ] Patterns and conventions recognized
+- [ ] Relevant code located
+- [ ] Configuration reviewed
+- [ ] Analysis documented

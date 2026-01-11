@@ -1,142 +1,142 @@
 ---
 name: Project Management Protocol
 description: |
-  Skill maestro que garantiza un proceso de desarrollo consistente y metodológico.
-  Orquesta el análisis de requerimientos, comprensión del código base, y protocolo de implementación
-  para asegurar resultados profesionales en cualquier proyecto. Esta skill asegura que cada paso
-  del desarrollo siga un protocolo claro: entender al usuario, analizar el estado actual,
-  planificar la solución, e implementar siguiendo mejores prácticas.
+  Master skill that guarantees a consistent and methodological development process.
+  Orchestrates requirements analysis, codebase understanding, and implementation protocol
+  to ensure professional results in any project. This skill ensures that each step
+  of development follows a clear protocol: understand the user, analyze the current state,
+  plan the solution, and implement following best practices.
 version: 1.0.0
 ---
 
 # Project Management Protocol Skill
 
-## Propósito
+## Purpose
 
-Esta skill actúa como orquestador principal que garantiza que todo desarrollo siga un protocolo consistente y metodológico, asegurando:
+This skill acts as the main orchestrator that ensures all development follows a consistent and methodological protocol, ensuring:
 
-1. **Comprensión completa** del requerimiento del usuario
-2. **Análisis del estado actual** del proyecto
-3. **Planificación coherente** de la solución
-4. **Implementación profesional** siguiendo estándares
+1. **Complete understanding** of the user's requirement
+2. **Analysis of the current state** of the project
+3. **Coherent planning** of the solution
+4. **Professional implementation** following standards
 
-## Metodología: Protocolo de 4 Fases
+## Methodology: 4-Phase Protocol
 
-### Fase 1: Análisis de Requerimientos (Requirements Analysis)
-**Objetivo**: Entender completamente qué necesita el usuario
+### Phase 1: Requirements Analysis
+**Objective**: Completely understand what the user needs
 
-**Proceso**:
-1. Identificar el requerimiento principal
-2. Extraer requisitos funcionales y no funcionales
-3. Identificar restricciones y dependencias
-4. Validar comprensión con el usuario si es necesario
-5. Documentar el requerimiento de forma estructurada
+**Process**:
+1. Identify the main requirement
+2. Extract functional and non-functional requirements
+3. Identify constraints and dependencies
+4. Validate understanding with the user if necessary
+5. Document the requirement in a structured way
 
-**Output esperado**:
-- Requerimiento principal claramente definido
-- Lista de funcionalidades requeridas
-- Restricciones identificadas
-- Criterios de aceptación
+**Expected Output**:
+- Main requirement clearly defined
+- List of required functionalities
+- Constraints identified
+- Acceptance criteria
 
-### Fase 2: Comprensión del Estado Actual (Codebase Understanding)
-**Objetivo**: Entender qué existe actualmente en el proyecto
+### Phase 2: Current State Understanding (Codebase Understanding)
+**Objective**: Understand what currently exists in the project
 
-**Proceso**:
-1. Analizar la estructura del proyecto
-2. Identificar tecnologías y frameworks usados
-3. Revisar patrones arquitectónicos existentes
-4. Identificar código relacionado o similar
-5. Documentar el estado actual
+**Process**:
+1. Analyze the project structure
+2. Identify technologies and frameworks used
+3. Review existing architectural patterns
+4. Identify related or similar code
+5. Document the current state
 
-**Output esperado**:
-- Arquitectura del proyecto documentada
-- Tecnologías y dependencias identificadas
-- Patrones y convenciones usados
-- Código existente relevante identificado
+**Expected Output**:
+- Project architecture documented
+- Technologies and dependencies identified
+- Patterns and conventions used
+- Relevant existing code identified
 
-### Fase 3: Planificación de la Solución (Solution Planning)
-**Objetivo**: Crear un plan coherente que respete el estado actual
+### Phase 3: Solution Planning
+**Objective**: Create a coherent plan that respects the current state
 
-**Proceso**:
-1. Diseñar solución que respete arquitectura existente
-2. Identificar componentes a crear/modificar
-3. Planificar integración con código existente
-4. Definir orden de implementación
-5. Identificar posibles riesgos o consideraciones
+**Process**:
+1. Design solution that respects existing architecture
+2. Identify components to create/modify
+3. Plan integration with existing code
+4. Define implementation order
+5. Identify possible risks or considerations
 
-**Output esperado**:
-- Plan de implementación paso a paso
-- Componentes a crear/modificar
-- Estrategia de integración
-- Consideraciones técnicas
+**Expected Output**:
+- Step-by-step implementation plan
+- Components to create/modify
+- Integration strategy
+- Technical considerations
 
-### Fase 4: Implementación (Implementation)
-**Objetivo**: Ejecutar el plan siguiendo mejores prácticas
+### Phase 4: Implementation
+**Objective**: Execute the plan following best practices
 
-**Proceso**:
-1. Implementar siguiendo el plan
-2. Respetar convenciones del proyecto
-3. Mantener consistencia con código existente
-4. Validar que cumple requerimientos
-5. Documentar cambios realizados
+**Process**:
+1. Implement following the plan
+2. Respect project conventions
+3. Maintain consistency with existing code
+4. Validate that it meets requirements
+5. Document changes made
 
-**Output esperado**:
-- Código implementado y funcional
-- Consistente con el proyecto existente
-- Documentado apropiadamente
-- Validado contra requerimientos
+**Expected Output**:
+- Implemented and functional code
+- Consistent with existing project
+- Appropriately documented
+- Validated against requirements
 
-## Reglas de Oro
+## Golden Rules
 
-1. **Nunca asumir**: Siempre analizar el código base antes de implementar
-2. **Respetar lo existente**: Mantener consistencia con patrones y convenciones actuales
-3. **Validar comprensión**: Si hay dudas sobre el requerimiento, preguntar antes de implementar
-4. **Documentar decisiones**: Explicar por qué se eligió una solución específica
-5. **Iterar si es necesario**: Si el plan inicial no funciona, ajustar y documentar
+1. **Never assume**: Always analyze the codebase before implementing
+2. **Respect existing**: Maintain consistency with current patterns and conventions
+3. **Validate understanding**: If there are doubts about the requirement, ask before implementing
+4. **Document decisions**: Explain why a specific solution was chosen
+5. **Iterate if necessary**: If the initial plan doesn't work, adjust and document
 
-## Uso con Otras Skills
+## Usage with Other Skills
 
-Esta skill debe trabajar en conjunto con:
-- `requirements_analyzer`: Para análisis profundo de requerimientos
-- `codebase_understanding`: Para comprensión del estado actual
-- `implementation_protocol`: Para guía de implementación
+This skill must work together with:
+- `requirements_analyzer`: For deep requirements analysis
+- `codebase_understanding`: For understanding the current state
+- `implementation_protocol`: For implementation guidance
 
-## Ejemplo de Flujo
+## Example Flow
 
 ```
-Usuario: "Necesito agregar autenticación al proyecto"
+User: "I need to add authentication to the project"
 
-Fase 1 (Análisis):
-- Requerimiento: Sistema de autenticación
-- Funcionalidades: Login, registro, sesiones
-- Restricciones: Debe usar JWT, compatible con React
+Phase 1 (Analysis):
+- Requirement: Authentication system
+- Functionalities: Login, registration, sessions
+- Constraints: Must use JWT, compatible with React
 
-Fase 2 (Comprensión):
-- Proyecto usa React + TypeScript
-- Ya existe estructura de rutas
-- No hay sistema de auth actual
-- Usa Context API para estado
+Phase 2 (Understanding):
+- Project uses React + TypeScript
+- Route structure already exists
+- No current auth system
+- Uses Context API for state
 
-Fase 3 (Planificación):
-- Crear AuthContext
-- Crear componentes Login/Register
-- Integrar con rutas existentes
-- Usar localStorage para tokens
+Phase 3 (Planning):
+- Create AuthContext
+- Create Login/Register components
+- Integrate with existing routes
+- Use localStorage for tokens
 
-Fase 4 (Implementación):
-- Implementar según plan
-- Seguir convenciones React del proyecto
-- Validar funcionamiento
+Phase 4 (Implementation):
+- Implement according to plan
+- Follow project's React conventions
+- Validate functionality
 ```
 
-## Checklist de Validación
+## Validation Checklist
 
-Antes de considerar completada una tarea, verificar:
+Before considering a task complete, verify:
 
-- [ ] Requerimiento completamente entendido
-- [ ] Estado actual del proyecto analizado
-- [ ] Plan de implementación creado
-- [ ] Solución respeta arquitectura existente
-- [ ] Código implementado y funcional
-- [ ] Consistente con convenciones del proyecto
-- [ ] Documentación actualizada si es necesario
+- [ ] Requirement completely understood
+- [ ] Current project state analyzed
+- [ ] Implementation plan created
+- [ ] Solution respects existing architecture
+- [ ] Code implemented and functional
+- [ ] Consistent with project conventions
+- [ ] Documentation updated if necessary

@@ -1,45 +1,45 @@
-# 🚀 Getting Started - Tu Primer Uso
+# 🚀 Getting Started - Your First Use
 
-Guía paso a paso para usar el template por primera vez.
+Step-by-step guide to using the template for the first time.
 
-## ⚡ Inicio Rápido (5 minutos)
+## ⚡ Quick Start (5 minutes)
 
-### Paso 1: Descargar y Configurar
+### Step 1: Download and Configure
 
 ```bash
-# Clonar o descargar el template
-git clone https://github.com/tu-usuario/claude-skills-template.git mi-proyecto
-cd mi-proyecto
+# Clone or download the template
+git clone https://github.com/your-username/claude-skills-template.git my-project
+cd my-project
 
-# Configurar automáticamente
+# Configure automatically
 ./setup.sh  # Linux/Mac
-# O
+# Or
 setup.bat   # Windows
 ```
 
-### Paso 2: Configurar API Key
+### Step 2: Configure API Key
 
 ```bash
-# Editar .env y agregar tu API key
+# Edit .env and add your API key
 # ANTHROPIC_API_KEY=sk-ant-api03-...
 ```
 
-Obtén tu API key en: https://console.anthropic.com/
+Get your API key at: https://console.anthropic.com/
 
-### Paso 3: Verificar que Funciona
+### Step 3: Verify It Works
 
 ```bash
-# Ejecutar test de verificación
+# Run verification test
 python test_skills.py
 ```
 
-Si ves "✅ Todo funciona correctamente", ¡estás listo!
+If you see "✅ Everything is working correctly", you're ready!
 
 ---
 
-## 🎯 Tu Primer Prompt con Skills
+## 🎯 Your First Prompt with Skills
 
-### Ejemplo Mínimo (Copia y Pega)
+### Minimal Example (Copy and Paste)
 
 ```python
 from anthropic import Anthropic
@@ -64,7 +64,7 @@ response = client.beta.messages.create(
     tools=[{"type": "code_execution_20250825", "name": "code_execution"}],
     messages=[{
         "role": "user",
-        "content": "Necesito agregar un botón de logout al header"
+        "content": "I need to add a logout button to the header"
     }],
     betas=["code-execution-2025-08-25", "files-api-2025-04-14", "skills-2025-10-02"]
 )
@@ -72,126 +72,126 @@ response = client.beta.messages.create(
 print(response.content[0].text)
 ```
 
-### O Usar el Helper
+### Or Use the Helper
 
 ```python
-# Usar el ejemplo incluido
+# Use the included example
 python examples/usage_example.py
 ```
 
 ---
 
-## 📖 Flujo de Aprendizaje Recomendado
+## 📖 Recommended Learning Flow
 
-### Día 1: Configuración (15 min)
-1. ✅ Ejecutar setup
-2. ✅ Configurar .env
-3. ✅ Ejecutar test_skills.py
-4. ✅ Leer README.md
+### Day 1: Setup (15 min)
+1. ✅ Run setup
+2. ✅ Configure .env
+3. ✅ Run test_skills.py
+4. ✅ Read README.md
 
-### Día 2: Primer Uso (30 min)
-1. ✅ Ejecutar examples/usage_example.py
-2. ✅ Hacer tu primer prompt real
-3. ✅ Revisar QUICK_START.md
-4. ✅ Entender el flujo de las skills
+### Day 2: First Use (30 min)
+1. ✅ Run examples/usage_example.py
+2. ✅ Make your first real prompt
+3. ✅ Review QUICK_START.md
+4. ✅ Understand the skills workflow
 
-### Día 3: Profundizar (1 hora)
-1. ✅ Leer skills/README.md
-2. ✅ Revisar INTEGRATION_GUIDE.md
-3. ✅ Personalizar según tu stack
-4. ✅ Crear tu primer prompt complejo
+### Day 3: Deep Dive (1 hour)
+1. ✅ Read skills/README.md
+2. ✅ Review INTEGRATION_GUIDE.md
+3. ✅ Customize for your stack
+4. ✅ Create your first complex prompt
 
-### Día 4+: Optimización
-1. ✅ Revisar RESOURCES.md
-2. ✅ Explorar CLAUDE_CODE_INTEGRATION.md (si usas Claude Code IDE)
-3. ✅ Personalizar skills según tus necesidades
-4. ✅ Compartir mejoras con la comunidad
+### Day 4+: Optimization
+1. ✅ Review RESOURCES.md
+2. ✅ Explore CLAUDE_CODE_INTEGRATION.md (if using Claude Code IDE)
+3. ✅ Customize skills according to your needs
+4. ✅ Share improvements with the community
 
 ---
 
-## 🎯 Casos de Uso Comunes
+## 🎯 Common Use Cases
 
-### Caso 1: Nuevo Proyecto desde Cero
+### Case 1: New Project from Scratch
 
 ```python
-# Prompt sugerido
-"Necesito crear un proyecto React con TypeScript que incluya:
-- Sistema de autenticación
-- Routing con React Router
-- Estado global con Context API
-- Estructura de componentes modular"
+# Suggested prompt
+"I need to create a React project with TypeScript that includes:
+- Authentication system
+- Routing with React Router
+- Global state with Context API
+- Modular component structure"
 ```
 
-### Caso 2: Agregar Feature a Proyecto Existente
+### Case 2: Add Feature to Existing Project
 
 ```python
-# Prompt sugerido
-"Necesito agregar un sistema de comentarios al proyecto existente.
-El proyecto usa React + TypeScript y ya tiene autenticación configurada."
+# Suggested prompt
+"I need to add a comment system to the existing project.
+The project uses React + TypeScript and already has authentication configured."
 ```
 
-### Caso 3: Refactorizar Código
+### Case 3: Refactor Code
 
 ```python
-# Prompt sugerido
-"Necesito refactorizar el módulo de autenticación para:
-- Separar lógica de UI
-- Mejorar manejo de errores
-- Mantener compatibilidad con código existente"
+# Suggested prompt
+"I need to refactor the authentication module to:
+- Separate logic from UI
+- Improve error handling
+- Maintain compatibility with existing code"
 ```
 
 ---
 
-## 💡 Tips para Mejores Resultados
+## 💡 Tips for Better Results
 
-### ✅ Hacer
-- **Sé específico**: Menciona tu stack tecnológico
-- **Proporciona contexto**: Comparte estructura del proyecto si es relevante
-- **Menciona restricciones**: Versiones, frameworks, convenciones
-- **Itera**: Empieza simple, luego agrega complejidad
+### ✅ Do
+- **Be specific**: Mention your technology stack
+- **Provide context**: Share project structure if relevant
+- **Mention constraints**: Versions, frameworks, conventions
+- **Iterate**: Start simple, then add complexity
 
-### ❌ Evitar
-- Prompts muy vagos ("haz algo")
-- Asumir que Claude conoce tu proyecto completo
-- Saltarse el análisis del estado actual
-- Ignorar las convenciones del proyecto
-
----
-
-## 🔧 Personalización Rápida
-
-### Ajustar Skills para Tu Stack
-
-1. **Edita skills/[skill_name]/SKILL.md**
-2. **Agrega ejemplos específicos de tu stack**
-3. **Ajusta metodología si es necesario**
-
-### Agregar Skills Personalizadas
-
-1. **Crea skills/mi_skill/SKILL.md**
-2. **Sigue el formato de las skills existentes**
-3. **Agrega a tu lista de skills al usar**
+### ❌ Avoid
+- Very vague prompts ("do something")
+- Assuming Claude knows your complete project
+- Skipping current state analysis
+- Ignoring project conventions
 
 ---
 
-## 📚 Próximos Pasos
+## 🔧 Quick Customization
 
-- **QUICK_START.md** - Más ejemplos y detalles
-- **INTEGRATION_GUIDE.md** - Integración avanzada
-- **skills/README.md** - Entender cada skill
-- **RESOURCES.md** - Recursos adicionales
+### Adjust Skills for Your Stack
 
----
+1. **Edit skills/[skill_name]/SKILL.md**
+2. **Add examples specific to your stack**
+3. **Adjust methodology if necessary**
 
-## ❓ ¿Problemas?
+### Add Custom Skills
 
-1. **Verifica .env** - API key correcta
-2. **Ejecuta test_skills.py** - Valida configuración
-3. **Revisa QUICK_START.md** - Instrucciones detalladas
-4. **Consulta INTEGRATION_GUIDE.md** - Troubleshooting
+1. **Create skills/my_skill/SKILL.md**
+2. **Follow the format of existing skills**
+3. **Add to your skills list when using**
 
 ---
 
-**¡Listo para empezar!** 🚀
+## 📚 Next Steps
 
-Ejecuta `python test_skills.py` para verificar que todo funciona, luego haz tu primer prompt.
+- **QUICK_START.md** - More examples and details
+- **INTEGRATION_GUIDE.md** - Advanced integration
+- **skills/README.md** - Understand each skill
+- **RESOURCES.md** - Additional resources
+
+---
+
+## ❓ Problems?
+
+1. **Check .env** - Correct API key
+2. **Run test_skills.py** - Validate configuration
+3. **Review QUICK_START.md** - Detailed instructions
+4. **Consult INTEGRATION_GUIDE.md** - Troubleshooting
+
+---
+
+**Ready to start!** 🚀
+
+Run `python test_skills.py` to verify everything works, then make your first prompt.

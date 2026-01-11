@@ -1,114 +1,114 @@
-# Skills del Template - Documentación
+# Template Skills - Documentation
 
-Este directorio contiene las 4 skills principales del template que garantizan desarrollo consistente y metodológico.
+This directory contains the 4 main skills of the template that guarantee consistent and methodological development.
 
-## 📦 Skills Incluidas
+## 📦 Included Skills
 
-### 1. `project_protocol/` - Protocolo Principal
+### 1. `project_protocol/` - Main Protocol
 
-**Propósito**: Orquestar todo el proceso de desarrollo siguiendo un protocolo consistente.
+**Purpose**: Orchestrate the entire development process following a consistent protocol.
 
-**Cuándo usar**: Siempre. Esta es la skill maestra que coordina las demás.
+**When to use**: Always. This is the master skill that coordinates the others.
 
-**Metodología**: Protocolo de 4 fases:
-- Análisis de Requerimientos
-- Comprensión del Estado Actual
-- Planificación de la Solución
-- Implementación
+**Methodology**: 4-phase protocol:
+- Requirements Analysis
+- Current State Understanding
+- Solution Planning
+- Implementation
 
-### 2. `requirements_analyzer/` - Analizador de Requerimientos
+### 2. `requirements_analyzer/` - Requirements Analyzer
 
-**Propósito**: Analizar y estructurar requerimientos del usuario de forma sistemática.
+**Purpose**: Systematically analyze and structure user requirements.
 
-**Cuándo usar**: Al inicio de cualquier tarea para entender completamente qué necesita el usuario.
+**When to use**: At the start of any task to completely understand what the user needs.
 
-**Metodología**: Análisis estructurado en 6 pasos:
-1. Extracción del requerimiento principal
-2. Identificación de funcionalidades
-3. Identificación de restricciones
-4. Identificación de dependencias
-5. Definición de criterios de aceptación
-6. Detección de ambigüedades
+**Methodology**: Structured analysis in 6 steps:
+1. Main requirement extraction
+2. Functionality identification
+3. Constraint identification
+4. Dependency identification
+5. Acceptance criteria definition
+6. Ambiguity detection
 
-### 3. `codebase_understanding/` - Comprensión del Código Base
+### 3. `codebase_understanding/` - Codebase Understanding
 
-**Propósito**: Analizar sistemáticamente el estado actual del proyecto.
+**Purpose**: Systematically analyze the current project state.
 
-**Cuándo usar**: Antes de implementar cualquier cambio para respetar la arquitectura existente.
+**When to use**: Before implementing any change to respect existing architecture.
 
-**Metodología**: Análisis sistemático en 6 pasos:
-1. Análisis de estructura del proyecto
-2. Identificación de tecnologías
-3. Análisis de arquitectura
-4. Identificación de patrones y convenciones
-5. Localización de código relevante
-6. Análisis de dependencias y configuración
+**Methodology**: Systematic analysis in 6 steps:
+1. Project structure analysis
+2. Technology identification
+3. Architecture analysis
+4. Pattern and convention identification
+5. Relevant code location
+6. Dependencies and configuration analysis
 
-### 4. `implementation_protocol/` - Protocolo de Implementación
+### 4. `implementation_protocol/` - Implementation Protocol
 
-**Propósito**: Guiar la implementación siguiendo mejores prácticas y respetando el proyecto.
+**Purpose**: Guide implementation following best practices and respecting the project.
 
-**Cuándo usar**: Durante la fase de implementación para asegurar calidad y consistencia.
+**When to use**: During the implementation phase to ensure quality and consistency.
 
-**Metodología**: Protocolo de implementación en 6 fases:
-1. Preparación
-2. Diseño de la solución
-3. Implementación
-4. Integración
-5. Validación
-6. Documentación
+**Methodology**: Implementation protocol in 6 phases:
+1. Preparation
+2. Solution design
+3. Implementation
+4. Integration
+5. Validation
+6. Documentation
 
-## 🔄 Flujo de Trabajo
+## 🔄 Workflow
 
 ```
-Usuario hace solicitud
+User makes request
     ↓
-project_protocol orquesta
+project_protocol orchestrates
     ↓
-requirements_analyzer → Analiza qué necesita
+requirements_analyzer → Analyzes what is needed
     ↓
-codebase_understanding → Analiza estado actual
+codebase_understanding → Analyzes current state
     ↓
-project_protocol → Crea plan coherente
+project_protocol → Creates coherent plan
     ↓
-implementation_protocol → Implementa siguiendo estándares
+implementation_protocol → Implements following standards
     ↓
-Resultado: Código consistente y profesional
+Result: Consistent and professional code
 ```
 
-## 📝 Estructura de Cada Skill
+## 📝 Each Skill Structure
 
-Cada skill sigue esta estructura:
+Each skill follows this structure:
 
 ```
 skill_name/
-├── SKILL.md          # Documentación principal (requerido)
-└── scripts/          # Scripts de ayuda (opcional)
+├── SKILL.md          # Main documentation (required)
+└── scripts/          # Helper scripts (optional)
     └── helper.py
 ```
 
 ### SKILL.md
 
-Cada `SKILL.md` contiene:
-- **YAML Frontmatter**: Metadatos (name, description, version)
-- **Propósito**: Qué hace la skill
-- **Metodología**: Cómo funciona
-- **Reglas**: Principios a seguir
-- **Ejemplos**: Casos de uso
-- **Checklist**: Validación de completitud
+Each `SKILL.md` contains:
+- **YAML Frontmatter**: Metadata (name, description, version)
+- **Purpose**: What the skill does
+- **Methodology**: How it works
+- **Rules**: Principles to follow
+- **Examples**: Use cases
+- **Checklist**: Completeness validation
 
 ### Scripts
 
-Los scripts en `scripts/` son herramientas de ayuda que Claude puede usar, pero no son requeridos. Incluyen:
-- Parsers para estructurar información
-- Validadores para verificar completitud
-- Generadores de reportes
+Scripts in `scripts/` are helper tools that Claude can use, but are not required. They include:
+- Parsers to structure information
+- Validators to verify completeness
+- Report generators
 
-## 🎯 Uso Recomendado
+## 🎯 Recommended Usage
 
-### Cargar Todas las Skills
+### Load All Skills
 
-Para mejores resultados, carga todas las skills juntas:
+For best results, load all skills together:
 
 ```python
 skills = [
@@ -119,33 +119,33 @@ skills = [
 ]
 ```
 
-### Orden de Prioridad
+### Priority Order
 
-Si solo puedes cargar algunas skills, prioriza en este orden:
-1. `project_protocol` - Esencial para orquestación
-2. `requirements_analyzer` - Crítico para entender al usuario
-3. `codebase_understanding` - Importante para respetar el proyecto
-4. `implementation_protocol` - Útil para guiar implementación
+If you can only load some skills, prioritize in this order:
+1. `project_protocol` - Essential for orchestration
+2. `requirements_analyzer` - Critical to understand the user
+3. `codebase_understanding` - Important to respect the project
+4. `implementation_protocol` - Useful to guide implementation
 
-## 🔧 Personalización
+## 🔧 Customization
 
-Cada skill puede ser personalizada editando su `SKILL.md`:
+Each skill can be customized by editing its `SKILL.md`:
 
-1. **Ajustar metodología**: Modifica los pasos según tus necesidades
-2. **Agregar ejemplos**: Incluye ejemplos específicos de tu dominio
-3. **Modificar reglas**: Ajusta las reglas según tus estándares
-4. **Extender checklists**: Agrega validaciones adicionales
+1. **Adjust methodology**: Modify steps according to your needs
+2. **Add examples**: Include examples specific to your domain
+3. **Modify rules**: Adjust rules according to your standards
+4. **Extend checklists**: Add additional validations
 
-## 📚 Recursos
+## 📚 Resources
 
-- Ver `INTEGRATION_GUIDE.md` para cómo cargar las skills
-- Ver `QUICK_START.md` para inicio rápido
-- Ver `README.md` principal para visión general
+- See `INTEGRATION_GUIDE.md` for how to load skills
+- See `QUICK_START.md` for quick start
+- See main `README.md` for overview
 
-## 🤝 Contribuir
+## 🤝 Contributing
 
-Si mejoras una skill:
-1. Documenta los cambios
-2. Actualiza ejemplos si es necesario
-3. Mantén compatibilidad con otras skills
-4. Actualiza esta documentación
+If you improve a skill:
+1. Document the changes
+2. Update examples if necessary
+3. Maintain compatibility with other skills
+4. Update this documentation

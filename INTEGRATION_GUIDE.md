@@ -1,55 +1,55 @@
-# 📘 Guía de Integración - Template de Skills
+# 📘 Integration Guide - Skills Template
 
-## Cómo Cargar las Skills en Claude
+## How to Load Skills in Claude
 
-### Método 1: Skills Personalizadas (Custom Skills)
+### Method 1: Custom Skills
 
-Para usar estas skills como custom skills, necesitas:
+To use these skills as custom skills, you need:
 
-1. **Estructura de Skills**: Cada skill debe estar en su propio directorio con `SKILL.md`
-2. **Cargar en Claude**: Dependiendo de tu entorno, hay diferentes formas
+1. **Skills Structure**: Each skill must be in its own directory with `SKILL.md`
+2. **Load in Claude**: Depending on your environment, there are different ways
 
-#### En Claude Desktop
+#### In Claude Desktop
 
-1. Abre Claude Desktop
-2. Ve a Settings → Skills
-3. Agrega el directorio `skills/` como fuente de skills
-4. Las skills deberían aparecer automáticamente
+1. Open Claude Desktop
+2. Go to Settings → Skills
+3. Add the `skills/` directory as a skills source
+4. Skills should appear automatically
 
-#### En Claude API (Beta)
+#### In Claude API (Beta)
 
 ```python
 from anthropic import Anthropic
 
 client = Anthropic(api_key="your-api-key")
 
-# Para custom skills, necesitas cargarlas primero
-# Esto requiere que las skills estén en un formato que Claude pueda acceder
+# For custom skills, you need to load them first
+# This requires skills to be in a format that Claude can access
 response = client.beta.messages.create(
     model="claude-sonnet-4-5",
     container={
         "skills": [
             {"type": "custom", "skill_id": "project_protocol", "version": "latest"},
-            # ... otras skills
+            # ... other skills
         ]
     },
     # ...
 )
 ```
 
-### Método 2: Usar como Referencia en Prompts
+### Method 2: Use as Reference in Prompts
 
-Si no puedes cargar las skills directamente, puedes usar su contenido como contexto en tus prompts:
+If you can't load skills directly, you can use their content as context in your prompts:
 
 ```python
-# Leer el contenido de las skills
+# Read skill content
 from pathlib import Path
 
 def load_skill_content(skill_name):
     skill_path = Path(f"skills/{skill_name}/SKILL.md")
     return skill_path.read_text()
 
-# Usar en el prompt
+# Use in prompt
 skill_content = load_skill_content("project_protocol")
 
 messages = [{
@@ -57,96 +57,96 @@ messages = [{
     "content": f"""
 {skill_content}
 
-Ahora, siguiendo este protocolo, analiza y desarrolla: [tu requerimiento]
+Now, following this protocol, analyze and develop: [your requirement]
 """
 }]
 ```
 
-## Estructura de las Skills
+## Skills Structure
 
-Cada skill sigue esta estructura:
+Each skill follows this structure:
 
 ```
 skill_name/
-├── SKILL.md          # Documentación principal de la skill
-└── scripts/          # Scripts de ayuda (opcional)
+├── SKILL.md          # Main skill documentation
+└── scripts/          # Helper scripts (optional)
     └── helper.py
 ```
 
-### SKILL.md - Formato
+### SKILL.md - Format
 
-Cada `SKILL.md` debe tener:
+Each `SKILL.md` must have:
 
-1. **YAML Frontmatter**: Metadatos de la skill
-2. **Documentación**: Instrucciones detalladas para Claude
-3. **Metodología**: Cómo debe trabajar la skill
-4. **Ejemplos**: Casos de uso
+1. **YAML Frontmatter**: Skill metadata
+2. **Documentation**: Detailed instructions for Claude
+3. **Methodology**: How the skill should work
+4. **Examples**: Use cases
 
-## Flujo de Trabajo con las Skills
+## Workflow with Skills
 
-### Paso 1: Análisis Inicial
+### Step 1: Initial Analysis
 
-Cuando el usuario hace una solicitud:
+When the user makes a request:
 
-1. **requirements_analyzer** analiza qué necesita el usuario
-2. **codebase_understanding** analiza el estado actual
-3. **project_protocol** orquesta el proceso
+1. **requirements_analyzer** analyzes what the user needs
+2. **codebase_understanding** analyzes the current state
+3. **project_protocol** orchestrates the process
 
-### Paso 2: Planificación
+### Step 2: Planning
 
-1. **project_protocol** crea un plan basado en:
-   - Requerimientos analizados
-   - Estado actual del proyecto
-   - Mejores prácticas
+1. **project_protocol** creates a plan based on:
+   - Analyzed requirements
+   - Current project state
+   - Best practices
 
-### Paso 3: Implementación
+### Step 3: Implementation
 
-1. **implementation_protocol** guía la implementación
-2. Sigue las convenciones del proyecto
-3. Respeta la arquitectura existente
+1. **implementation_protocol** guides implementation
+2. Follows project conventions
+3. Respects existing architecture
 
-## Personalización de Skills
+## Skills Customization
 
-### Modificar una Skill Existente
+### Modify an Existing Skill
 
-1. Edita el archivo `SKILL.md` de la skill
-2. Ajusta la metodología según tus necesidades
-3. Agrega ejemplos específicos de tu dominio
+1. Edit the skill's `SKILL.md` file
+2. Adjust methodology according to your needs
+3. Add examples specific to your domain
 
-### Crear una Nueva Skill
+### Create a New Skill
 
-1. Crea un nuevo directorio en `skills/`
-2. Crea `SKILL.md` con el formato correcto
-3. Agrega scripts de ayuda si es necesario
-4. Documenta su propósito y uso
+1. Create a new directory in `skills/`
+2. Create `SKILL.md` with the correct format
+3. Add helper scripts if necessary
+4. Document its purpose and usage
 
-### Ejemplo: Skill Personalizada
+### Example: Custom Skill
 
 ```markdown
 ---
 name: My Custom Skill
 description: |
-  Descripción de lo que hace tu skill personalizada.
+  Description of what your custom skill does.
 version: 1.0.0
 ---
 
 # My Custom Skill
 
-## Propósito
-[Descripción detallada]
+## Purpose
+[Detailed description]
 
-## Metodología
-[Cómo funciona]
+## Methodology
+[How it works]
 
-## Uso
-[Ejemplos]
+## Usage
+[Examples]
 ```
 
-## Mejores Prácticas
+## Best Practices
 
-### 1. Usar Todas las Skills Juntas
+### 1. Use All Skills Together
 
-Para mejores resultados, carga todas las skills del template:
+For best results, load all template skills:
 
 ```python
 skills = [
@@ -157,59 +157,59 @@ skills = [
 ]
 ```
 
-### 2. Proporcionar Contexto del Proyecto
+### 2. Provide Project Context
 
-Incluye información sobre tu proyecto en el prompt:
+Include information about your project in the prompt:
 
 ```python
 messages = [{
     "role": "user",
     "content": f"""
-Proyecto: {project_name}
+Project: {project_name}
 Stack: {tech_stack}
-Estructura: {project_structure}
+Structure: {project_structure}
 
-Requerimiento: {user_requirement}
+Requirement: {user_requirement}
 """
 }]
 ```
 
-### 3. Iterar y Refinar
+### 3. Iterate and Refine
 
-Las skills mejoran con el uso. Si algo no funciona como esperas:
-- Revisa la documentación de la skill
-- Ajusta los prompts
-- Personaliza las skills según tus necesidades
+Skills improve with use. If something doesn't work as expected:
+- Review the skill documentation
+- Adjust prompts
+- Customize skills according to your needs
 
 ## Troubleshooting
 
-### Las Skills No Se Cargan
+### Skills Don't Load
 
-- Verifica que los archivos `SKILL.md` tengan el formato correcto
-- Asegúrate de que el YAML frontmatter esté bien formateado
-- Revisa que las rutas sean correctas
+- Verify that `SKILL.md` files have the correct format
+- Make sure YAML frontmatter is well formatted
+- Check that paths are correct
 
-### Los Resultados No Son Consistentes
+### Results Are Not Consistent
 
-- Asegúrate de cargar todas las skills
-- Proporciona contexto suficiente del proyecto
-- Usa prompts claros y específicos
+- Make sure to load all skills
+- Provide sufficient project context
+- Use clear and specific prompts
 
-### La Implementación No Respeta el Proyecto
+### Implementation Doesn't Respect Project
 
-- Verifica que `codebase_understanding` tenga acceso al código
-- Proporciona más contexto sobre la arquitectura
-- Revisa que las convenciones estén documentadas
+- Verify that `codebase_understanding` has access to code
+- Provide more context about architecture
+- Review that conventions are documented
 
-## Recursos Adicionales
+## Additional Resources
 
-- [Documentación de Skills de Anthropic](https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/overview)
-- [Mejores Prácticas de Skills](https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/best-practices)
-- [Ejemplos de Skills](https://github.com/anthropics/claude-cookbooks)
+- [Anthropic Skills Documentation](https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/overview)
+- [Skills Best Practices](https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills/best-practices)
+- [Skills Examples](https://github.com/anthropics/claude-cookbooks)
 
-## Siguiente Paso
+## Next Step
 
-1. Revisa cada skill individual en `skills/`
-2. Personaliza según tus necesidades
-3. Prueba con un proyecto real
-4. Itera y mejora
+1. Review each individual skill in `skills/`
+2. Customize according to your needs
+3. Test with a real project
+4. Iterate and improve

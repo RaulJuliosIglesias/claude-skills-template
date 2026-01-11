@@ -1,220 +1,220 @@
 ---
 name: Requirements Analysis Protocol
 description: |
-  Analiza y estructura requerimientos del usuario de forma sistemática. Identifica funcionalidades,
-  restricciones, dependencias y criterios de aceptación. Garantiza comprensión completa antes de
-  cualquier implementación, evitando malentendidos y asegurando que la solución cumpla exactamente
-  con lo que el usuario necesita.
+  Systematically analyzes and structures user requirements. Identifies functionalities,
+  constraints, dependencies, and acceptance criteria. Guarantees complete understanding before
+  any implementation, avoiding misunderstandings and ensuring the solution exactly meets
+  what the user needs.
 version: 1.0.0
 ---
 
 # Requirements Analysis Protocol Skill
 
-## Propósito
+## Purpose
 
-Esta skill garantiza que todos los requerimientos del usuario sean analizados de forma sistemática y completa antes de cualquier implementación, asegurando:
+This skill ensures that all user requirements are analyzed systematically and completely before any implementation, ensuring:
 
-1. **Comprensión precisa** de lo que el usuario necesita
-2. **Identificación completa** de funcionalidades requeridas
-3. **Detección temprana** de ambigüedades o inconsistencias
-4. **Documentación estructurada** de requerimientos
+1. **Precise understanding** of what the user needs
+2. **Complete identification** of required functionalities
+3. **Early detection** of ambiguities or inconsistencies
+4. **Structured documentation** of requirements
 
-## Metodología: Análisis Estructurado
+## Methodology: Structured Analysis
 
-### Paso 1: Extracción del Requerimiento Principal
+### Step 1: Main Requirement Extraction
 
-**Objetivo**: Identificar el objetivo central del usuario
+**Objective**: Identify the user's central goal
 
-**Proceso**:
-- Leer el mensaje completo del usuario
-- Identificar el verbo de acción principal (crear, modificar, agregar, eliminar, etc.)
-- Extraer el objeto principal (qué se quiere crear/modificar)
-- Formular el requerimiento principal en una frase clara
-
-**Output**:
-```
-Requerimiento Principal: [Acción] + [Objeto] + [Contexto]
-Ejemplo: "Agregar sistema de autenticación con JWT al proyecto React"
-```
-
-### Paso 2: Identificación de Funcionalidades
-
-**Objetivo**: Listar todas las funcionalidades necesarias
-
-**Proceso**:
-- Descomponer el requerimiento principal en funcionalidades específicas
-- Identificar funcionalidades explícitas mencionadas
-- Inferir funcionalidades implícitas necesarias
-- Organizar por prioridad o dependencias
+**Process**:
+- Read the user's complete message
+- Identify the main action verb (create, modify, add, delete, etc.)
+- Extract the main object (what to create/modify)
+- Formulate the main requirement in a clear sentence
 
 **Output**:
 ```
-Funcionalidades:
-1. [Funcionalidad principal]
-2. [Funcionalidad secundaria]
-3. [Funcionalidad de soporte]
+Main Requirement: [Action] + [Object] + [Context]
+Example: "Add JWT authentication system to React project"
+```
+
+### Step 2: Functionality Identification
+
+**Objective**: List all necessary functionalities
+
+**Process**:
+- Break down the main requirement into specific functionalities
+- Identify explicitly mentioned functionalities
+- Infer implicitly necessary functionalities
+- Organize by priority or dependencies
+
+**Output**:
+```
+Functionalities:
+1. [Main functionality]
+2. [Secondary functionality]
+3. [Support functionality]
 ...
 ```
 
-### Paso 3: Identificación de Restricciones
+### Step 3: Constraint Identification
 
-**Objetivo**: Detectar limitaciones y requisitos técnicos
+**Objective**: Detect limitations and technical requirements
 
-**Proceso**:
-- Identificar tecnologías mencionadas o requeridas
-- Detectar restricciones de diseño o UX
-- Identificar limitaciones de rendimiento
-- Notar restricciones de seguridad o privacidad
-- Identificar restricciones de compatibilidad
-
-**Output**:
-```
-Restricciones:
-- Tecnológicas: [frameworks, librerías, versiones]
-- De diseño: [UI/UX requirements]
-- De rendimiento: [performance requirements]
-- De seguridad: [security requirements]
-- De compatibilidad: [browser, platform requirements]
-```
-
-### Paso 4: Identificación de Dependencias
-
-**Objetivo**: Reconocer relaciones con otros componentes
-
-**Proceso**:
-- Identificar componentes existentes que se usarán
-- Detectar nuevas dependencias necesarias
-- Identificar servicios externos requeridos
-- Notar dependencias de datos o APIs
+**Process**:
+- Identify mentioned or required technologies
+- Detect design or UX constraints
+- Identify performance limitations
+- Note security or privacy constraints
+- Identify compatibility constraints
 
 **Output**:
 ```
-Dependencias:
-- Internas: [componentes del proyecto]
-- Externas: [librerías, servicios]
-- APIs: [endpoints, servicios]
-- Datos: [estructuras de datos, modelos]
+Constraints:
+- Technological: [frameworks, libraries, versions]
+- Design: [UI/UX requirements]
+- Performance: [performance requirements]
+- Security: [security requirements]
+- Compatibility: [browser, platform requirements]
 ```
 
-### Paso 5: Definición de Criterios de Aceptación
+### Step 4: Dependency Identification
 
-**Objetivo**: Establecer cómo validar que la solución es correcta
+**Objective**: Recognize relationships with other components
 
-**Proceso**:
-- Definir casos de uso principales
-- Identificar escenarios de éxito
-- Detectar casos edge o límites
-- Establecer métricas de validación
+**Process**:
+- Identify existing components that will be used
+- Detect new necessary dependencies
+- Identify required external services
+- Note data or API dependencies
 
 **Output**:
 ```
-Criterios de Aceptación:
-1. [Criterio específico y medible]
-2. [Criterio específico y medible]
+Dependencies:
+- Internal: [project components]
+- External: [libraries, services]
+- APIs: [endpoints, services]
+- Data: [data structures, models]
+```
+
+### Step 5: Acceptance Criteria Definition
+
+**Objective**: Establish how to validate that the solution is correct
+
+**Process**:
+- Define main use cases
+- Identify success scenarios
+- Detect edge cases or limits
+- Establish validation metrics
+
+**Output**:
+```
+Acceptance Criteria:
+1. [Specific and measurable criterion]
+2. [Specific and measurable criterion]
 ...
 ```
 
-### Paso 6: Detección de Ambigüedades
+### Step 6: Ambiguity Detection
 
-**Objetivo**: Identificar puntos que necesitan clarificación
+**Objective**: Identify points that need clarification
 
-**Proceso**:
-- Revisar requerimiento en busca de términos vagos
-- Identificar opciones de implementación no especificadas
-- Detectar posibles interpretaciones diferentes
-- Listar preguntas para clarificar
+**Process**:
+- Review requirement for vague terms
+- Identify unspecified implementation options
+- Detect possible different interpretations
+- List questions to clarify
 
 **Output**:
 ```
-Ambigüedades Detectadas:
-- [Punto ambiguo] → Pregunta sugerida: [¿...?]
+Detected Ambiguities:
+- [Ambiguous point] → Suggested question: [¿...?]
 ...
 ```
 
-## Template de Análisis
+## Analysis Template
 
-Usar este template para estructurar el análisis:
+Use this template to structure the analysis:
 
 ```markdown
-## Análisis de Requerimientos
+## Requirements Analysis
 
-### Requerimiento Principal
-[Descripción clara y concisa]
+### Main Requirement
+[Clear and concise description]
 
-### Funcionalidades Requeridas
-1. [Funcionalidad 1]
-2. [Funcionalidad 2]
+### Required Functionalities
+1. [Functionality 1]
+2. [Functionality 2]
 ...
 
-### Restricciones
-- Tecnológicas: ...
-- De diseño: ...
-- De rendimiento: ...
-- De seguridad: ...
+### Constraints
+- Technological: ...
+- Design: ...
+- Performance: ...
+- Security: ...
 
-### Dependencias
-- Internas: ...
-- Externas: ...
+### Dependencies
+- Internal: ...
+- External: ...
 - APIs: ...
-- Datos: ...
+- Data: ...
 
-### Criterios de Aceptación
-1. [Criterio 1]
-2. [Criterio 2]
+### Acceptance Criteria
+1. [Criterion 1]
+2. [Criterion 2]
 ...
 
-### Ambigüedades (si las hay)
-- [Ambigüedad] → ¿[Pregunta]?
+### Ambiguities (if any)
+- [Ambiguity] → ¿[Question]?
 ```
 
-## Reglas de Análisis
+## Analysis Rules
 
-1. **No asumir**: Si algo no está claro, preguntar
-2. **Ser exhaustivo**: Analizar todos los aspectos del requerimiento
-3. **Ser específico**: Evitar generalidades, ser concreto
-4. **Validar comprensión**: Confirmar entendimiento antes de proceder
-5. **Documentar todo**: Registrar todas las decisiones y razonamientos
+1. **Don't assume**: If something is unclear, ask
+2. **Be exhaustive**: Analyze all aspects of the requirement
+3. **Be specific**: Avoid generalities, be concrete
+4. **Validate understanding**: Confirm understanding before proceeding
+5. **Document everything**: Record all decisions and reasoning
 
-## Ejemplos
+## Examples
 
-### Ejemplo 1: Requerimiento Simple
+### Example 1: Simple Requirement
 
-**Usuario**: "Agregar un botón de logout"
+**User**: "Add a logout button"
 
-**Análisis**:
-- Requerimiento Principal: Agregar funcionalidad de logout al sistema
-- Funcionalidades: Botón UI, función de logout, limpieza de sesión
-- Restricciones: Debe estar en el header, estilo consistente
-- Dependencias: Sistema de autenticación existente
-- Criterios: Al hacer click, usuario es deslogueado y redirigido
+**Analysis**:
+- Main Requirement: Add logout functionality to the system
+- Functionalities: UI button, logout function, session cleanup
+- Constraints: Must be in header, consistent style
+- Dependencies: Existing authentication system
+- Criteria: On click, user is logged out and redirected
 
-### Ejemplo 2: Requerimiento Complejo
+### Example 2: Complex Requirement
 
-**Usuario**: "Necesito un dashboard con gráficos de ventas mensuales"
+**User**: "I need a dashboard with monthly sales charts"
 
-**Análisis**:
-- Requerimiento Principal: Crear dashboard con visualización de datos de ventas
-- Funcionalidades: Dashboard UI, gráficos mensuales, filtros de fecha, carga de datos
-- Restricciones: Debe ser responsive, usar librería de gráficos compatible
-- Dependencias: API de ventas, librería de gráficos, sistema de autenticación
-- Criterios: Muestra datos correctos, gráficos interactivos, carga rápida
-- Ambigüedades: ¿Qué tipo de gráfico? → Preguntar preferencia
+**Analysis**:
+- Main Requirement: Create dashboard with sales data visualization
+- Functionalities: Dashboard UI, monthly charts, date filters, data loading
+- Constraints: Must be responsive, use compatible chart library
+- Dependencies: Sales API, chart library, authentication system
+- Criteria: Shows correct data, interactive charts, fast loading
+- Ambiguities: What type of chart? → Ask preference
 
-## Integración con Otras Skills
+## Integration with Other Skills
 
-Esta skill alimenta:
-- `project_protocol`: Proporciona requerimientos estructurados
-- `codebase_understanding`: Identifica qué buscar en el código
-- `implementation_protocol`: Define qué implementar
+This skill feeds:
+- `project_protocol`: Provides structured requirements
+- `codebase_understanding`: Identifies what to look for in code
+- `implementation_protocol`: Defines what to implement
 
-## Checklist de Validación
+## Validation Checklist
 
-Antes de considerar el análisis completo:
+Before considering the analysis complete:
 
-- [ ] Requerimiento principal claramente identificado
-- [ ] Todas las funcionalidades listadas
-- [ ] Restricciones identificadas
-- [ ] Dependencias mapeadas
-- [ ] Criterios de aceptación definidos
-- [ ] Ambigüedades identificadas y resueltas (o preguntadas)
-- [ ] Análisis documentado de forma estructurada
+- [ ] Main requirement clearly identified
+- [ ] All functionalities listed
+- [ ] Constraints identified
+- [ ] Dependencies mapped
+- [ ] Acceptance criteria defined
+- [ ] Ambiguities identified and resolved (or asked)
+- [ ] Analysis documented in structured way

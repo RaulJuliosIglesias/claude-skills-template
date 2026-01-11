@@ -1,284 +1,284 @@
 ---
 name: Implementation Protocol
 description: |
-  Guía la implementación siguiendo mejores prácticas, respetando la arquitectura existente y
-  manteniendo consistencia con el código del proyecto. Asegura que cada implementación sea
-  profesional, testeable, documentada y alineada con los estándares del proyecto.
+  Guides implementation following best practices, respecting existing architecture and
+  maintaining consistency with project code. Ensures that each implementation is
+  professional, testable, documented, and aligned with project standards.
 version: 1.0.0
 ---
 
 # Implementation Protocol Skill
 
-## Propósito
+## Purpose
 
-Esta skill garantiza que toda implementación siga un protocolo consistente y profesional, asegurando:
+This skill ensures that all implementation follows a consistent and professional protocol, ensuring:
 
-1. **Respeto por la arquitectura** existente
-2. **Consistencia** con código y convenciones del proyecto
-3. **Calidad** siguiendo mejores prácticas
-4. **Testeabilidad** y mantenibilidad
-5. **Documentación** apropiada
+1. **Respect for existing architecture**
+2. **Consistency** with project code and conventions
+3. **Quality** following best practices
+4. **Testability** and maintainability
+5. **Appropriate documentation**
 
-## Metodología: Protocolo de Implementación
+## Methodology: Implementation Protocol
 
-### Fase 1: Preparación (Preparation)
+### Phase 1: Preparation
 
-**Objetivo**: Preparar el entorno y entender el contexto
+**Objective**: Prepare the environment and understand the context
 
-**Proceso**:
-1. Revisar análisis de requerimientos
-2. Revisar análisis del código base
-3. Identificar ubicación exacta para nuevos archivos
-4. Verificar dependencias necesarias
-5. Preparar estructura de archivos
+**Process**:
+1. Review requirements analysis
+2. Review codebase analysis
+3. Identify exact location for new files
+4. Verify necessary dependencies
+5. Prepare file structure
 
 **Checklist**:
-- [ ] Requerimientos claros y documentados
-- [ ] Estado actual del proyecto entendido
-- [ ] Ubicación de archivos definida
-- [ ] Dependencias verificadas/instaladas
-- [ ] Estructura preparada
+- [ ] Requirements clear and documented
+- [ ] Current project state understood
+- [ ] File location defined
+- [ ] Dependencies verified/installed
+- [ ] Structure prepared
 
-### Fase 2: Diseño de la Solución (Solution Design)
+### Phase 2: Solution Design
 
-**Objetivo**: Diseñar la solución respetando el proyecto existente
+**Objective**: Design the solution respecting the existing project
 
-**Proceso**:
-1. Diseñar siguiendo patrones existentes
-2. Definir estructura de componentes/funciones
-3. Planificar integración con código existente
-4. Identificar puntos de extensión
-5. Considerar casos edge y errores
+**Process**:
+1. Design following existing patterns
+2. Define component/function structure
+3. Plan integration with existing code
+4. Identify extension points
+5. Consider edge cases and errors
 
-**Principios**:
-- **DRY (Don't Repeat Yourself)**: Reutilizar código existente
-- **KISS (Keep It Simple, Stupid)**: Soluciones simples y claras
-- **Consistencia**: Seguir patrones del proyecto
-- **Separación de responsabilidades**: Cada componente tiene un propósito claro
+**Principles**:
+- **DRY (Don't Repeat Yourself)**: Reuse existing code
+- **KISS (Keep It Simple, Stupid)**: Simple and clear solutions
+- **Consistency**: Follow project patterns
+- **Separation of concerns**: Each component has a clear purpose
 
 **Output**:
 ```
-Diseño de Solución:
-- Componentes a crear: [lista]
-- Componentes a modificar: [lista]
-- Estructura propuesta: [descripción]
-- Integración: [cómo se integra]
-- Consideraciones: [notas importantes]
+Solution Design:
+- Components to create: [list]
+- Components to modify: [list]
+- Proposed structure: [description]
+- Integration: [how it integrates]
+- Considerations: [important notes]
 ```
 
-### Fase 3: Implementación (Implementation)
+### Phase 3: Implementation
 
-**Objetivo**: Escribir código de calidad
+**Objective**: Write quality code
 
-**Proceso**:
-1. Crear estructura de archivos
-2. Implementar siguiendo convenciones
-3. Usar patrones del proyecto
-4. Mantener consistencia de estilo
-5. Agregar comentarios donde sea necesario
+**Process**:
+1. Create file structure
+2. Implement following conventions
+3. Use project patterns
+4. Maintain style consistency
+5. Add comments where necessary
 
-**Reglas de Implementación**:
+**Implementation Rules**:
 
-#### Nomenclatura
-- Seguir convenciones del proyecto
-- Nombres descriptivos y claros
-- Evitar abreviaciones innecesarias
+#### Nomenclature
+- Follow project conventions
+- Descriptive and clear names
+- Avoid unnecessary abbreviations
 
-#### Estructura de Código
-- Organizar imports (externos, internos, relativos)
-- Agrupar lógica relacionada
-- Separar concerns (UI, lógica, datos)
+#### Code Structure
+- Organize imports (external, internal, relative)
+- Group related logic
+- Separate concerns (UI, logic, data)
 
-#### Calidad de Código
-- Funciones pequeñas y enfocadas
-- Evitar código duplicado
-- Manejar errores apropiadamente
-- Validar inputs cuando sea necesario
+#### Code Quality
+- Small, focused functions
+- Avoid duplicate code
+- Handle errors appropriately
+- Validate inputs when necessary
 
-#### Consistencia
-- Seguir estilo de código existente
-- Usar mismos patrones que el proyecto
-- Mantener estructura similar a código relacionado
+#### Consistency
+- Follow existing code style
+- Use same patterns as project
+- Maintain structure similar to related code
 
-**Template de Implementación**:
+**Implementation Template**:
 
 ```typescript
-// Ejemplo para componente React
+// Example for React component
 import React from 'react';
 import { existingUtility } from '../utils';
 import { ExistingType } from '../types';
 
 /**
- * [Descripción del componente]
+ * [Component description]
  * 
- * @param props - [Descripción de props]
+ * @param props - [Props description]
  */
 export const NewComponent: React.FC<Props> = ({ prop1, prop2 }) => {
-  // Lógica del componente
-  // Siguiendo patrones del proyecto
+  // Component logic
+  // Following project patterns
   
   return (
-    // JSX siguiendo estructura del proyecto
+    // JSX following project structure
   );
 };
 ```
 
-### Fase 4: Integración (Integration)
+### Phase 4: Integration
 
-**Objetivo**: Integrar correctamente con el código existente
+**Objective**: Correctly integrate with existing code
 
-**Proceso**:
-1. Importar/exportar correctamente
-2. Integrar con componentes existentes
-3. Conectar con servicios/APIs
-4. Actualizar rutas si es necesario
-5. Verificar que no rompe funcionalidad existente
+**Process**:
+1. Import/export correctly
+2. Integrate with existing components
+3. Connect with services/APIs
+4. Update routes if necessary
+5. Verify it doesn't break existing functionality
 
-**Checklist de Integración**:
-- [ ] Imports correctos
-- [ ] Exports apropiados
-- [ ] Integrado con componentes padre
-- [ ] Conectado con servicios necesarios
-- [ ] Rutas actualizadas si aplica
-- [ ] No rompe funcionalidad existente
+**Integration Checklist**:
+- [ ] Correct imports
+- [ ] Appropriate exports
+- [ ] Integrated with parent components
+- [ ] Connected with necessary services
+- [ ] Routes updated if applicable
+- [ ] Doesn't break existing functionality
 
-### Fase 5: Validación (Validation)
+### Phase 5: Validation
 
-**Objetivo**: Verificar que la implementación cumple requerimientos
+**Objective**: Verify that implementation meets requirements
 
-**Proceso**:
-1. Revisar código implementado
-2. Verificar que cumple requerimientos
-3. Validar que respeta arquitectura
-4. Verificar consistencia con proyecto
-5. Probar funcionalidad básica
+**Process**:
+1. Review implemented code
+2. Verify it meets requirements
+3. Validate it respects architecture
+4. Verify consistency with project
+5. Test basic functionality
 
-**Checklist de Validación**:
-- [ ] Código implementado completamente
-- [ ] Cumple todos los requerimientos
-- [ ] Respeta arquitectura del proyecto
-- [ ] Consistente con código existente
-- [ ] Funcionalidad básica verificada
-- [ ] Sin errores de sintaxis/compilación
+**Validation Checklist**:
+- [ ] Code completely implemented
+- [ ] Meets all requirements
+- [ ] Respects project architecture
+- [ ] Consistent with existing code
+- [ ] Basic functionality verified
+- [ ] No syntax/compilation errors
 
-### Fase 6: Documentación (Documentation)
+### Phase 6: Documentation
 
-**Objetivo**: Documentar la implementación apropiadamente
+**Objective**: Appropriately document the implementation
 
-**Proceso**:
-1. Agregar comentarios en código complejo
-2. Documentar funciones/componentes principales
-3. Actualizar README si es necesario
-4. Documentar decisiones importantes
-5. Agregar ejemplos de uso si aplica
+**Process**:
+1. Add comments in complex code
+2. Document main functions/components
+3. Update README if necessary
+4. Document important decisions
+5. Add usage examples if applicable
 
-**Nivel de Documentación**:
-- **Comentarios inline**: Para lógica compleja
-- **JSDoc/TSDoc**: Para funciones y componentes públicos
-- **README**: Para features importantes o cambios significativos
-- **Comentarios de decisión**: Para explicar por qué se eligió una solución
+**Documentation Level**:
+- **Inline comments**: For complex logic
+- **JSDoc/TSDoc**: For public functions and components
+- **README**: For important features or significant changes
+- **Decision comments**: To explain why a solution was chosen
 
-## Reglas de Oro de Implementación
+## Golden Rules of Implementation
 
-1. **Respetar lo existente**: Nunca cambiar patrones sin razón
-2. **Mantener consistencia**: Seguir convenciones del proyecto
-3. **Código limpio**: Legible, mantenible, bien estructurado
-4. **Manejar errores**: Validar inputs, manejar casos edge
-5. **Documentar decisiones**: Explicar elecciones importantes
-6. **No romper nada**: Verificar que cambios no afecten funcionalidad existente
+1. **Respect existing**: Never change patterns without reason
+2. **Maintain consistency**: Follow project conventions
+3. **Clean code**: Readable, maintainable, well-structured
+4. **Handle errors**: Validate inputs, handle edge cases
+5. **Document decisions**: Explain important choices
+6. **Don't break anything**: Verify changes don't affect existing functionality
 
-## Patrones Comunes por Tipo de Proyecto
+## Common Patterns by Project Type
 
 ### React/TypeScript
-- Functional components con hooks
-- TypeScript para type safety
-- Separación de componentes, hooks, utils, types
-- Custom hooks para lógica reutilizable
+- Functional components with hooks
+- TypeScript for type safety
+- Separation of components, hooks, utils, types
+- Custom hooks for reusable logic
 
 ### Node.js/Express
-- Separación de routes, controllers, services
-- Middleware para lógica compartida
-- Error handling centralizado
-- Validación de inputs
+- Separation of routes, controllers, services
+- Middleware for shared logic
+- Centralized error handling
+- Input validation
 
 ### Python
 - PEP 8 style guide
-- Type hints donde sea posible
-- Docstrings para funciones
-- Separación de concerns
+- Type hints where possible
+- Docstrings for functions
+- Separation of concerns
 
-## Checklist Completo de Implementación
+## Complete Implementation Checklist
 
-### Antes de Implementar
-- [ ] Requerimientos analizados
-- [ ] Estado actual entendido
-- [ ] Plan de implementación creado
-- [ ] Dependencias verificadas
+### Before Implementing
+- [ ] Requirements analyzed
+- [ ] Current state understood
+- [ ] Implementation plan created
+- [ ] Dependencies verified
 
-### Durante la Implementación
-- [ ] Siguiendo convenciones de nombres
-- [ ] Usando patrones del proyecto
-- [ ] Código limpio y legible
-- [ ] Manejo de errores apropiado
+### During Implementation
+- [ ] Following naming conventions
+- [ ] Using project patterns
+- [ ] Clean and readable code
+- [ ] Appropriate error handling
 
-### Después de Implementar
-- [ ] Integrado correctamente
-- [ ] Validado contra requerimientos
-- [ ] Consistente con proyecto
-- [ ] Documentado apropiadamente
-- [ ] Sin errores de compilación
+### After Implementing
+- [ ] Correctly integrated
+- [ ] Validated against requirements
+- [ ] Consistent with project
+- [ ] Appropriately documented
+- [ ] No compilation errors
 
-## Ejemplo de Flujo Completo
+## Complete Flow Example
 
 ```
-Requerimiento: Agregar botón de logout
+Requirement: Add logout button
 
-Fase 1 (Preparación):
-- Ubicación: Header component
-- Dependencia: AuthContext existente
+Phase 1 (Preparation):
+- Location: Header component
+- Dependency: Existing AuthContext
 
-Fase 2 (Diseño):
-- Crear componente LogoutButton
-- Integrar en Header
-- Usar función logout de AuthContext
+Phase 2 (Design):
+- Create LogoutButton component
+- Integrate in Header
+- Use logout function from AuthContext
 
-Fase 3 (Implementación):
-- Crear LogoutButton.tsx
-- Seguir estructura de otros botones
-- Usar estilos del proyecto
+Phase 3 (Implementation):
+- Create LogoutButton.tsx
+- Follow structure of other buttons
+- Use project styles
 
-Fase 4 (Integración):
-- Importar en Header
-- Agregar al JSX del Header
-- Conectar con AuthContext
+Phase 4 (Integration):
+- Import in Header
+- Add to Header JSX
+- Connect with AuthContext
 
-Fase 5 (Validación):
-- Verificar que funciona
-- Verificar estilos consistentes
-- Verificar que no rompe nada
+Phase 5 (Validation):
+- Verify it works
+- Verify consistent styles
+- Verify it doesn't break anything
 
-Fase 6 (Documentación):
-- Comentario JSDoc en componente
-- Documentar uso si es necesario
+Phase 6 (Documentation):
+- JSDoc comment in component
+- Document usage if necessary
 ```
 
-## Integración con Otras Skills
+## Integration with Other Skills
 
-Esta skill recibe input de:
-- `requirements_analyzer`: Qué implementar
-- `codebase_understanding`: Cómo implementar respetando el proyecto
-- `project_protocol`: Orquestación del proceso
+This skill receives input from:
+- `requirements_analyzer`: What to implement
+- `codebase_understanding`: How to implement respecting the project
+- `project_protocol`: Process orchestration
 
-## Manejo de Errores Comunes
+## Common Error Handling
 
-### Error: No sigue convenciones
-**Solución**: Revisar código existente y ajustar
+### Error: Doesn't follow conventions
+**Solution**: Review existing code and adjust
 
-### Error: Rompe funcionalidad existente
-**Solución**: Revisar integración, verificar imports/exports
+### Error: Breaks existing functionality
+**Solution**: Review integration, verify imports/exports
 
-### Error: Código inconsistente
-**Solución**: Revisar patrones del proyecto y alinear
+### Error: Inconsistent code
+**Solution**: Review project patterns and align
 
-### Error: Falta documentación
-**Solución**: Agregar comentarios y documentación apropiada
+### Error: Missing documentation
+**Solution**: Add comments and appropriate documentation

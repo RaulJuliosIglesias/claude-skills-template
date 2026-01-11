@@ -1,65 +1,65 @@
 @echo off
-REM Script de configuración rápida para Claude Skills Template (Windows)
-REM Uso: setup.bat
+REM Quick setup script for Claude Skills Template (Windows)
+REM Usage: setup.bat
 
-echo 🚀 Configurando Claude Skills Template...
+echo 🚀 Setting up Claude Skills Template...
 echo.
 
-REM Verificar Python
+REM Check Python
 python --version >nul 2>&1
 if errorlevel 1 (
-    echo ❌ Python no encontrado. Por favor instala Python 3.8 o superior.
+    echo ❌ Python not found. Please install Python 3.8 or higher.
     exit /b 1
 )
 
-echo ✓ Python encontrado
+echo ✓ Python found
 python --version
 
-REM Crear entorno virtual si no existe
+REM Create virtual environment if it doesn't exist
 if not exist "venv" (
-    echo 📦 Creando entorno virtual...
+    echo 📦 Creating virtual environment...
     python -m venv venv
-    echo ✓ Entorno virtual creado
+    echo ✓ Virtual environment created
 ) else (
-    echo ✓ Entorno virtual ya existe
+    echo ✓ Virtual environment already exists
 )
 
-REM Activar entorno virtual
-echo 🔧 Activando entorno virtual...
+REM Activate virtual environment
+echo 🔧 Activating virtual environment...
 call venv\Scripts\activate.bat
 
-REM Instalar dependencias
-echo 📥 Instalando dependencias...
+REM Install dependencies
+echo 📥 Installing dependencies...
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-echo ✓ Dependencias instaladas
+echo ✓ Dependencies installed
 
-REM Crear .env si no existe
+REM Create .env if it doesn't exist
 if not exist ".env" (
-    echo 📝 Creando archivo .env...
+    echo 📝 Creating .env file...
     copy .env.example .env
-    echo ⚠️  Por favor edita .env y agrega tu ANTHROPIC_API_KEY
-    echo    Obtén tu API key en: https://console.anthropic.com/
+    echo ⚠️  Please edit .env and add your ANTHROPIC_API_KEY
+    echo    Get your API key at: https://console.anthropic.com/
 ) else (
-    echo ✓ Archivo .env ya existe
+    echo ✓ .env file already exists
 )
 
-REM Crear directorio de outputs
+REM Create outputs directory
 if not exist "outputs" (
     mkdir outputs
-    echo ✓ Directorio outputs creado
+    echo ✓ outputs directory created
 )
 
 echo.
-echo ✅ Configuración completada!
+echo ✅ Setup completed!
 echo.
-echo Próximos pasos:
-echo 1. Edita .env y agrega tu ANTHROPIC_API_KEY
-echo 2. Ejecuta: python test_skills.py (verificar configuración)
-echo 3. Lee GETTING_STARTED.md para tu primer uso
-echo 4. Revisa examples/ para ver ejemplos de uso
+echo Next steps:
+echo 1. Edit .env and add your ANTHROPIC_API_KEY
+echo 2. Run: python test_skills.py (verify configuration)
+echo 3. Read GETTING_STARTED.md for your first use
+echo 4. Review examples/ to see usage examples
 echo.
-echo Para activar el entorno virtual en el futuro:
+echo To activate the virtual environment in the future:
 echo   venv\Scripts\activate
 
 pause

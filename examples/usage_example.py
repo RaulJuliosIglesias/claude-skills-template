@@ -1,5 +1,5 @@
 """
-Ejemplo de uso del template de Skills para desarrollo consistente
+Usage example of the Skills template for consistent development
 """
 
 from anthropic import Anthropic
@@ -7,38 +7,38 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 
-# Cargar variables de entorno
+# Load environment variables
 load_dotenv()
 
 API_KEY = os.getenv("ANTHROPIC_API_KEY")
 MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-5")
 
 if not API_KEY:
-    raise ValueError("ANTHROPIC_API_KEY no encontrada. Configura tu .env file.")
+    raise ValueError("ANTHROPIC_API_KEY not found. Configure your .env file.")
 
-# Inicializar cliente
+# Initialize client
 client = Anthropic(api_key=API_KEY)
 
 def create_development_request(user_requirement, project_path=None):
     """
-    Crea una solicitud de desarrollo usando todas las skills del template
+    Creates a development request using all template skills
     
     Args:
-        user_requirement: Requerimiento del usuario
-        project_path: Ruta opcional del proyecto a analizar
+        user_requirement: User requirement
+        project_path: Optional project path to analyze
         
     Returns:
-        response de Claude con análisis y plan
+        Claude response with analysis and plan
     """
     
-    # Construir mensaje con contexto del proyecto si se proporciona
+    # Build message with project context if provided
     system_context = ""
     if project_path:
         system_context = f"""
         
-Contexto del proyecto:
-- Ruta del proyecto: {project_path}
-- Por favor, analiza el estado actual del proyecto antes de proponer soluciones.
+Project context:
+- Project path: {project_path}
+- Please analyze the current project state before proposing solutions.
 """
     
     messages = [{
@@ -48,15 +48,15 @@ Contexto del proyecto:
 
 {system_context}
 
-Por favor, sigue el protocolo completo:
-1. Analiza los requerimientos de forma estructurada
-2. Comprende el estado actual del proyecto
-3. Crea un plan de implementación coherente
-4. Proporciona la implementación siguiendo las mejores prácticas del proyecto
+Please follow the complete protocol:
+1. Analyze requirements in a structured way
+2. Understand the current project state
+3. Create a coherent implementation plan
+4. Provide implementation following project best practices
 """
     }]
     
-    # Usar todas las skills del template
+    # Use all template skills
     response = client.beta.messages.create(
         model=MODEL,
         max_tokens=4096,
@@ -81,10 +81,10 @@ Por favor, sigue el protocolo completo:
 
 def print_response(response):
     """
-    Imprime la respuesta de Claude de forma formateada
+    Prints Claude's response in formatted way
     """
     print("=" * 80)
-    print("RESPUESTA DE CLAUDE")
+    print("CLAUDE RESPONSE")
     print("=" * 80)
     print()
     
@@ -93,40 +93,40 @@ def print_response(response):
             print(content.text)
             print()
         elif content.type == "tool_use":
-            print(f"🔧 Herramienta usada: {content.name}")
+            print(f"🔧 Tool used: {content.name}")
             print()
     
     print("=" * 80)
-    print(f"📊 Tokens: {response.usage.input_tokens} entrada, {response.usage.output_tokens} salida")
+    print(f"📊 Tokens: {response.usage.input_tokens} input, {response.usage.output_tokens} output")
     print("=" * 80)
 
-# Ejemplo de uso
+# Usage example
 if __name__ == "__main__":
-    # Ejemplo 1: Requerimiento simple
-    print("Ejemplo 1: Requerimiento Simple")
+    # Example 1: Simple requirement
+    print("Example 1: Simple Requirement")
     print("-" * 80)
     
-    requirement = "Necesito agregar un botón de logout al header de la aplicación"
+    requirement = "I need to add a logout button to the application header"
     
     response = create_development_request(requirement)
     print_response(response)
     
     print("\n\n")
     
-    # Ejemplo 2: Requerimiento complejo con contexto
-    print("Ejemplo 2: Requerimiento Complejo")
+    # Example 2: Complex requirement with context
+    print("Example 2: Complex Requirement")
     print("-" * 80)
     
     requirement = """
-    Necesito implementar un sistema de autenticación completo que incluya:
-    - Login con email y contraseña
-    - Registro de nuevos usuarios
-    - Recuperación de contraseña
-    - Protección de rutas privadas
-    - Manejo de sesiones con JWT
+    I need to implement a complete authentication system that includes:
+    - Login with email and password
+    - New user registration
+    - Password recovery
+    - Private route protection
+    - Session handling with JWT
     """
     
-    project_path = Path.cwd()  # Ajustar según tu proyecto
+    project_path = Path.cwd()  # Adjust according to your project
     
     response = create_development_request(requirement, project_path=str(project_path))
     print_response(response)
